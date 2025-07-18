@@ -1,0 +1,60 @@
+{
+  "description": "Microsoft.IoTOperations/instances/dataflowEndpoints",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-04-01"
+      ],
+      "type": "string"
+    },
+    "extendedLocation": {
+      "description": "Edge location of the resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ExtendedLocation"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "name": {
+      "description": "Name of Instance dataflowEndpoint resource",
+      "oneOf": [
+        {
+          "maxLength": 63,
+          "minLength": 3,
+          "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The resource-specific properties for this resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/DataflowEndpointProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.IoTOperations/instances/dataflowEndpoints"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

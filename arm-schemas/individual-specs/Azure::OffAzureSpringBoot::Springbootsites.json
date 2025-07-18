@@ -1,0 +1,92 @@
+{
+  "description": "Microsoft.OffAzureSpringBoot/springbootsites",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-04-01-preview"
+      ],
+      "type": "string"
+    },
+    "extendedLocation": {
+      "description": "The extended location definition.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/SpringbootsitesModelExtendedLocation"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The geo-location where the resource lives",
+      "type": "string"
+    },
+    "name": {
+      "description": "The springbootsites name.",
+      "oneOf": [
+        {
+          "maxLength": 64,
+          "minLength": 3,
+          "pattern": "^[a-z][a-z0-9-]*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The springbootsites resource definition.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/SpringbootsitesProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/springbootsites_springbootapps_childResource"
+          },
+          {
+            "$ref": "#/definitions/springbootsites_springbootservers_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.OffAzureSpringBoot/springbootsites"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,40 @@
+{
+  "description": "Microsoft.EventHub/namespaces/schemagroups",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The Schema Group name ",
+      "maxLength": 256,
+      "minLength": 1,
+      "type": "string"
+    },
+    "properties": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/SchemaGroupProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.EventHub/namespaces/schemagroups"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

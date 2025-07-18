@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.AppPlatform/Spring/gateways/routeConfigs",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the Spring Cloud Gateway route config.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "API route config of the Spring Cloud Gateway",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/GatewayRouteConfigProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AppPlatform/Spring/gateways/routeConfigs"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/storageAccounts",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-12-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The StorageAccount name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The Storage Account properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/StorageAccountProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/dataBoxEdgeDevices_storageAccounts_containers_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DataBoxEdge/dataBoxEdgeDevices/storageAccounts"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

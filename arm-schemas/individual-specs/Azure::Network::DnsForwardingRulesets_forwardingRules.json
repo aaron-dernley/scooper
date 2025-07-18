@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Network/dnsForwardingRulesets/forwardingRules",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-05-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the forwarding rule.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of the forwarding rule.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ForwardingRuleProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Network/dnsForwardingRulesets/forwardingRules"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

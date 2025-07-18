@@ -1,0 +1,80 @@
+{
+  "description": "Microsoft.AAD/domainServices",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-05-01"
+      ],
+      "type": "string"
+    },
+    "etag": {
+      "description": "Resource etag",
+      "type": "string"
+    },
+    "location": {
+      "description": "Resource location",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the domain service.",
+      "oneOf": [
+        {
+          "pattern": "^(?=.{3,255}$)([a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)(\\.([a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?))*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Domain service properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/DomainServiceProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/domainServices_ouContainer_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AAD/domainServices"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

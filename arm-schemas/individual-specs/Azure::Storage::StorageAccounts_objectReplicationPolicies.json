@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Storage/storageAccounts/objectReplicationPolicies",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-01-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "For the destination account, provide the value 'default'. Configure the policy on the destination account first. For the source account, provide the value of the policy ID that is returned when you download the policy that was defined on the destination account. The policy is downloaded as a JSON file.",
+      "minLength": 1,
+      "type": "string"
+    },
+    "properties": {
+      "description": "Returns the Storage Account Object Replication Policy.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ObjectReplicationPolicyProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Storage/storageAccounts/objectReplicationPolicies"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

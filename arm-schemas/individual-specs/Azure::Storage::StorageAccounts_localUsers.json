@@ -1,0 +1,40 @@
+{
+  "description": "Microsoft.Storage/storageAccounts/localUsers",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-01-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of local user. The username must contain lowercase letters and numbers only. It must be unique only within the storage account.",
+      "maxLength": 64,
+      "minLength": 3,
+      "type": "string"
+    },
+    "properties": {
+      "description": "Storage account local user properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/LocalUserProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Storage/storageAccounts/localUsers"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

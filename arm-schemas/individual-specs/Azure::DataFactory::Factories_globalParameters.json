@@ -1,0 +1,53 @@
+{
+  "description": "Microsoft.DataFactory/factories/globalParameters",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2018-06-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The global parameter name.",
+      "oneOf": [
+        {
+          "maxLength": 260,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_][^<>*#.%&:\\\\+?/]*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Properties of the global parameter.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "$ref": "#/definitions/GlobalParameterSpecification"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DataFactory/factories/globalParameters"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

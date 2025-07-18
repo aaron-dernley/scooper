@@ -1,0 +1,52 @@
+{
+  "description": "Microsoft.StorageSync/storageSyncServices/syncGroups",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2022-09-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of Sync Group resource.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The parameters used to create the sync group",
+      "oneOf": [
+        {
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/storageSyncServices_syncGroups_cloudEndpoints_childResource"
+          },
+          {
+            "$ref": "#/definitions/storageSyncServices_syncGroups_serverEndpoints_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.StorageSync/storageSyncServices/syncGroups"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

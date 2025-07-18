@@ -1,0 +1,41 @@
+{
+  "description": "Microsoft.EventHub/namespaces/eventhubs/consumergroups",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The consumer group name",
+      "maxLength": 50,
+      "minLength": 1,
+      "type": "string"
+    },
+    "properties": {
+      "description": "Single item in List or Get Consumer group operation",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ConsumerGroupProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.EventHub/namespaces/eventhubs/consumergroups"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

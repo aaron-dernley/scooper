@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.DocumentDB/databaseAccounts/cassandraRoleDefinitions",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The GUID for the Role Definition.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties to create and update an Azure Cosmos DB Cassandra Role Definition.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/CassandraRoleDefinitionResourceProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DocumentDB/databaseAccounts/cassandraRoleDefinitions"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

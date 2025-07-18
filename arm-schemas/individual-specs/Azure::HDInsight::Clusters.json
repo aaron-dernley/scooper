@@ -1,0 +1,96 @@
+{
+  "description": "Microsoft.HDInsight/clusters",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-01-15-preview"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "The identity of the cluster, if configured.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ClusterIdentity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The location of the cluster.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the cluster.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The cluster create parameters.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ClusterCreateProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/clusters_applications_childResource"
+          },
+          {
+            "$ref": "#/definitions/clusters_privateEndpointConnections_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "The resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.HDInsight/clusters"
+      ],
+      "type": "string"
+    },
+    "zones": {
+      "description": "The availability zones.",
+      "oneOf": [
+        {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

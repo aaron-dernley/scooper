@@ -1,0 +1,75 @@
+{
+  "description": "Microsoft.Batch/batchAccounts/pools",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "The type of identity used for the Batch Pool.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/BatchPoolIdentity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "name": {
+      "description": "The pool name. This must be unique within the account.",
+      "oneOf": [
+        {
+          "maxLength": 64,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9_-]+$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The properties associated with the pool.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/PoolProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "The tags of the resource.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Batch/batchAccounts/pools"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

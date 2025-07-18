@@ -1,0 +1,81 @@
+{
+  "description": "Microsoft.ElasticSan/elasticSans",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01-preview"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "The geo-location where the resource lives",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the ElasticSan.",
+      "oneOf": [
+        {
+          "maxLength": 24,
+          "minLength": 3,
+          "pattern": "^[A-Za-z0-9]+((-|_)[a-z0-9A-Z]+)*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Properties of ElasticSan.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ElasticSanProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/elasticSans_volumegroups_childResource"
+          },
+          {
+            "$ref": "#/definitions/elasticSans_privateEndpointConnections_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ElasticSan/elasticSans"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,71 @@
+{
+  "description": "Microsoft.AppPlatform/Spring/gateways",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of Spring Cloud Gateway.",
+      "oneOf": [
+        {
+          "pattern": "^[a-z][a-z0-9]*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Spring Cloud Gateway properties payload",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/GatewayProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/Spring_gateways_domains_childResource"
+          },
+          {
+            "$ref": "#/definitions/Spring_gateways_routeConfigs_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "sku": {
+      "description": "Sku of the Spring Cloud Gateway resource",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/Sku"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AppPlatform/Spring/gateways"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,119 @@
+{
+  "description": "Microsoft.DataFactory/factories",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2018-06-01"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "Managed service identity of the factory.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/FactoryIdentity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The resource location.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The factory name.",
+      "oneOf": [
+        {
+          "maxLength": 63,
+          "minLength": 3,
+          "pattern": "^[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Properties of the factory.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/FactoryProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/factories_adfcdcs_childResource"
+          },
+          {
+            "$ref": "#/definitions/factories_datasets_childResource"
+          },
+          {
+            "$ref": "#/definitions/factories_triggers_childResource"
+          },
+          {
+            "$ref": "#/definitions/factories_pipelines_childResource"
+          },
+          {
+            "$ref": "#/definitions/factories_dataflows_childResource"
+          },
+          {
+            "$ref": "#/definitions/factories_credentials_childResource"
+          },
+          {
+            "$ref": "#/definitions/factories_linkedservices_childResource"
+          },
+          {
+            "$ref": "#/definitions/factories_globalParameters_childResource"
+          },
+          {
+            "$ref": "#/definitions/factories_integrationRuntimes_childResource"
+          },
+          {
+            "$ref": "#/definitions/factories_managedVirtualNetworks_childResource"
+          },
+          {
+            "$ref": "#/definitions/factories_privateEndpointConnections_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "The resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DataFactory/factories"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

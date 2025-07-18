@@ -1,0 +1,54 @@
+{
+  "description": "Microsoft.ApiManagement/service/identityProviders",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-06-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Identity Provider Type identifier.",
+      "oneOf": [
+        {
+          "enum": [
+            "facebook",
+            "google",
+            "microsoft",
+            "twitter",
+            "aad",
+            "aadB2C"
+          ],
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Identity Provider contract properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/IdentityProviderCreateContractProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ApiManagement/service/identityProviders"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

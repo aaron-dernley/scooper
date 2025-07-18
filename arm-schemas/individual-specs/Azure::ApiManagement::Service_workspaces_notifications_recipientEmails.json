@@ -1,0 +1,27 @@
+{
+  "description": "Microsoft.ApiManagement/service/workspaces/notifications/recipientEmails",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-06-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Email identifier.",
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ApiManagement/service/workspaces/notifications/recipientEmails"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

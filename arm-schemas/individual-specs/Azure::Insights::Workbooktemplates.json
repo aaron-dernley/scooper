@@ -1,0 +1,58 @@
+{
+  "description": "Microsoft.Insights/workbooktemplates",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2020-11-20"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "Resource location",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the Application Insights component resource.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Metadata describing a workbook template for an Azure resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/WorkbookTemplateProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Resource tags",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Insights/workbooktemplates"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

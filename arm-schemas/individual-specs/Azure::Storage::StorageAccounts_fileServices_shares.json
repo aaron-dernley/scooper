@@ -1,0 +1,40 @@
+{
+  "description": "Microsoft.Storage/storageAccounts/fileServices/shares",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-01-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the file share within the specified storage account. File share names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.",
+      "maxLength": 63,
+      "minLength": 3,
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of the file share.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/FileShareProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Storage/storageAccounts/fileServices/shares"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

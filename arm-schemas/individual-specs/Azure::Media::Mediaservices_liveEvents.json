@@ -1,0 +1,78 @@
+{
+  "description": "Microsoft.Media/mediaservices/liveEvents",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2022-11-01"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "The geo-location where the resource lives",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the live event, maximum length is 32.",
+      "oneOf": [
+        {
+          "maxLength": 32,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9]+(-*[a-zA-Z0-9])*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The live event properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/LiveEventProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/mediaservices_liveEvents_liveOutputs_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Media/mediaservices/liveEvents"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,41 @@
+{
+  "description": "Microsoft.ServiceBus/namespaces/topics/authorizationRules",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-01-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The authorization rule name.",
+      "maxLength": 50,
+      "minLength": 1,
+      "type": "string"
+    },
+    "properties": {
+      "description": "AuthorizationRule properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/SBAuthorizationRuleProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ServiceBus/namespaces/topics/authorizationRules"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

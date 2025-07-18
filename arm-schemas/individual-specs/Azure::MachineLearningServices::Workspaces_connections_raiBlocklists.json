@@ -1,0 +1,57 @@
+{
+  "description": "Microsoft.MachineLearningServices/workspaces/connections/raiBlocklists",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-04-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the RaiBlocklist.",
+      "oneOf": [
+        {
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.-]*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "RAI Custom Blocklist properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/RaiBlocklistProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/workspaces_connections_raiBlocklists_raiBlocklistItems_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.MachineLearningServices/workspaces/connections/raiBlocklists"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,85 @@
+{
+  "description": "Microsoft.ServiceFabric/managedClusters",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-09-01-preview"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "Azure resource location.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the cluster resource.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The managed cluster resource properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ManagedClusterProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/managedClusters_nodeTypes_childResource"
+          },
+          {
+            "$ref": "#/definitions/managedclusters_applications_childResource"
+          },
+          {
+            "$ref": "#/definitions/managedclusters_applicationTypes_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "sku": {
+      "description": "The sku of the managed cluster",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/Sku"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Azure resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ServiceFabric/managedClusters"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

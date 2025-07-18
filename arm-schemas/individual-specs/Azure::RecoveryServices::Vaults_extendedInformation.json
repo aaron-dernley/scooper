@@ -1,0 +1,50 @@
+{
+  "description": "Microsoft.RecoveryServices/vaults/extendedInformation",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-02-01"
+      ],
+      "type": "string"
+    },
+    "etag": {
+      "description": "Optional ETag.",
+      "type": "string"
+    },
+    "name": {
+      "oneOf": [
+        {
+          "pattern": "^.*/vaultExtendedInfo$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Vault extended information.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/VaultExtendedInfo"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.RecoveryServices/vaults/extendedInformation"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,27 @@
+{
+  "description": "Microsoft.DataShare/accounts/shareSubscriptions/triggers",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2021-08-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the trigger.",
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DataShare/accounts/shareSubscriptions/triggers"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

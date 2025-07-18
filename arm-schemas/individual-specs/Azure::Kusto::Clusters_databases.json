@@ -1,0 +1,55 @@
+{
+  "description": "Microsoft.Kusto/clusters/databases",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-04-13"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "Resource location.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the database in the Kusto cluster.",
+      "oneOf": [
+        {
+          "pattern": "^.*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/clusters_databases_scripts_childResource"
+          },
+          {
+            "$ref": "#/definitions/clusters_databases_dataConnections_childResource"
+          },
+          {
+            "$ref": "#/definitions/clusters_databases_principalAssignments_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Kusto/clusters/databases"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

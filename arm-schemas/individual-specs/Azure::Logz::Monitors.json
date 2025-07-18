@@ -1,0 +1,86 @@
+{
+  "description": "Microsoft.Logz/monitors",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2022-01-01-preview"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/IdentityProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "type": "string"
+    },
+    "name": {
+      "description": "Monitor resource name",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties specific to the monitor resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/MonitorProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/monitors_tagRules_childResource"
+          },
+          {
+            "$ref": "#/definitions/monitors_accounts_childResource"
+          },
+          {
+            "$ref": "#/definitions/monitors_metricsSource_childResource"
+          },
+          {
+            "$ref": "#/definitions/monitors_singleSignOnConfigurations_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Dictionary of <string>",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Logz/monitors"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

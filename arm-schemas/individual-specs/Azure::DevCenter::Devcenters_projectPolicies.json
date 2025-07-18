@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.DevCenter/devcenters/projectPolicies",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-04-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the project policy.",
+      "oneOf": [
+        {
+          "maxLength": 63,
+          "minLength": 3,
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9-_.]{2,62}$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Properties of an project policy.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ProjectPolicyProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DevCenter/devcenters/projectPolicies"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

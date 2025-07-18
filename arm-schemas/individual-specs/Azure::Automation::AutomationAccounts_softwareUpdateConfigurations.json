@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-10-23"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the software update configuration to be created.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Software update configuration properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/SoftwareUpdateConfigurationProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

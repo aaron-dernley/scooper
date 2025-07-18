@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.DocumentDB/mongoClusters/firewallRules",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-04-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the mongo cluster firewall rule.",
+      "oneOf": [
+        {
+          "maxLength": 80,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9][-_.a-zA-Z0-9]*",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The resource-specific properties for this resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/FirewallRuleProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DocumentDB/mongoClusters/firewallRules"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

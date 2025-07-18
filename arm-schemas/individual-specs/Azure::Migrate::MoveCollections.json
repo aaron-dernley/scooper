@@ -1,0 +1,79 @@
+{
+  "description": "Microsoft.Migrate/moveCollections",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-08-01"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "Defines the MSI properties of the Move Collection.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/Identity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The geo-location where the resource lives.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The Move Collection Name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Defines the move collection properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/MoveCollectionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/moveCollections_moveResources_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Migrate/moveCollections"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

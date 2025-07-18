@@ -1,0 +1,47 @@
+{
+  "description": "microsoft.insights/components/linkedStorageAccounts",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2020-03-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The type of the Application Insights component data source for the linked storage account.",
+      "oneOf": [
+        {
+          "pattern": "^.*/ServiceProfiler$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The properties of the linked storage accounts.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/LinkedStorageAccountsProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "microsoft.insights/components/linkedStorageAccounts"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

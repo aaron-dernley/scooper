@@ -1,0 +1,71 @@
+{
+  "description": "Microsoft.ApiManagement/service/workspaces/apis",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-06-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "API revision identifier. Must be unique in the current API Management service instance. Non-current revision has ;rev=n as a suffix where n is the revision number.",
+      "oneOf": [
+        {
+          "maxLength": 256,
+          "minLength": 1,
+          "pattern": "^[^*#&+:<>?]+$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "API entity create of update properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ApiCreateOrUpdateProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/service_workspaces_apis_schemas_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_workspaces_apis_releases_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_workspaces_apis_policies_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_workspaces_apis_operations_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_workspaces_apis_diagnostics_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ApiManagement/service/workspaces/apis"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

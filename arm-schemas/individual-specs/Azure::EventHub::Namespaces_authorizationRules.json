@@ -1,0 +1,45 @@
+{
+  "description": "Microsoft.EventHub/namespaces/AuthorizationRules",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2015-08-01"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "Data center location.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The authorization rule name.",
+      "maxLength": 50,
+      "minLength": 1,
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties supplied to create or update SharedAccessAuthorizationRule",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/SharedAccessAuthorizationRuleProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.EventHub/namespaces/AuthorizationRules"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

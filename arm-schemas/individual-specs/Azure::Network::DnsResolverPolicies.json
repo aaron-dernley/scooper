@@ -1,0 +1,81 @@
+{
+  "description": "Microsoft.Network/dnsResolverPolicies",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-05-01"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "The geo-location where the resource lives",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the DNS resolver policy.",
+      "oneOf": [
+        {
+          "maxLength": 80,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9]([a-zA-Z0-9_\\-]*[a-zA-Z0-9])?$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Properties of the DNS resolver policy.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/DnsResolverPolicyProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/dnsResolverPolicies_dnsSecurityRules_childResource"
+          },
+          {
+            "$ref": "#/definitions/dnsResolverPolicies_virtualNetworkLinks_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Network/dnsResolverPolicies"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

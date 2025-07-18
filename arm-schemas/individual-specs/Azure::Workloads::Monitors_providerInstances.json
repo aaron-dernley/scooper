@@ -1,0 +1,50 @@
+{
+  "description": "Microsoft.Workloads/monitors/providerInstances",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-04-01"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "[currently not in use] Managed service identity(user assigned identities)",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/UserAssignedServiceIdentity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "name": {
+      "description": "Name of the provider instance.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Provider Instance properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ProviderInstanceProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Workloads/monitors/providerInstances"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

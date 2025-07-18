@@ -1,0 +1,77 @@
+{
+  "description": "Microsoft.MobileNetwork/packetCoreControlPlanes/packetCoreDataPlanes",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-04-01"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "The geo-location where the resource lives",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the packet core data plane.",
+      "oneOf": [
+        {
+          "maxLength": 64,
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Packet core data plane Properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/PacketCoreDataPlanePropertiesFormat"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/packetCoreControlPlanes_packetCoreDataPlanes_attachedDataNetworks_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.MobileNetwork/packetCoreControlPlanes/packetCoreDataPlanes"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

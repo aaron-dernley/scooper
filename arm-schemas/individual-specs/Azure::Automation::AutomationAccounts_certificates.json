@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Automation/automationAccounts/certificates",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-10-23"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The parameters supplied to the create or update certificate operation.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Gets or sets the properties of the certificate.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/CertificateCreateOrUpdateProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Automation/automationAccounts/certificates"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

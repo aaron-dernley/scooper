@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.StorageSync/storageSyncServices/registeredServers",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2022-09-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "GUID identifying the on-premises server.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The parameters used to create the registered server.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/RegisteredServerCreateParametersProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.StorageSync/storageSyncServices/registeredServers"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,155 @@
+{
+  "description": "Microsoft.MachineLearningServices/workspaces",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-06-01"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "The identity of the resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ManagedServiceIdentity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "kind": {
+      "type": "string"
+    },
+    "location": {
+      "description": "Specifies the location of the resource.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of Azure Machine Learning workspace.",
+      "oneOf": [
+        {
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{2,32}$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The properties of the machine learning workspace.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/WorkspaceProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/workspaces_data_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_jobs_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_codes_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_models_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_computes_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_schedules_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_components_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_datastores_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_featuresets_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_connections_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_environments_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_outboundRules_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_batchEndpoints_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_capabilityHosts_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_onlineEndpoints_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_serverlessEndpoints_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_featurestoreEntities_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_marketplaceSubscriptions_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_privateEndpointConnections_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "sku": {
+      "description": "The sku of the workspace.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/Sku"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Contains resource tags defined as key/value pairs.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.MachineLearningServices/workspaces"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

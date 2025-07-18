@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.ElasticSan/elasticSans/volumegroups/snapshots",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the volume snapshot within the given volume group.",
+      "oneOf": [
+        {
+          "maxLength": 80,
+          "minLength": 1,
+          "pattern": "^[a-z0-9]+(?:[._-][a-z0-9]+)*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Properties of Volume Snapshot.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/SnapshotProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ElasticSan/elasticSans/volumegroups/snapshots"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

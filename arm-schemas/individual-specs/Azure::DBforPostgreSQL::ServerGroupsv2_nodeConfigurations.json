@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.DBforPostgreSQL/serverGroupsv2/nodeConfigurations",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-03-02-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the cluster configuration.",
+      "oneOf": [
+        {
+          "maxLength": 90,
+          "minLength": 1,
+          "pattern": "^[-\\w\\._]+$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The properties of a configuration.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ServerConfigurationProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DBforPostgreSQL/serverGroupsv2/nodeConfigurations"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,46 @@
+{
+  "description": "Microsoft.DocumentDB/databaseAccounts/apis/databases/graphs/settings",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2016-03-31"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "oneOf": [
+        {
+          "pattern": "^.*/throughput$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Properties to update Azure Cosmos DB resource throughput.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ThroughputUpdateProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DocumentDB/databaseAccounts/apis/databases/graphs/settings"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

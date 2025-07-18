@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.EventGrid/namespaces/caCertificates",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-04-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The CA certificate name.",
+      "oneOf": [
+        {
+          "maxLength": 50,
+          "minLength": 3,
+          "pattern": "^[a-zA-Z0-9-]*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The properties of CA certificate.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/CaCertificateProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.EventGrid/namespaces/caCertificates"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

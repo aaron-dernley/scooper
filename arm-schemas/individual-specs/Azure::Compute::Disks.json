@@ -1,0 +1,94 @@
+{
+  "description": "Microsoft.Compute/disks",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-01-02"
+      ],
+      "type": "string"
+    },
+    "extendedLocation": {
+      "description": "The extended location where the disk will be created. Extended location cannot be changed.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ExtendedLocation"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "Resource location",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the managed disk that is being created. The name can't be changed after the disk is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Disk resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/DiskProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "sku": {
+      "description": "The disks sku name. Can be Standard_LRS, Premium_LRS, StandardSSD_LRS, UltraSSD_LRS, Premium_ZRS, StandardSSD_ZRS, or PremiumV2_LRS.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/DiskSku"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Resource tags",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Compute/disks"
+      ],
+      "type": "string"
+    },
+    "zones": {
+      "description": "The Logical zone list for Disk.",
+      "oneOf": [
+        {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

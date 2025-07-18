@@ -1,0 +1,31 @@
+{
+  "description": "Microsoft.Authorization/resourceManagementPrivateLinks",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2020-05-01"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "the region to create private link association.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the resource management private link.",
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Authorization/resourceManagementPrivateLinks"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,68 @@
+{
+  "description": "Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-10-01"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "Resource location.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the SQL virtual machine group.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/SqlVirtualMachineGroupProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/sqlVirtualMachineGroups_availabilityGroupListeners_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

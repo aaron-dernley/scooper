@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.EventGrid/partnerTopics/eventSubscriptions",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-04-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the event subscription to be created. Event subscription names must be between 3 and 64 characters in length and use alphanumeric letters only.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of the event subscription.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/EventSubscriptionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.EventGrid/partnerTopics/eventSubscriptions"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

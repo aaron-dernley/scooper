@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.StorSimple/managers/devices/fileservers",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2016-10-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The file server name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/FileServerProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/managers_devices_fileservers_shares_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.StorSimple/managers/devices/fileservers"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

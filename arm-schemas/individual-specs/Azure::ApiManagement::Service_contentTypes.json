@@ -1,0 +1,51 @@
+{
+  "description": "Microsoft.ApiManagement/service/contentTypes",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-06-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Content type identifier.",
+      "maxLength": 80,
+      "minLength": 1,
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of the content type.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ContentTypeContractProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/service_contentTypes_contentItems_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ApiManagement/service/contentTypes"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,89 @@
+{
+  "description": "Microsoft.MySQLDiscovery/MySQLSites",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-09-30-preview"
+      ],
+      "type": "string"
+    },
+    "extendedLocation": {
+      "description": "The extended location.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ExtendedLocation"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The geo-location where the resource lives",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of Site",
+      "oneOf": [
+        {
+          "maxLength": 63,
+          "minLength": 3,
+          "pattern": "^[a-zA-Z0-9-]*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/MySQLSiteProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/MySQLSites_MySQLServers_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.MySQLDiscovery/MySQLSites"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

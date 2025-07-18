@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Media/mediaServices/streamingPolicies",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-01-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The Streaming Policy name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Class to specify properties of Streaming Policy",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/StreamingPolicyProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Media/mediaServices/streamingPolicies"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

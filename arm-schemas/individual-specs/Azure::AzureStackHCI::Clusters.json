@@ -1,0 +1,91 @@
+{
+  "description": "Microsoft.AzureStackHCI/clusters",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-02-15-preview"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "Identity of Cluster resource",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ManagedServiceIdentity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The geo-location where the resource lives",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the cluster.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Cluster properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ClusterProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/clusters_updates_childResource"
+          },
+          {
+            "$ref": "#/definitions/clusters_arcSettings_childResource"
+          },
+          {
+            "$ref": "#/definitions/clusters_updateSummaries_childResource"
+          },
+          {
+            "$ref": "#/definitions/clusters_securitySettings_childResource"
+          },
+          {
+            "$ref": "#/definitions/clusters_deploymentSettings_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AzureStackHCI/clusters"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

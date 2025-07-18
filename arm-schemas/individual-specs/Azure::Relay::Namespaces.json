@@ -1,0 +1,93 @@
+{
+  "description": "Microsoft.Relay/namespaces",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-01-01"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "Resource location.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The namespace name",
+      "maxLength": 50,
+      "minLength": 6,
+      "type": "string"
+    },
+    "properties": {
+      "description": "Description of Relay namespace",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/RelayNamespaceProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/namespaces_wcfRelays_childResource"
+          },
+          {
+            "$ref": "#/definitions/namespaces_networkRuleSets_childResource"
+          },
+          {
+            "$ref": "#/definitions/namespaces_hybridConnections_childResource"
+          },
+          {
+            "$ref": "#/definitions/namespaces_authorizationRules_childResource"
+          },
+          {
+            "$ref": "#/definitions/namespaces_privateEndpointConnections_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "sku": {
+      "description": "SKU of the namespace.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/Sku"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Relay/namespaces"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

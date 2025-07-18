@@ -1,0 +1,58 @@
+{
+  "description": "Microsoft.MachineLearning/webServices",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2017-01-01"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "Specifies the location of the resource.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the web service.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Contains the property payload that describes the web service.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/WebServiceProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Contains resource tags defined as key/value pairs.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.MachineLearning/webServices"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

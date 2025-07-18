@@ -1,0 +1,47 @@
+{
+  "description": "Microsoft.Sql/managedInstances/databases/backupShortTermRetentionPolicies",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The policy name. Should always be \"default\".",
+      "oneOf": [
+        {
+          "pattern": "^.*/default$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ManagedBackupShortTermRetentionPolicyProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Sql/managedInstances/databases/backupShortTermRetentionPolicies"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

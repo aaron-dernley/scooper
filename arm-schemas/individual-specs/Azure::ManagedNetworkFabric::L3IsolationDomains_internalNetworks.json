@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.ManagedNetworkFabric/l3IsolationDomains/internalNetworks",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-06-15"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the Internal Network.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/InternalNetworkProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ManagedNetworkFabric/l3IsolationDomains/internalNetworks"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

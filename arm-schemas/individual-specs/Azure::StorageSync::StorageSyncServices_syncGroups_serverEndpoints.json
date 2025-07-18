@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2022-09-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of Server Endpoint object.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The parameters used to create the server endpoint.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ServerEndpointCreateParametersProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

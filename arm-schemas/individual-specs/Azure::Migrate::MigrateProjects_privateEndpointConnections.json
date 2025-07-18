@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "properties": {
+    "apiVersion": {
+      "type": "string",
+      "enum": [
+        "2020-05-01"
+      ]
+    },
+    "eTag": {
+      "type": "string",
+      "description": "Gets the tag for optimistic concurrency control."
+    },
+    "name": {
+      "type": "string",
+      "description": "Private endpoint connection name."
+    },
+    "properties": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ConnectionStateRequestBodyProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ],
+      "description": "Properties of Connection state request."
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "Microsoft.Migrate/migrateProjects/privateEndpointConnections"
+      ]
+    }
+  },
+  "required": [
+    "apiVersion",
+    "name",
+    "properties",
+    "type"
+  ],
+  "description": "Microsoft.Migrate/migrateProjects/privateEndpointConnections"
+}

@@ -1,0 +1,58 @@
+{
+  "description": "Microsoft.HanaOnAzure/hanaInstances",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2017-11-03-preview"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "Resource location",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the SAP HANA on Azure instance.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "HANA instance properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/HanaInstanceProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Resource tags",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.HanaOnAzure/hanaInstances"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

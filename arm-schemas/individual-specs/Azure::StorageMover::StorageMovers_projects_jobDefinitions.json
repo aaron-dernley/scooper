@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.StorageMover/storageMovers/projects/jobDefinitions",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the Job Definition resource.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Job definition properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/JobDefinitionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.StorageMover/storageMovers/projects/jobDefinitions"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

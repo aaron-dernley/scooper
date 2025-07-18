@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.HybridCompute/privateLinkScopes/scopedResources",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2020-08-15-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the scoped resource object.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ScopedResourceProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.HybridCompute/privateLinkScopes/scopedResources"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Authorization/locks",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2015-01-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The lock name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The properties of the lock.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ManagementLockProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Authorization/locks"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

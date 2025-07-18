@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.AppPlatform/Spring/buildServices/builders",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the builder resource.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Property of the Builder resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/BuilderProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/Spring_buildServices_builders_buildpackBindings_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AppPlatform/Spring/buildServices/builders"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

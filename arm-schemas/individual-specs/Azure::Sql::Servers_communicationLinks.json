@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Sql/servers/communicationLinks",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2014-04-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the server communication link.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The properties of resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ServerCommunicationLinkProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Sql/servers/communicationLinks"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

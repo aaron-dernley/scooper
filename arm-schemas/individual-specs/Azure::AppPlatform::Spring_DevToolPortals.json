@@ -1,0 +1,47 @@
+{
+  "description": "Microsoft.AppPlatform/Spring/DevToolPortals",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of Dev Tool Portal.",
+      "oneOf": [
+        {
+          "pattern": "^[a-z][a-z0-9]*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Dev Tool Portal properties payload",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/DevToolPortalProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AppPlatform/Spring/DevToolPortals"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

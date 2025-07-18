@@ -1,0 +1,29 @@
+{
+  "description": "Microsoft.ApiManagement/service/workspaces/groups/users",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-06-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "User identifier. Must be unique in the current API Management service instance.",
+      "maxLength": 80,
+      "minLength": 1,
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ApiManagement/service/workspaces/groups/users"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

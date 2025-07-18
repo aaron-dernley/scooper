@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.EventGrid/namespaces/clients",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-04-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The client name.",
+      "oneOf": [
+        {
+          "maxLength": 128,
+          "minLength": 1,
+          "pattern": "^[-a-zA-Z0-9:\\._]*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The properties of client.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ClientProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.EventGrid/namespaces/clients"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

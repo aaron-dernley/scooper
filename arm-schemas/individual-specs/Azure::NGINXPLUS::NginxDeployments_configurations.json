@@ -1,0 +1,38 @@
+{
+  "description": "Nginx.NginxPlus/nginxDeployments/configurations",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-11-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of configuration, only 'default' is supported value due to the singleton of NGINX conf",
+      "type": "string"
+    },
+    "properties": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/NginxConfigurationRequestProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Nginx.NginxPlus/nginxDeployments/configurations"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

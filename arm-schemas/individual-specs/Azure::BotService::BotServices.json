@@ -1,0 +1,117 @@
+{
+  "description": "Microsoft.BotService/botServices",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-09-15-preview"
+      ],
+      "type": "string"
+    },
+    "etag": {
+      "description": "Entity Tag.",
+      "type": "string"
+    },
+    "kind": {
+      "description": "Required. Gets or sets the Kind of the resource.",
+      "oneOf": [
+        {
+          "enum": [
+            "sdk",
+            "designer",
+            "bot",
+            "function",
+            "azurebot"
+          ],
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "Specifies the location of the resource.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the Bot resource.",
+      "oneOf": [
+        {
+          "maxLength": 64,
+          "minLength": 2,
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.-]*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The set of properties specific to bot resource",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/BotProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/botServices_channels_childResource"
+          },
+          {
+            "$ref": "#/definitions/botServices_connections_childResource"
+          },
+          {
+            "$ref": "#/definitions/botServices_privateEndpointConnections_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "sku": {
+      "description": "Gets or sets the SKU of the resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/Sku"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Contains resource tags defined as key/value pairs.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.BotService/botServices"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

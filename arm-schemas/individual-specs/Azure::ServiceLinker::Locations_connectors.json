@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.ServiceLinker/locations/connectors",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of resource.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The properties of the Linker.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/LinkerProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ServiceLinker/locations/connectors"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

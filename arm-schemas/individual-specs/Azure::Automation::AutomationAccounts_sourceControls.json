@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.Automation/automationAccounts/sourceControls",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-10-23"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The source control name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The properties of the source control.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/SourceControlCreateOrUpdateProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/automationAccounts_sourceControls_sourceControlSyncJobs_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Automation/automationAccounts/sourceControls"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

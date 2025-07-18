@@ -1,0 +1,86 @@
+{
+  "description": "Microsoft.Sql/managedInstances/databases",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "Resource location.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the database.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ManagedDatabaseProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/managedInstances_databases_ledgerDigestUploads_childResource"
+          },
+          {
+            "$ref": "#/definitions/managedInstances_databases_securityAlertPolicies_childResource"
+          },
+          {
+            "$ref": "#/definitions/managedInstances_databases_vulnerabilityAssessments_childResource"
+          },
+          {
+            "$ref": "#/definitions/managedInstances_databases_transparentDataEncryption_childResource"
+          },
+          {
+            "$ref": "#/definitions/managedInstances_databases_backupLongTermRetentionPolicies_childResource"
+          },
+          {
+            "$ref": "#/definitions/managedInstances_databases_backupShortTermRetentionPolicies_childResource"
+          },
+          {
+            "$ref": "#/definitions/managedInstances_databases_advancedThreatProtectionSettings_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Sql/managedInstances/databases"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

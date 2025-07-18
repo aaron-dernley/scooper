@@ -1,0 +1,58 @@
+{
+  "description": "Microsoft.AzureStackHCI/virtualMachines/extensions",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2022-12-15-preview"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "The location.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the machine extension.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Describes Machine Extension Properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/MachineExtensionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "The Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AzureStackHCI/virtualMachines/extensions"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

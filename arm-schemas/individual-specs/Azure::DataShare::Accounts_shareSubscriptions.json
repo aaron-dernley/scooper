@@ -1,0 +1,52 @@
+{
+  "description": "Microsoft.DataShare/accounts/shareSubscriptions",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2021-08-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the shareSubscription.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties on the share subscription",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ShareSubscriptionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/accounts_shareSubscriptions_triggers_childResource"
+          },
+          {
+            "$ref": "#/definitions/accounts_shareSubscriptions_dataSetMappings_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DataShare/accounts/shareSubscriptions"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

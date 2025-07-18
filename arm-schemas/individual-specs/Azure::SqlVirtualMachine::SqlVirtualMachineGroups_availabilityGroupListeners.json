@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups/availabilityGroupListeners",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-10-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the availability group listener.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/AvailabilityGroupListenerProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups/availabilityGroupListeners"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

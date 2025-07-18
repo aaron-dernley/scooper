@@ -1,0 +1,76 @@
+{
+  "description": "Microsoft.IoTOperations/instances/brokers",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-04-01"
+      ],
+      "type": "string"
+    },
+    "extendedLocation": {
+      "description": "Edge location of the resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ExtendedLocation"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "name": {
+      "description": "Name of broker.",
+      "oneOf": [
+        {
+          "maxLength": 63,
+          "minLength": 3,
+          "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The resource-specific properties for this resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/BrokerProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/instances_brokers_listeners_childResource"
+          },
+          {
+            "$ref": "#/definitions/instances_brokers_authorizations_childResource"
+          },
+          {
+            "$ref": "#/definitions/instances_brokers_authentications_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.IoTOperations/instances/brokers"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

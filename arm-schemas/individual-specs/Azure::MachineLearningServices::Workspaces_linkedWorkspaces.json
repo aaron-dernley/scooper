@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.MachineLearningServices/workspaces/linkedWorkspaces",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2020-05-15-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Friendly name of the linked workspace",
+      "type": "string"
+    },
+    "properties": {
+      "description": "LinkedWorkspace specific properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/LinkedWorkspaceProps"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.MachineLearningServices/workspaces/linkedWorkspaces"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

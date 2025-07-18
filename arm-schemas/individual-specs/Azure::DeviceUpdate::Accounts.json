@@ -1,0 +1,95 @@
+{
+  "description": "Microsoft.DeviceUpdate/accounts",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-07-01"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "The type of identity used for the resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ManagedServiceIdentity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The geo-location where the resource lives",
+      "type": "string"
+    },
+    "name": {
+      "description": "Account name.",
+      "oneOf": [
+        {
+          "maxLength": 24,
+          "minLength": 3,
+          "pattern": "^[A-Za-z0-9]+(-[A-Za-z0-9]+)*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Device Update account properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/AccountProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/accounts_instances_childResource"
+          },
+          {
+            "$ref": "#/definitions/accounts_privateEndpointConnections_childResource"
+          },
+          {
+            "$ref": "#/definitions/accounts_privateEndpointConnectionProxies_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DeviceUpdate/accounts"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

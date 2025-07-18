@@ -1,0 +1,51 @@
+{
+  "description": "Microsoft.Web/staticSites/builds/databaseConnections",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-11-01"
+      ],
+      "type": "string"
+    },
+    "kind": {
+      "description": "Kind of resource.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the database connection.",
+      "oneOf": [
+        {
+          "pattern": "^[a-zA-Z0-9]+$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "DatabaseConnection resource specific properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/DatabaseConnectionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Web/staticSites/builds/databaseConnections"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

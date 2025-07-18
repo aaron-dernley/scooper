@@ -1,0 +1,87 @@
+{
+  "description": "Microsoft.IoTOperationsMQ/mq/kafkaConnector",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-10-04-preview"
+      ],
+      "type": "string"
+    },
+    "extendedLocation": {
+      "description": "Extended Location",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ExtendedLocationProperty"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The geo-location where the resource lives",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of MQ kafkaConnector resource",
+      "oneOf": [
+        {
+          "pattern": "^[a-zA-Z0-9-]{3,24}$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The resource-specific properties for this resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/KafkaConnectorProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/mq_kafkaConnector_topicMap_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.IoTOperationsMQ/mq/kafkaConnector"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

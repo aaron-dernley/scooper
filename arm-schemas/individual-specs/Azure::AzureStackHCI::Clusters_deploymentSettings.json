@@ -1,0 +1,48 @@
+{
+  "description": "Microsoft.AzureStackHCI/clusters/deploymentSettings",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-02-15-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of Deployment Setting",
+      "oneOf": [
+        {
+          "default": "default",
+          "pattern": "^[a-zA-Z0-9-]{3,24}$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The resource-specific properties for this resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/DeploymentSettingsProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AzureStackHCI/clusters/deploymentSettings"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,72 @@
+{
+  "description": "Microsoft.CognitiveServices/accounts/raiBlocklists",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-06-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the RaiBlocklist associated with the Cognitive Services Account",
+      "oneOf": [
+        {
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.-]*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Properties of Cognitive Services RaiBlocklist.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/RaiBlocklistProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/accounts_raiBlocklists_raiBlocklistItems_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.CognitiveServices/accounts/raiBlocklists"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

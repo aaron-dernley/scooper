@@ -1,0 +1,43 @@
+{
+  "description": "Microsoft.DataMigration/services/serviceTasks",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-03-15-preview"
+      ],
+      "type": "string"
+    },
+    "etag": {
+      "description": "HTTP strong entity tag value. This is ignored if submitted.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the Task",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Custom task properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ProjectTaskProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DataMigration/services/serviceTasks"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

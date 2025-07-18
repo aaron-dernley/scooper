@@ -1,0 +1,47 @@
+{
+  "description": "Microsoft.CodeSigning/codeSigningAccounts/certificateProfiles",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-09-30-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Certificate profile name.",
+      "oneOf": [
+        {
+          "pattern": "^(?=.{5,100}$)[^0-9][A-Za-z0-9]+(?:-[A-Za-z0-9]+)*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The resource-specific properties for this resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/CertificateProfileProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.CodeSigning/codeSigningAccounts/certificateProfiles"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

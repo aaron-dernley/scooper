@@ -1,0 +1,89 @@
+{
+  "description": "Microsoft.AzureDataTransfer/connections",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-05-21"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "The managed service identities assigned to this resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ManagedServiceIdentity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The geo-location where the resource lives",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name for the connection to perform the operation on.",
+      "oneOf": [
+        {
+          "maxLength": 64,
+          "minLength": 3,
+          "pattern": "^[a-zA-Z0-9-]{3,64}$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Properties of connection",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ConnectionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/connections_flows_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AzureDataTransfer/connections"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

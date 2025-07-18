@@ -1,0 +1,47 @@
+{
+  "description": "Microsoft.Sovereign/landingZoneAccounts/landingZoneRegistrations",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-02-27-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the landing zone registration resource.",
+      "oneOf": [
+        {
+          "pattern": "^[a-zA-Z0-9-]{3,64}$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The resource-specific properties for this resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/LandingZoneRegistrationResourceProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Sovereign/landingZoneAccounts/landingZoneRegistrations"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

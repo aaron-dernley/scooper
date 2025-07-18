@@ -1,0 +1,47 @@
+{
+  "description": "Microsoft.ApiManagement/service/workspaces/products/policies",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-06-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The identifier of the Policy.",
+      "oneOf": [
+        {
+          "pattern": "^.*/policy$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Properties of the Policy.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/PolicyContractProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ApiManagement/service/workspaces/products/policies"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

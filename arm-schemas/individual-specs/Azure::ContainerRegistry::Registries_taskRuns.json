@@ -1,0 +1,64 @@
+{
+  "description": "Microsoft.ContainerRegistry/registries/taskRuns",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-03-01-preview"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "Identity for the resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/IdentityProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The location of the resource",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the task run.",
+      "oneOf": [
+        {
+          "maxLength": 50,
+          "minLength": 5,
+          "pattern": "^[a-zA-Z0-9-]*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The properties associated with the task run, i.e., request and result of the run",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/TaskRunProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ContainerRegistry/registries/taskRuns"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

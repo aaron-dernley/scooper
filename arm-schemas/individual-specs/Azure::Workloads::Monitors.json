@@ -1,0 +1,82 @@
+{
+  "description": "Microsoft.Workloads/monitors",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-04-01"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "[currently not in use] Managed service identity(user assigned identities)",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/UserAssignedServiceIdentity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The geo-location where the resource lives",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the SAP monitor resource.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "SAP monitor properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/MonitorProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/monitors_providerInstances_childResource"
+          },
+          {
+            "$ref": "#/definitions/monitors_sapLandscapeMonitor_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Workloads/monitors"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

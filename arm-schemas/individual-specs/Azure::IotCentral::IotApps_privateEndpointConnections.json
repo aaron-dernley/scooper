@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.IoTCentral/iotApps/privateEndpointConnections",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2021-11-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The private endpoint connection name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/PrivateEndpointConnectionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.IoTCentral/iotApps/privateEndpointConnections"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

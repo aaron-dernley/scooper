@@ -1,0 +1,62 @@
+{
+  "description": "Microsoft.RecoveryServices/vaults/privateEndpointConnections",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-02-28-preview"
+      ],
+      "type": "string"
+    },
+    "eTag": {
+      "description": "Optional ETag.",
+      "type": "string"
+    },
+    "location": {
+      "description": "Resource location.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the private endpoint connection.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "PrivateEndpointConnectionResource properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/PrivateEndpointConnection"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.RecoveryServices/vaults/privateEndpointConnections"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

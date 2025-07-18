@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.App/builders/builds",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-02-02-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of a build.",
+      "oneOf": [
+        {
+          "maxLength": 64,
+          "minLength": 2,
+          "pattern": "^[-\\w\\._\\(\\)]+$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The resource-specific properties for this resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/BuildProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.App/builders/builds"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

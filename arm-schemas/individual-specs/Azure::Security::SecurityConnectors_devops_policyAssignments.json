@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Security/securityConnectors/devops/policyAssignments",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-05-15-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The policy assignment Id.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of the DevOps policy assignment resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/DevOpsPolicyAssignmentProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Security/securityConnectors/devops/policyAssignments"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

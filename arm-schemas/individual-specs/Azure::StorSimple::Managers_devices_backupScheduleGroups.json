@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.StorSimple/managers/devices/backupScheduleGroups",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2016-10-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the schedule group.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of BackupScheduleGroup",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/BackupScheduleGroupProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.StorSimple/managers/devices/backupScheduleGroups"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

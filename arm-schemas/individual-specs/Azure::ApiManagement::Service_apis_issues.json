@@ -1,0 +1,62 @@
+{
+  "description": "Microsoft.ApiManagement/service/apis/issues",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-06-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Issue identifier. Must be unique in the current API Management service instance.",
+      "oneOf": [
+        {
+          "maxLength": 256,
+          "minLength": 1,
+          "pattern": "^[^*#&+:<>?]+$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Properties of the Issue.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/IssueContractProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/service_apis_issues_comments_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_apis_issues_attachments_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ApiManagement/service/apis/issues"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

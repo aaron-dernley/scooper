@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.RedHatOpenShift/openshiftclusters/syncSet",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-11-22"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the SyncSet resource.",
+      "oneOf": [
+        {
+          "maxLength": 63,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][-_a-zA-Z0-9]*[a-zA-Z0-9]$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The Syncsets properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/SyncSetProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.RedHatOpenShift/openshiftclusters/syncSet"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

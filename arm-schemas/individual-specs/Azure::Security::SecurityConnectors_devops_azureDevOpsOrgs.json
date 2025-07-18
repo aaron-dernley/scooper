@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-03-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The Azure DevOps organization name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Azure DevOps Organization properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/AzureDevOpsOrgProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/securityConnectors_devops_azureDevOpsOrgs_projects_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

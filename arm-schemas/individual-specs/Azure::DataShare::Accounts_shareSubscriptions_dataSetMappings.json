@@ -1,0 +1,27 @@
+{
+  "description": "Microsoft.DataShare/accounts/shareSubscriptions/dataSetMappings",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2021-08-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the data set mapping to be created.",
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DataShare/accounts/shareSubscriptions/dataSetMappings"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

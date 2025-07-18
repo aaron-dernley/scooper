@@ -1,0 +1,65 @@
+{
+  "description": "Microsoft.ApiManagement/service/tags",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-06-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Tag identifier. Must be unique in the current API Management service instance.",
+      "oneOf": [
+        {
+          "maxLength": 80,
+          "minLength": 1,
+          "pattern": "^[^*#&+:<>?]+$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Properties supplied to Create Tag operation.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/TagContractProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/service_tags_apiLinks_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_tags_productLinks_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_tags_operationLinks_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ApiManagement/service/tags"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

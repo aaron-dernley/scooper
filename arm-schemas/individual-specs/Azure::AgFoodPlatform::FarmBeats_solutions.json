@@ -1,0 +1,47 @@
+{
+  "description": "Microsoft.AgFoodPlatform/farmBeats/solutions",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-06-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "SolutionId for Data Manager For Agriculture Resource.",
+      "oneOf": [
+        {
+          "pattern": "^[a-zA-Z]{3,50}[.][a-zA-Z]{3,100}$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Solution resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/SolutionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AgFoodPlatform/farmBeats/solutions"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

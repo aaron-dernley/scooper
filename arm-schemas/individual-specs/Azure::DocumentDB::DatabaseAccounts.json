@@ -1,0 +1,174 @@
+{
+  "description": "Microsoft.DocumentDB/databaseAccounts",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "Identity for the resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ManagedServiceIdentity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "kind": {
+      "description": "Indicates the type of database account. This can only be set at database account creation.",
+      "oneOf": [
+        {
+          "enum": [
+            "GlobalDocumentDB",
+            "MongoDB",
+            "Parse"
+          ],
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The location of the resource group to which the resource belongs.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Cosmos DB database account name.",
+      "oneOf": [
+        {
+          "maxLength": 50,
+          "minLength": 3,
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Properties to create and update Azure Cosmos DB database accounts.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/DatabaseAccountCreateUpdateProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/databaseAccounts_graphs_childResource"
+          },
+          {
+            "$ref": "#/definitions/databaseAccounts_tables_childResource"
+          },
+          {
+            "$ref": "#/definitions/databaseAccounts_copyJobs_childResource"
+          },
+          {
+            "$ref": "#/definitions/databaseAccounts_services_childResource"
+          },
+          {
+            "$ref": "#/definitions/databaseAccounts_chaosFaults_childResource"
+          },
+          {
+            "$ref": "#/definitions/databaseAccounts_sqlDatabases_childResource"
+          },
+          {
+            "$ref": "#/definitions/databaseAccounts_mongodbDatabases_childResource"
+          },
+          {
+            "$ref": "#/definitions/databaseAccounts_gremlinDatabases_childResource"
+          },
+          {
+            "$ref": "#/definitions/databaseAccounts_dataTransferJobs_childResource"
+          },
+          {
+            "$ref": "#/definitions/databaseAccounts_sqlRoleDefinitions_childResource"
+          },
+          {
+            "$ref": "#/definitions/databaseAccounts_sqlRoleAssignments_childResource"
+          },
+          {
+            "$ref": "#/definitions/databaseAccounts_cassandraKeyspaces_childResource"
+          },
+          {
+            "$ref": "#/definitions/databaseAccounts_notebookWorkspaces_childResource"
+          },
+          {
+            "$ref": "#/definitions/databaseAccounts_tableRoleDefinitions_childResource"
+          },
+          {
+            "$ref": "#/definitions/databaseAccounts_tableRoleAssignments_childResource"
+          },
+          {
+            "$ref": "#/definitions/databaseAccounts_mongodbRoleDefinitions_childResource"
+          },
+          {
+            "$ref": "#/definitions/databaseAccounts_mongodbUserDefinitions_childResource"
+          },
+          {
+            "$ref": "#/definitions/databaseAccounts_gremlinRoleDefinitions_childResource"
+          },
+          {
+            "$ref": "#/definitions/databaseAccounts_gremlinRoleAssignments_childResource"
+          },
+          {
+            "$ref": "#/definitions/databaseAccounts_mongoMIRoleDefinitions_childResource"
+          },
+          {
+            "$ref": "#/definitions/databaseAccounts_mongoMIRoleAssignments_childResource"
+          },
+          {
+            "$ref": "#/definitions/databaseAccounts_cassandraRoleDefinitions_childResource"
+          },
+          {
+            "$ref": "#/definitions/databaseAccounts_cassandraRoleAssignments_childResource"
+          },
+          {
+            "$ref": "#/definitions/databaseAccounts_privateEndpointConnections_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Tags are a list of key-value pairs that describe the resource. These tags can be used in viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a resource. Each tag must have a key no greater than 128 characters and value no greater than 256 characters. For example, the default experience for a template type is set with \"defaultExperience\": \"Cassandra\". Current \"defaultExperience\" values also include \"Table\", \"Graph\", \"DocumentDB\", and \"MongoDB\".",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DocumentDB/databaseAccounts"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

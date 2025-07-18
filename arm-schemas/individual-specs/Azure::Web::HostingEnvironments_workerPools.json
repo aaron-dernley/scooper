@@ -1,0 +1,54 @@
+{
+  "description": "Microsoft.Web/hostingEnvironments/workerPools",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-11-01"
+      ],
+      "type": "string"
+    },
+    "kind": {
+      "description": "Kind of resource.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the worker pool.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Core resource properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/WorkerPool"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "sku": {
+      "description": "Description of a SKU for a scalable resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/SkuDescription"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Web/hostingEnvironments/workerPools"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

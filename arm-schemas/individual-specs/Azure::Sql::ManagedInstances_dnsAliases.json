@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Sql/managedInstances/dnsAliases",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "createDnsRecord": {
+      "description": "Whether or not DNS record should be created for this alias.",
+      "oneOf": [
+        {
+          "default": true,
+          "type": "boolean"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "name": {
+      "description": "",
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Sql/managedInstances/dnsAliases"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

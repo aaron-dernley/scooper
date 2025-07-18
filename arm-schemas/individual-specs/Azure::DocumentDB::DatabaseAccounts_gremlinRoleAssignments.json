@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.DocumentDB/databaseAccounts/gremlinRoleAssignments",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The GUID for the Role Assignment.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties to create and update an Azure Cosmos DB Gremlin Role Assignment.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/GremlinRoleAssignmentResourceProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DocumentDB/databaseAccounts/gremlinRoleAssignments"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

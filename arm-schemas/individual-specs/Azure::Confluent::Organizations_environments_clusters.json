@@ -1,0 +1,60 @@
+{
+  "description": "Microsoft.Confluent/organizations/environments/clusters",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01"
+      ],
+      "type": "string"
+    },
+    "id": {
+      "description": "Id of the cluster",
+      "type": "string"
+    },
+    "kind": {
+      "description": "Type of cluster",
+      "type": "string"
+    },
+    "name": {
+      "description": "Confluent kafka or schema registry cluster id",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Cluster Properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ClusterProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/organizations_environments_clusters_topics_childResource"
+          },
+          {
+            "$ref": "#/definitions/organizations_environments_clusters_connectors_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Confluent/organizations/environments/clusters"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

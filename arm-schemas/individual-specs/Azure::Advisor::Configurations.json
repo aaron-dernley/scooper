@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.Advisor/configurations",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-01-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Advisor configuration name. Value must be 'default'",
+      "oneOf": [
+        {
+          "enum": [
+            "default"
+          ],
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The Advisor configuration data structure.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ConfigDataProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Advisor/configurations"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

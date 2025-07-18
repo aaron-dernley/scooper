@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Network/dnsForwardingRulesets/virtualNetworkLinks",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-05-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the virtual network link.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of the virtual network link.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/VirtualNetworkLinkProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Network/dnsForwardingRulesets/virtualNetworkLinks"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

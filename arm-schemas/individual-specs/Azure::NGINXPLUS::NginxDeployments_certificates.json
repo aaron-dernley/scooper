@@ -1,0 +1,41 @@
+{
+  "description": "Nginx.NginxPlus/nginxDeployments/certificates",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-11-01-preview"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of certificate",
+      "type": "string"
+    },
+    "properties": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/NginxCertificateProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Nginx.NginxPlus/nginxDeployments/certificates"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

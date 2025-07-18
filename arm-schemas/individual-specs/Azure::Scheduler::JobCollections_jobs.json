@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Scheduler/jobCollections/jobs",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2016-03-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The job name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Gets or sets the job properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/JobProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Scheduler/jobCollections/jobs"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

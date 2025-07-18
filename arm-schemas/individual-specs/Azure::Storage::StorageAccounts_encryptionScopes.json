@@ -1,0 +1,40 @@
+{
+  "description": "Microsoft.Storage/storageAccounts/encryptionScopes",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-01-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the encryption scope within the specified storage account. Encryption scope names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.",
+      "maxLength": 63,
+      "minLength": 3,
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of the encryption scope.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/EncryptionScopeProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Storage/storageAccounts/encryptionScopes"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

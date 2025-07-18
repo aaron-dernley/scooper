@@ -1,0 +1,43 @@
+{
+  "description": "Microsoft.Insights/components/ProactiveDetectionConfigs",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2018-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "Resource location",
+      "type": "string"
+    },
+    "name": {
+      "description": "The ProactiveDetection configuration ID. This is unique within a Application Insights component.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties that define a ProactiveDetection configuration.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ApplicationInsightsComponentProactiveDetectionConfigurationProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Insights/components/ProactiveDetectionConfigs"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

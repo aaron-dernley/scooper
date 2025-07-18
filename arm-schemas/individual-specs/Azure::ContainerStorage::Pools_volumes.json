@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.ContainerStorage/pools/volumes",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-07-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Volume Resource",
+      "oneOf": [
+        {
+          "maxLength": 253,
+          "minLength": 3,
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The resource-specific properties for this resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/VolumeProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ContainerStorage/pools/volumes"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

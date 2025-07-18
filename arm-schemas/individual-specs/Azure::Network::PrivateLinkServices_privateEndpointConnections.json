@@ -1,0 +1,43 @@
+{
+  "description": "Microsoft.Network/privateLinkServices/privateEndpointConnections",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01"
+      ],
+      "type": "string"
+    },
+    "id": {
+      "description": "Resource ID.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the private end point connection.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of the private end point connection.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/PrivateEndpointConnectionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Network/privateLinkServices/privateEndpointConnections"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

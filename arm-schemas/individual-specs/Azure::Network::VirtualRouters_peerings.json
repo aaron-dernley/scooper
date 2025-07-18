@@ -1,0 +1,43 @@
+{
+  "description": "Microsoft.Network/virtualRouters/peerings",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01"
+      ],
+      "type": "string"
+    },
+    "id": {
+      "description": "Resource ID.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the Virtual Router Peering.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The properties of the Virtual Router Peering.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/VirtualRouterPeeringProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Network/virtualRouters/peerings"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

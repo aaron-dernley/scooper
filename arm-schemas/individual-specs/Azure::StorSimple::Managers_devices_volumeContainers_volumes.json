@@ -1,0 +1,53 @@
+{
+  "description": "Microsoft.StorSimple/managers/devices/volumeContainers/volumes",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2017-06-01"
+      ],
+      "type": "string"
+    },
+    "kind": {
+      "description": "The Kind of the object. Currently only Series8000 is supported",
+      "oneOf": [
+        {
+          "enum": [
+            "Series8000"
+          ],
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "name": {
+      "description": "The volume name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The properties of the volume.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/VolumeProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.StorSimple/managers/devices/volumeContainers/volumes"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

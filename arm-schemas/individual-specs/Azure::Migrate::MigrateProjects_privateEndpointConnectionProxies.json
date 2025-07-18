@@ -1,0 +1,50 @@
+{
+  "description": "Microsoft.Migrate/migrateProjects/privateEndpointConnectionProxies",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-01-01"
+      ],
+      "type": "string"
+    },
+    "eTag": {
+      "type": "string"
+    },
+    "name": {
+      "description": "Private endpoint proxy name.",
+      "oneOf": [
+        {
+          "pattern": "^[a-zA-Z0-9-]{3,24}$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Properties of a private endpoint connection proxy.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/PrivateEndpointConnectionProxyProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Migrate/migrateProjects/privateEndpointConnectionProxies"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

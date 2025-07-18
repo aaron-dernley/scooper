@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.EventGrid/namespaces/topicSpaces",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-04-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The topic space name.",
+      "oneOf": [
+        {
+          "maxLength": 50,
+          "minLength": 3,
+          "pattern": "^[a-zA-Z0-9-]*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The properties of topic space.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/TopicSpaceProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.EventGrid/namespaces/topicSpaces"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

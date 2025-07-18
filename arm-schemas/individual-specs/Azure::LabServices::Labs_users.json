@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.LabServices/labs/users",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-06-07"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the user that uniquely identifies it within containing lab. Used in resource URIs.",
+      "oneOf": [
+        {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[-\\w\\\\._\\\\(\\\\)]+$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "User resource properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/UserProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.LabServices/labs/users"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

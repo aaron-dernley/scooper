@@ -1,0 +1,53 @@
+{
+  "description": "Microsoft.OperationalInsights/workspaces/linkedStorageAccounts",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-02-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Linked storage accounts type.",
+      "oneOf": [
+        {
+          "enum": [
+            "CustomLogs",
+            "AzureWatson",
+            "Query",
+            "Ingestion",
+            "Alerts"
+          ],
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Linked storage accounts properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/LinkedStorageAccountsProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.OperationalInsights/workspaces/linkedStorageAccounts"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

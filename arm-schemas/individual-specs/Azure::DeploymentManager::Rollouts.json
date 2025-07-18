@@ -1,0 +1,71 @@
+{
+  "type": "object",
+  "properties": {
+    "apiVersion": {
+      "type": "string",
+      "enum": [
+        "2019-11-01-preview"
+      ]
+    },
+    "identity": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/Identity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ],
+      "description": "Identity for the resource."
+    },
+    "location": {
+      "type": "string",
+      "description": "The geo-location where the resource lives"
+    },
+    "name": {
+      "type": "string",
+      "description": "The rollout name."
+    },
+    "properties": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/RolloutRequestProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ],
+      "description": "The properties for defining a rollout."
+    },
+    "tags": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {}
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ],
+      "description": "Resource tags."
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "Microsoft.DeploymentManager/rollouts"
+      ]
+    }
+  },
+  "required": [
+    "apiVersion",
+    "identity",
+    "location",
+    "name",
+    "properties",
+    "type"
+  ],
+  "description": "Microsoft.DeploymentManager/rollouts"
+}

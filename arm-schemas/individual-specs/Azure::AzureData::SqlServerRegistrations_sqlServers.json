@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.AzureData/sqlServerRegistrations/sqlServers",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2019-07-24-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the SQL Server.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/SqlServerProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AzureData/sqlServerRegistrations/sqlServers"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

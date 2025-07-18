@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.ContainerService/managedClusters/trustedAccessRoleBindings",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-05-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of trusted access role binding.",
+      "oneOf": [
+        {
+          "maxLength": 24,
+          "minLength": 1,
+          "pattern": "^([A-Za-z0-9-])+$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Properties for trusted access role binding",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/TrustedAccessRoleBindingProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ContainerService/managedClusters/trustedAccessRoleBindings"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

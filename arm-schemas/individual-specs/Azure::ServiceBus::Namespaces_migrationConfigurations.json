@@ -1,0 +1,47 @@
+{
+  "description": "Microsoft.ServiceBus/namespaces/migrationConfigurations",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-01-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The configuration name. Should always be \"$default\".",
+      "oneOf": [
+        {
+          "pattern": "^.*/\\$default$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Properties required to the Create Migration Configuration",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/MigrationConfigPropertiesProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ServiceBus/namespaces/migrationConfigurations"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

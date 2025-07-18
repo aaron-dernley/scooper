@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Devices/IotHubs/eventHubEndpoints/ConsumerGroups",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-06-30-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the consumer group to add.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The EventHub consumer group name.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/EventHubConsumerGroupName"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Devices/IotHubs/eventHubEndpoints/ConsumerGroups"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

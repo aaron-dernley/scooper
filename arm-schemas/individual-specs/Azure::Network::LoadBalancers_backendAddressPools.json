@@ -1,0 +1,43 @@
+{
+  "description": "Microsoft.Network/loadBalancers/backendAddressPools",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01"
+      ],
+      "type": "string"
+    },
+    "id": {
+      "description": "Resource ID.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the backend address pool.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of load balancer backend address pool.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/BackendAddressPoolPropertiesFormat"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Network/loadBalancers/backendAddressPools"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

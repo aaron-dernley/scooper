@@ -1,0 +1,41 @@
+{
+  "description": "Microsoft.ApiManagement/service/users",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-06-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "User identifier. Must be unique in the current API Management service instance.",
+      "maxLength": 80,
+      "minLength": 1,
+      "type": "string"
+    },
+    "properties": {
+      "description": "User entity create contract properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/UserCreateParameterProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ApiManagement/service/users"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

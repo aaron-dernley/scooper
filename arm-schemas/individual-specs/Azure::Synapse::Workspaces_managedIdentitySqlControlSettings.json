@@ -1,0 +1,46 @@
+{
+  "description": "Microsoft.Synapse/workspaces/managedIdentitySqlControlSettings",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2021-06-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "oneOf": [
+        {
+          "pattern": "^.*/default$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Sql Control Settings for workspace managed identity",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ManagedIdentitySqlControlSettingsModelProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Synapse/workspaces/managedIdentitySqlControlSettings"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

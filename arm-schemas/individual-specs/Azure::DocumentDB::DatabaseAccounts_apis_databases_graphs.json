@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.DocumentDB/databaseAccounts/apis/databases/graphs",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2016-03-31"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Cosmos DB graph name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties to create and update Azure Cosmos DB Gremlin graph.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/GremlinGraphCreateUpdateProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/databaseAccounts_apis_databases_graphs_settings_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DocumentDB/databaseAccounts/apis/databases/graphs"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

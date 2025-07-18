@@ -1,0 +1,53 @@
+{
+  "description": "Microsoft.Network/firewallPolicies/ruleCollectionGroups",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01"
+      ],
+      "type": "string"
+    },
+    "id": {
+      "description": "Resource ID.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the FirewallPolicyRuleCollectionGroup.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The properties of the firewall policy rule collection group.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/FirewallPolicyRuleCollectionGroupProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/firewallPolicies_ruleCollectionGroups_ruleCollectionGroupDrafts_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Network/firewallPolicies/ruleCollectionGroups"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

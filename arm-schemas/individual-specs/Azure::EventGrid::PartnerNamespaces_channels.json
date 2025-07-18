@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.EventGrid/partnerNamespaces/channels",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-04-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the channel.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of the Channel.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ChannelProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.EventGrid/partnerNamespaces/channels"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.DesktopVirtualization/hostPools/msixPackages",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-03-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The version specific package full name of the MSIX package within specified hostpool",
+      "oneOf": [
+        {
+          "maxLength": 100,
+          "minLength": 3,
+          "pattern": "^[A-Za-z0-9@.\\-_ ]*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Detailed properties for MSIX Package",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/MsixPackageProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DesktopVirtualization/hostPools/msixPackages"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

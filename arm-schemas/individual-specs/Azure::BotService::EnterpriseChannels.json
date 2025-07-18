@@ -1,0 +1,100 @@
+{
+  "description": "Microsoft.BotService/enterpriseChannels",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2018-07-12"
+      ],
+      "type": "string"
+    },
+    "etag": {
+      "description": "Entity Tag",
+      "type": "string"
+    },
+    "kind": {
+      "description": "Required. Gets or sets the Kind of the resource.",
+      "oneOf": [
+        {
+          "enum": [
+            "sdk",
+            "designer",
+            "bot",
+            "function"
+          ],
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "Specifies the location of the resource.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the Bot resource.",
+      "oneOf": [
+        {
+          "maxLength": 64,
+          "minLength": 2,
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.-]*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The set of properties specific to an Enterprise Channel resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/EnterpriseChannelProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "sku": {
+      "description": "Gets or sets the SKU of the resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/Sku"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Contains resource tags defined as key/value pairs.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.BotService/enterpriseChannels"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

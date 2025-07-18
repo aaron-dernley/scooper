@@ -1,0 +1,93 @@
+{
+  "description": "Microsoft.Web/hostingEnvironments/configurations",
+  "oneOf": [
+    {
+      "properties": {
+        "kind": {
+          "description": "Kind of resource.",
+          "type": "string"
+        },
+        "name": {
+          "oneOf": [
+            {
+              "pattern": "^.*/customdnssuffix$",
+              "type": "string"
+            },
+            {
+              "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+            }
+          ]
+        },
+        "properties": {
+          "description": "CustomDnsSuffixConfiguration resource specific properties",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/CustomDnsSuffixConfigurationProperties"
+            },
+            {
+              "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+            }
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "properties"
+      ],
+      "type": "object"
+    },
+    {
+      "properties": {
+        "kind": {
+          "description": "Kind of resource.",
+          "type": "string"
+        },
+        "name": {
+          "oneOf": [
+            {
+              "pattern": "^.*/networking$",
+              "type": "string"
+            },
+            {
+              "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+            }
+          ]
+        },
+        "properties": {
+          "description": "AseV3NetworkingConfiguration resource specific properties",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/AseV3NetworkingConfigurationProperties"
+            },
+            {
+              "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+            }
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "properties"
+      ],
+      "type": "object"
+    }
+  ],
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-11-01"
+      ],
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Web/hostingEnvironments/configurations"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "apiVersion",
+    "type"
+  ]
+}

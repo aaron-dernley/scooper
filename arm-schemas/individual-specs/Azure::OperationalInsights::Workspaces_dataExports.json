@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.OperationalInsights/workspaces/dataExports",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-02-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The data export rule name.",
+      "oneOf": [
+        {
+          "maxLength": 63,
+          "minLength": 4,
+          "pattern": "^[A-Za-z][A-Za-z0-9-]+[A-Za-z0-9]$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "data export properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/DataExportProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.OperationalInsights/workspaces/dataExports"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

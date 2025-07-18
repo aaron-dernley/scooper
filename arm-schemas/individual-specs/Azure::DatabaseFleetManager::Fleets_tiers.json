@@ -1,0 +1,47 @@
+{
+  "description": "Microsoft.DatabaseFleetManager/fleets/tiers",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-02-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the tier.",
+      "oneOf": [
+        {
+          "pattern": "^.+$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "A Fleet tier properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/FleetTierProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DatabaseFleetManager/fleets/tiers"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

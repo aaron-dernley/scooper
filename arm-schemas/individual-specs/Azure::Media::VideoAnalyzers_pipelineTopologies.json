@@ -1,0 +1,65 @@
+{
+  "description": "Microsoft.Media/videoAnalyzers/pipelineTopologies",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2021-11-01-preview"
+      ],
+      "type": "string"
+    },
+    "kind": {
+      "description": "Topology kind.",
+      "oneOf": [
+        {
+          "enum": [
+            "Live",
+            "Batch"
+          ],
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "name": {
+      "description": "Pipeline topology unique identifier.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/PipelineTopologyProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "sku": {
+      "description": "Describes the properties of a SKU.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/Sku"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Media/videoAnalyzers/pipelineTopologies"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

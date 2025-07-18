@@ -1,0 +1,47 @@
+{
+  "description": "Microsoft.AppPlatform/Spring/configurationServices",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of Application Configuration Service.",
+      "oneOf": [
+        {
+          "pattern": "^[a-z][a-z0-9]*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Application Configuration Service properties payload",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ConfigurationServiceProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AppPlatform/Spring/configurationServices"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

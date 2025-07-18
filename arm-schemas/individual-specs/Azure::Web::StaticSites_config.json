@@ -1,0 +1,101 @@
+{
+  "description": "Microsoft.Web/staticSites/config",
+  "oneOf": [
+    {
+      "properties": {
+        "kind": {
+          "description": "Kind of resource.",
+          "type": "string"
+        },
+        "name": {
+          "oneOf": [
+            {
+              "pattern": "^.*/appsettings$",
+              "type": "string"
+            },
+            {
+              "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+            }
+          ]
+        },
+        "properties": {
+          "description": "Settings.",
+          "oneOf": [
+            {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "properties": {},
+              "type": "object"
+            },
+            {
+              "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+            }
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "properties"
+      ],
+      "type": "object"
+    },
+    {
+      "properties": {
+        "kind": {
+          "description": "Kind of resource.",
+          "type": "string"
+        },
+        "name": {
+          "oneOf": [
+            {
+              "pattern": "^.*/functionappsettings$",
+              "type": "string"
+            },
+            {
+              "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+            }
+          ]
+        },
+        "properties": {
+          "description": "Settings.",
+          "oneOf": [
+            {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "properties": {},
+              "type": "object"
+            },
+            {
+              "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+            }
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "properties"
+      ],
+      "type": "object"
+    }
+  ],
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-11-01"
+      ],
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Web/staticSites/config"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "apiVersion",
+    "type"
+  ]
+}

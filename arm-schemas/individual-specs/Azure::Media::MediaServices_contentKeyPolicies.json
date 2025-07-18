@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Media/mediaServices/contentKeyPolicies",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-01-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The Content Key Policy name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The properties of the Content Key Policy.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ContentKeyPolicyProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Media/mediaServices/contentKeyPolicies"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

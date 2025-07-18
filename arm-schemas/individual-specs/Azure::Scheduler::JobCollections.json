@@ -1,0 +1,68 @@
+{
+  "description": "Microsoft.Scheduler/jobCollections",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2016-03-01"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "Gets or sets the storage account location.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The job collection name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Gets or sets the job collection properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/JobCollectionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/jobCollections_jobs_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Gets or sets the tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Scheduler/jobCollections"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

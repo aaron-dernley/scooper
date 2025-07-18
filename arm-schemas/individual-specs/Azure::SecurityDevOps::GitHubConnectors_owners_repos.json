@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.SecurityDevOps/gitHubConnectors/owners/repos",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2022-09-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the GitHub Repo.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "GitHub Repo properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/GitHubRepoProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.SecurityDevOps/gitHubConnectors/owners/repos"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

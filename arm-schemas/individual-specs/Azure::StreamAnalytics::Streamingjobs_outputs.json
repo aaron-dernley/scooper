@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.StreamAnalytics/streamingjobs/outputs",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2021-10-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the output.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The properties that are associated with an output. Required on PUT (CreateOrReplace) requests.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/OutputProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.StreamAnalytics/streamingjobs/outputs"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

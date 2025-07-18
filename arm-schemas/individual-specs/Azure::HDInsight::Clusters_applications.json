@@ -1,0 +1,58 @@
+{
+  "description": "Microsoft.HDInsight/clusters/applications",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-01-15-preview"
+      ],
+      "type": "string"
+    },
+    "etag": {
+      "description": "The ETag for the application",
+      "type": "string"
+    },
+    "name": {
+      "description": "The constant value for the application name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The properties of the application.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ApplicationProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "The tags for the application.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.HDInsight/clusters/applications"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

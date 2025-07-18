@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.DataFactory/factories/integrationRuntimes",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2018-06-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The integration runtime name.",
+      "oneOf": [
+        {
+          "maxLength": 63,
+          "minLength": 3,
+          "pattern": "^[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Integration runtime properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/IntegrationRuntime"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DataFactory/factories/integrationRuntimes"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

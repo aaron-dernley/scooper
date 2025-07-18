@@ -1,0 +1,8 @@
+{
+  "lint": true,
+  "fmt": true,
+  "tasks": {
+    "scoop": "deno run --allow-read --allow-write --allow-run scoop_arm_schemas.ts",
+    "checker": "deno run --allow-read --allow-write verify_schema_structures.ts"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "type": "object",
+  "properties": {
+    "apiVersion": {
+      "type": "string",
+      "enum": [
+        "2019-10-01"
+      ]
+    },
+    "eTag": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "description": "Unique name of a VMware collector within a project."
+    },
+    "properties": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/CollectorProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "Microsoft.Migrate/assessmentProjects/vmwarecollectors"
+      ]
+    }
+  },
+  "required": [
+    "apiVersion",
+    "name",
+    "properties",
+    "type"
+  ],
+  "description": "Microsoft.Migrate/assessmentProjects/vmwarecollectors"
+}

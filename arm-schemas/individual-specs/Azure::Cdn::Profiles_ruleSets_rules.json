@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Cdn/profiles/ruleSets/rules",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-04-15"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the delivery rule which is unique within the endpoint.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The JSON object that contains the properties of the Rules to create.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/RuleProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Cdn/profiles/ruleSets/rules"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

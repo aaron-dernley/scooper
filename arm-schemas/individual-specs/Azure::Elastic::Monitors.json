@@ -1,0 +1,108 @@
+{
+  "description": "Microsoft.Elastic/monitors",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-06-01"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "Identity properties of the monitor resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/IdentityProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "kind": {
+      "description": "The kind of the Elastic resource - observability, security, search etc.",
+      "type": "string"
+    },
+    "location": {
+      "description": "The location of the monitor resource",
+      "type": "string"
+    },
+    "name": {
+      "description": "Monitor resource name",
+      "oneOf": [
+        {
+          "pattern": "^.*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Properties of the monitor resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/MonitorProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/monitors_tagRules_childResource"
+          },
+          {
+            "$ref": "#/definitions/monitors_openAIIntegrations_childResource"
+          },
+          {
+            "$ref": "#/definitions/monitors_monitoredSubscriptions_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "sku": {
+      "description": "SKU of the monitor resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ResourceSku"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "The tags of the monitor resource.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Elastic/monitors"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

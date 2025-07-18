@@ -1,0 +1,39 @@
+{
+  "description": "NewRelic.Observability/monitors/tagRules",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the TagRule",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The resource-specific properties for this resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/MonitoringTagRulesProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "NewRelic.Observability/monitors/tagRules"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

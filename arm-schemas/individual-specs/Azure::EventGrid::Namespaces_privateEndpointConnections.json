@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.EventGrid/namespaces/privateEndpointConnections",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-04-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the private endpoint connection connection.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of the PrivateEndpointConnection.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/PrivateEndpointConnectionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.EventGrid/namespaces/privateEndpointConnections"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.StorageSync/storageSyncServices/syncGroups/cloudEndpoints",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2022-09-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of Cloud Endpoint object.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The parameters used to create the cloud endpoint.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/CloudEndpointCreateParametersProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.StorageSync/storageSyncServices/syncGroups/cloudEndpoints"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

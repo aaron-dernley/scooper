@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Media/videoAnalyzers/pipelineJobs",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2021-11-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The pipeline job name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/PipelineJobProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Media/videoAnalyzers/pipelineJobs"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,45 @@
+{
+  "description": "Microsoft.Storage/storageAccounts/blobServices/containers/immutabilityPolicies",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-01-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "oneOf": [
+        {
+          "pattern": "^.*/default$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The properties of an ImmutabilityPolicy of a blob container.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ImmutabilityPolicyProperty"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Storage/storageAccounts/blobServices/containers/immutabilityPolicies"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

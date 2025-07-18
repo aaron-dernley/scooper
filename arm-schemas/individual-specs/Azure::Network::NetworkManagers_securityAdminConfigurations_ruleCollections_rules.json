@@ -1,0 +1,27 @@
+{
+  "description": "Microsoft.Network/networkManagers/securityAdminConfigurations/ruleCollections/rules",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the rule.",
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Network/networkManagers/securityAdminConfigurations/ruleCollections/rules"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

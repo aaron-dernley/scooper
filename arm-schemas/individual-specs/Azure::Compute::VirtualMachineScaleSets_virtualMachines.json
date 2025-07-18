@@ -1,0 +1,82 @@
+{
+  "description": "Microsoft.Compute/virtualMachineScaleSets/virtualmachines",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2021-07-01"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "Resource location",
+      "type": "string"
+    },
+    "name": {
+      "description": "The instance ID of the virtual machine.",
+      "type": "string"
+    },
+    "plan": {
+      "description": "Specifies information about the marketplace image used to create the virtual machine. This element is only used for marketplace images. Before you can use a marketplace image from an API, you must enable the image for programmatic use.  In the Azure portal, find the marketplace image that you want to use and then click **Want to deploy programmatically, Get Started ->**. Enter any required information and then click **Save**.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/Plan"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Describes the properties of a virtual machine scale set virtual machine.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/VirtualMachineScaleSetVMProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/virtualMachineScaleSets_virtualMachines_extensions_childResource"
+          },
+          {
+            "$ref": "#/definitions/virtualMachineScaleSets_virtualMachines_runCommands_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Compute/virtualMachineScaleSets/virtualmachines"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

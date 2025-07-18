@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Peering/peerings/registeredAsns",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-05-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the ASN.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The properties that define a registered ASN.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/PeeringRegisteredAsnProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Peering/peerings/registeredAsns"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,41 @@
+{
+  "description": "Microsoft.HybridContainerService/provisionedClusters/hybridIdentityMetadata",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2022-09-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Parameter for the name of the hybrid identity metadata resource.",
+      "maxLength": 64,
+      "minLength": 3,
+      "type": "string"
+    },
+    "properties": {
+      "description": "Resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/HybridIdentityMetadataProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.HybridContainerService/provisionedClusters/hybridIdentityMetadata"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.AzureSphere/catalogs/images",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-04-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Image name. Use an image GUID for GA versions of the API.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The resource-specific properties for this resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ImageProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AzureSphere/catalogs/images"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,105 @@
+{
+  "description": "Microsoft.TestBase/testBaseAccounts",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-11-01-preview"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "The identity of the testBaseAccount.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/SystemAssignedServiceIdentity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The geo-location where the resource lives",
+      "type": "string"
+    },
+    "name": {
+      "description": "The resource name of the Test Base Account.",
+      "oneOf": [
+        {
+          "pattern": "^[A-Za-z0-9]([A-Za-z0-9_]|([-. ][A-Za-z0-9]))+$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Properties of a Test Base Account.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/TestBaseAccountResourceProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/testBaseAccounts_packages_childResource"
+          },
+          {
+            "$ref": "#/definitions/testBaseAccounts_credentials_childResource"
+          },
+          {
+            "$ref": "#/definitions/testBaseAccounts_customImages_childResource"
+          },
+          {
+            "$ref": "#/definitions/testBaseAccounts_draftPackages_childResource"
+          },
+          {
+            "$ref": "#/definitions/testBaseAccounts_actionRequests_childResource"
+          },
+          {
+            "$ref": "#/definitions/testBaseAccounts_customerEvents_childResource"
+          },
+          {
+            "$ref": "#/definitions/testBaseAccounts_imageDefinitions_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.TestBase/testBaseAccounts"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

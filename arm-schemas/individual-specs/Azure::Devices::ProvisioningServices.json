@@ -1,0 +1,105 @@
+{
+  "description": "Microsoft.Devices/provisioningServices",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-02-01-preview"
+      ],
+      "type": "string"
+    },
+    "etag": {
+      "description": "The Etag field is *not* required. If it is provided in the response body, it must also be provided as a header per the normal ETag convention.",
+      "type": "string"
+    },
+    "identity": {
+      "description": "The managed identities for a provisioning service.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ManagedServiceIdentity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The resource location.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of provisioning service to create or update.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Service specific properties for a provisioning service",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/IotDpsPropertiesDescription"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resourcegroup": {
+      "description": "The resource group of the resource.",
+      "type": "string"
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/provisioningServices_certificates_childResource"
+          },
+          {
+            "$ref": "#/definitions/provisioningServices_privateEndpointConnections_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "sku": {
+      "description": "Sku info for a provisioning Service.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/IotDpsSkuInfo"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "subscriptionid": {
+      "description": "The subscription id of the resource.",
+      "type": "string"
+    },
+    "tags": {
+      "description": "The resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Devices/provisioningServices"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

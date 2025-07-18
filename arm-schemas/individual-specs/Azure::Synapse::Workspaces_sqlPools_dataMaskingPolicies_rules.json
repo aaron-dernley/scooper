@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Synapse/workspaces/sqlPools/dataMaskingPolicies/rules",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2021-06-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the data masking rule.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The properties of the resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/DataMaskingRuleProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Synapse/workspaces/sqlPools/dataMaskingPolicies/rules"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,54 @@
+{
+  "description": "Microsoft.ImportExport/jobs",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2021-01-01"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "Specifies the supported Azure location where the job should be created",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the import/export job.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Specifies the job properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/JobDetails"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Specifies the tags that will be assigned to the job.",
+      "oneOf": [
+        {
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ImportExport/jobs"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

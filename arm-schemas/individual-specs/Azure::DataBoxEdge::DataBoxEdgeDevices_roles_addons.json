@@ -1,0 +1,27 @@
+{
+  "description": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/addons",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-12-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The addon name.",
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/addons"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

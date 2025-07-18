@@ -1,0 +1,47 @@
+{
+  "description": "Microsoft.DataProtection/backupVaults/backupResourceGuardProxies",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-07-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "name of the resource guard proxy",
+      "oneOf": [
+        {
+          "pattern": "^[A-Za-z0-9]*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "ResourceGuardProxyBaseResource properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ResourceGuardProxyBase"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DataProtection/backupVaults/backupResourceGuardProxies"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

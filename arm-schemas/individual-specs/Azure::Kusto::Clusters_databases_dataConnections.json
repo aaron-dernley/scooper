@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Kusto/clusters/databases/dataConnections",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-04-13"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "Resource location.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the data connection.",
+      "oneOf": [
+        {
+          "pattern": "^.*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Kusto/clusters/databases/dataConnections"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

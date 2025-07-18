@@ -1,0 +1,59 @@
+{
+  "description": "Microsoft.DocumentDB/fleets/fleetspaces",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Cosmos DB fleetspace name. Needs to be unique under a fleet.",
+      "oneOf": [
+        {
+          "maxLength": 50,
+          "minLength": 3,
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Properties to update Azure Cosmos DB Fleetspace.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/FleetspaceProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/fleets_fleetspaces_fleetspaceAccounts_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DocumentDB/fleets/fleetspaces"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

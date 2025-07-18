@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Media/videoAnalyzers/livePipelines",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2021-11-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Live pipeline unique identifier.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/LivePipelineProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Media/videoAnalyzers/livePipelines"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

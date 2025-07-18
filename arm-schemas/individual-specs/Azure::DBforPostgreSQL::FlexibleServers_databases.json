@@ -1,0 +1,48 @@
+{
+  "description": "Microsoft.DBforPostgreSQL/flexibleServers/databases",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-01-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the database.",
+      "oneOf": [
+        {
+          "minLength": 1,
+          "pattern": "^[a-zA-Z_][a-zA-Z0-9_]{0,30}$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Properties of a database.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/DatabaseProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DBforPostgreSQL/flexibleServers/databases"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

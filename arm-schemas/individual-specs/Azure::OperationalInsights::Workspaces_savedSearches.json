@@ -1,0 +1,43 @@
+{
+  "description": "Microsoft.OperationalInsights/workspaces/savedSearches",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-02-01"
+      ],
+      "type": "string"
+    },
+    "etag": {
+      "description": "The ETag of the saved search. To override an existing saved search, use \"*\" or specify the current Etag",
+      "type": "string"
+    },
+    "name": {
+      "description": "The id of the saved search.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The properties of the saved search.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/SavedSearchProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.OperationalInsights/workspaces/savedSearches"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.TestBase/testBaseAccounts/customerEvents",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-11-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The resource name of the Test Base Customer event.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Customer Notification Event properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/CustomerEventProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.TestBase/testBaseAccounts/customerEvents"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

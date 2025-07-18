@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.DataLakeStore/accounts/virtualNetworkRules",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2016-11-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the virtual network rule to create or update.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The virtual network rule properties to use when creating a new virtual network rule.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/CreateOrUpdateVirtualNetworkRuleProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DataLakeStore/accounts/virtualNetworkRules"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,74 @@
+{
+  "description": "Microsoft.StorageMover/storageMovers",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "The geo-location where the resource lives",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the Storage Mover resource.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The resource specific properties for the Storage Mover resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/StorageMoverProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/storageMovers_agents_childResource"
+          },
+          {
+            "$ref": "#/definitions/storageMovers_projects_childResource"
+          },
+          {
+            "$ref": "#/definitions/storageMovers_endpoints_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.StorageMover/storageMovers"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

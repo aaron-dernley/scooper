@@ -1,0 +1,90 @@
+{
+  "description": "Microsoft.Peering/peeringServices",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-05-01"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "The location of the resource.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the peering service.",
+      "oneOf": [
+        {
+          "pattern": "[A-Za-z0-9_.-]{1,63}",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The properties that define a peering service.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/PeeringServiceProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/peeringServices_prefixes_childResource"
+          },
+          {
+            "$ref": "#/definitions/peeringServices_connectionMonitorTests_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "sku": {
+      "description": "The SKU that defines the type of the peering service.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/PeeringServiceSku"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "The resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Peering/peeringServices"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

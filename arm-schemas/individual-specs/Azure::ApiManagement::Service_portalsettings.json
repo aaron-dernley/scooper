@@ -1,0 +1,116 @@
+{
+  "description": "Microsoft.ApiManagement/service/portalsettings",
+  "oneOf": [
+    {
+      "properties": {
+        "name": {
+          "oneOf": [
+            {
+              "pattern": "^.*/signin$",
+              "type": "string"
+            },
+            {
+              "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+            }
+          ]
+        },
+        "properties": {
+          "description": "Sign-in settings contract properties.",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/PortalSigninSettingProperties"
+            },
+            {
+              "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+            }
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "properties"
+      ],
+      "type": "object"
+    },
+    {
+      "properties": {
+        "name": {
+          "oneOf": [
+            {
+              "pattern": "^.*/signup$",
+              "type": "string"
+            },
+            {
+              "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+            }
+          ]
+        },
+        "properties": {
+          "description": "Sign-up settings contract properties.",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/PortalSignupSettingsProperties"
+            },
+            {
+              "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+            }
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "properties"
+      ],
+      "type": "object"
+    },
+    {
+      "properties": {
+        "name": {
+          "oneOf": [
+            {
+              "pattern": "^.*/delegation$",
+              "type": "string"
+            },
+            {
+              "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+            }
+          ]
+        },
+        "properties": {
+          "description": "Delegation settings contract properties.",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/PortalDelegationSettingsProperties"
+            },
+            {
+              "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+            }
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "properties"
+      ],
+      "type": "object"
+    }
+  ],
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-06-01-preview"
+      ],
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ApiManagement/service/portalsettings"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "apiVersion",
+    "type"
+  ]
+}

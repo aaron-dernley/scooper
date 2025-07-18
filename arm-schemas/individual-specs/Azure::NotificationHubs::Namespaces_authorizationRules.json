@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.NotificationHubs/namespaces/AuthorizationRules",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2017-04-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Authorization Rule Name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of the Namespace AuthorizationRules.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/SharedAccessAuthorizationRuleProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.NotificationHubs/namespaces/AuthorizationRules"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,53 @@
+{
+  "description": "Microsoft.Web/sites/slots/functions",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-11-01"
+      ],
+      "type": "string"
+    },
+    "kind": {
+      "description": "Kind of resource.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Function name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "FunctionEnvelope resource specific properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/FunctionEnvelopeProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/sites_slots_functions_keys_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Web/sites/slots/functions"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

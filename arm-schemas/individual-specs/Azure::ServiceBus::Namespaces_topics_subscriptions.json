@@ -1,0 +1,51 @@
+{
+  "description": "Microsoft.ServiceBus/namespaces/topics/subscriptions",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-01-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The subscription name.",
+      "maxLength": 50,
+      "minLength": 1,
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of subscriptions resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/SBSubscriptionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/namespaces_topics_subscriptions_rules_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ServiceBus/namespaces/topics/subscriptions"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

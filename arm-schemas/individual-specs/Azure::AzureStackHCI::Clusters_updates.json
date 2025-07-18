@@ -1,0 +1,53 @@
+{
+  "description": "Microsoft.AzureStackHCI/clusters/updates",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-02-15-preview"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "The geo-location where the resource lives",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the Update",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Update properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/UpdateProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/clusters_updates_updateRuns_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AzureStackHCI/clusters/updates"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

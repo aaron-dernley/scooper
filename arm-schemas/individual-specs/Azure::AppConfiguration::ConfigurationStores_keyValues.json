@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.AppConfiguration/configurationStores/keyValues",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-02-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Identifier of key and label combination. Key and label are joined by $ character. Label is optional.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "All key-value properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/KeyValueProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AppConfiguration/configurationStores/keyValues"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

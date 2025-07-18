@@ -1,0 +1,50 @@
+{
+  "description": "Microsoft.Automation/automationAccounts/runtimeEnvironments/packages",
+  "properties": {
+    "allOf": {
+      "description": "The resource model definition for an Azure Resource Manager tracked top level resource which has 'tags' and a 'location'",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/TrackedResource"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "apiVersion": {
+      "enum": [
+        "2024-10-23"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of Package.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Gets or sets the package create properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/PackageCreateOrUpdateProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Automation/automationAccounts/runtimeEnvironments/packages"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

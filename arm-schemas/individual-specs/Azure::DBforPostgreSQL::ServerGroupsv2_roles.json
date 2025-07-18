@@ -1,0 +1,47 @@
+{
+  "description": "Microsoft.DBforPostgreSQL/serverGroupsv2/roles",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-03-02-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the cluster role.",
+      "oneOf": [
+        {
+          "pattern": "^[-\\w\\._]+$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The properties of a role.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/RoleProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DBforPostgreSQL/serverGroupsv2/roles"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

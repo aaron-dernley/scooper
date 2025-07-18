@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.DBforMySQL/flexibleServers/configurations",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-12-30"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the server configuration.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The properties of a configuration.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ConfigurationProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DBforMySQL/flexibleServers/configurations"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

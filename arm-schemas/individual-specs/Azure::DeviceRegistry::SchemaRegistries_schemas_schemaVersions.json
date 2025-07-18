@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.DeviceRegistry/schemaRegistries/schemas/schemaVersions",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-09-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Schema version name parameter.",
+      "oneOf": [
+        {
+          "maxLength": 10,
+          "minLength": 1,
+          "pattern": "^[0-9]*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The resource-specific properties for this resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/SchemaVersionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DeviceRegistry/schemaRegistries/schemas/schemaVersions"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,54 @@
+{
+  "description": "Microsoft.DeviceUpdate/accounts/privateEndpointConnectionProxies",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-07-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The ID of the private endpoint connection proxy object.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Private endpoint connection proxy object property bag.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/PrivateEndpointConnectionProxyProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "remotePrivateEndpoint": {
+      "description": "Remote private endpoint details.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/RemotePrivateEndpoint"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "status": {
+      "description": "Operation status.",
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DeviceUpdate/accounts/privateEndpointConnectionProxies"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.Media/mediaservices/liveEvents/liveOutputs",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2022-11-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the live output.",
+      "oneOf": [
+        {
+          "maxLength": 256,
+          "minLength": 1,
+          "pattern": "^([a-zA-Z0-9])+(-*[a-zA-Z0-9])*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Live output properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/LiveOutputProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Media/mediaservices/liveEvents/liveOutputs"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

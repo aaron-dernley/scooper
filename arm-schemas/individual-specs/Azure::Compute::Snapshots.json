@@ -1,0 +1,80 @@
+{
+  "description": "Microsoft.Compute/snapshots",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-01-02"
+      ],
+      "type": "string"
+    },
+    "extendedLocation": {
+      "description": "The extended location where the snapshot will be created. Extended location cannot be changed.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ExtendedLocation"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "Resource location",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Snapshot resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/SnapshotProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "sku": {
+      "description": "The snapshots sku name. Can be Standard_LRS, Premium_LRS, or Standard_ZRS. This is an optional parameter for incremental snapshot and the default behavior is the SKU will be set to the same sku as the previous snapshot",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/SnapshotSku"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Resource tags",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Compute/snapshots"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

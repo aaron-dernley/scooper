@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Media/videoAnalyzers/accessPolicies",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2021-11-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The Access Policy name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/AccessPolicyProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Media/videoAnalyzers/accessPolicies"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

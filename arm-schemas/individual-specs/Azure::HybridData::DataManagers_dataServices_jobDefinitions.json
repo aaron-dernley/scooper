@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.HybridData/dataManagers/dataServices/jobDefinitions",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2019-06-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The job definition name to be created or updated.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "JobDefinition properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/JobDefinitionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.HybridData/dataManagers/dataServices/jobDefinitions"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

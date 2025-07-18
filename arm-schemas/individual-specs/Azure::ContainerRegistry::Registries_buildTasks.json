@@ -1,0 +1,78 @@
+{
+  "description": "Microsoft.ContainerRegistry/registries/buildTasks",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2018-02-01-preview"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "The location of the resource. This cannot be changed after the resource is created.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the container registry build task.",
+      "oneOf": [
+        {
+          "maxLength": 50,
+          "minLength": 5,
+          "pattern": "^[a-zA-Z0-9]*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The properties of a build task.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/BuildTaskProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/registries_buildTasks_steps_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "The tags of the resource.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ContainerRegistry/registries/buildTasks"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

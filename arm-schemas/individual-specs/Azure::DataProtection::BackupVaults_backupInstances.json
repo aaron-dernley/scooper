@@ -1,0 +1,54 @@
+{
+  "description": "Microsoft.DataProtection/backupVaults/backupInstances",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-07-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the backup instance.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "BackupInstanceResource properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/BackupInstance"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Proxy Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DataProtection/backupVaults/backupInstances"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

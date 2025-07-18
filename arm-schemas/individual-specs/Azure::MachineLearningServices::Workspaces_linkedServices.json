@@ -1,0 +1,54 @@
+{
+  "description": "Microsoft.MachineLearningServices/workspaces/linkedServices",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2020-09-01-preview"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "Identity for the resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/Identity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "location of the linked service.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Friendly name of the linked workspace",
+      "type": "string"
+    },
+    "properties": {
+      "description": "LinkedService specific properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/LinkedServiceProps"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.MachineLearningServices/workspaces/linkedServices"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

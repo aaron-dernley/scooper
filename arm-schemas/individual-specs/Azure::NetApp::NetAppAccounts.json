@@ -1,0 +1,99 @@
+{
+  "description": "Microsoft.NetApp/netAppAccounts",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-03-01"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "The identity used for the resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ManagedServiceIdentity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The geo-location where the resource lives",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the NetApp account",
+      "oneOf": [
+        {
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9\\-_]{0,127}$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "NetApp Account properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/AccountProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/netAppAccounts_volumeGroups_childResource"
+          },
+          {
+            "$ref": "#/definitions/netAppAccounts_backupVaults_childResource"
+          },
+          {
+            "$ref": "#/definitions/netAppAccounts_capacityPools_childResource"
+          },
+          {
+            "$ref": "#/definitions/netAppAccounts_backupPolicies_childResource"
+          },
+          {
+            "$ref": "#/definitions/netAppAccounts_snapshotPolicies_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.NetApp/netAppAccounts"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

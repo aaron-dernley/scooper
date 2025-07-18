@@ -1,0 +1,41 @@
+{
+  "description": "Microsoft.DocumentDB/databaseAccounts/services",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Cosmos DB service name.",
+      "maxLength": 50,
+      "minLength": 3,
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties in ServiceResourceCreateUpdateParameters.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ServiceResourceCreateUpdateProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DocumentDB/databaseAccounts/services"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

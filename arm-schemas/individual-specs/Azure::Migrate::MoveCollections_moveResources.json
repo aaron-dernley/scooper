@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Migrate/moveCollections/moveResources",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-08-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The Move Resource Name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Defines the move resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/MoveResourceProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Migrate/moveCollections/moveResources"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,97 @@
+{
+  "description": "Microsoft.PowerPlatform/enterprisePolicies",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2020-10-30-preview"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "The identity of the EnterprisePolicy.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/EnterprisePolicyIdentity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "kind": {
+      "description": "The kind (type) of Enterprise Policy.",
+      "oneOf": [
+        {
+          "enum": [
+            "Lockbox",
+            "PrivateEndpoint",
+            "Encryption",
+            "NetworkInjection",
+            "Identity"
+          ],
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The geo-location where the resource lives",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the EnterprisePolicy.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The properties that define configuration for the enterprise policy",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/Properties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/enterprisePolicies_privateEndpointConnections_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.PowerPlatform/enterprisePolicies"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

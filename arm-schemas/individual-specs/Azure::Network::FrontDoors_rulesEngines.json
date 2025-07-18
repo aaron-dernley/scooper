@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.Network/frontDoors/rulesEngines",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2021-06-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the Rules Engine which is unique within the Front Door.",
+      "oneOf": [
+        {
+          "maxLength": 90,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9]+(-*[a-zA-Z0-9])*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Properties of the Rules Engine Configuration.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/RulesEngineProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Network/frontDoors/rulesEngines"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

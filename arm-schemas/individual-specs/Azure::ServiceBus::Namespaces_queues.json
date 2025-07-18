@@ -1,0 +1,50 @@
+{
+  "description": "Microsoft.ServiceBus/namespaces/queues",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-01-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The queue name.",
+      "minLength": 1,
+      "type": "string"
+    },
+    "properties": {
+      "description": "Queue Properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/SBQueueProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/namespaces_queues_authorizationRules_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ServiceBus/namespaces/queues"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

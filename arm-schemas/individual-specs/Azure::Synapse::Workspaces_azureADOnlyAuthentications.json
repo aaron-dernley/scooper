@@ -1,0 +1,47 @@
+{
+  "description": "Microsoft.Synapse/workspaces/azureADOnlyAuthentications",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2021-06-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "name of the property",
+      "oneOf": [
+        {
+          "pattern": "^.*/default$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Azure Active Directory Only Authentication resource properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/AzureADOnlyAuthenticationProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Synapse/workspaces/azureADOnlyAuthentications"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

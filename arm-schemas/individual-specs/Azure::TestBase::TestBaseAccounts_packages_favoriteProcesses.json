@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.TestBase/testBaseAccounts/packages/favoriteProcesses",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-11-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The resource name of a favorite process in a package. If the process name contains characters that are not allowed in Azure Resource Name, we use 'actualProcessName' in request body to submit the name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of a favorite process identifier.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/FavoriteProcessProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.TestBase/testBaseAccounts/packages/favoriteProcesses"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

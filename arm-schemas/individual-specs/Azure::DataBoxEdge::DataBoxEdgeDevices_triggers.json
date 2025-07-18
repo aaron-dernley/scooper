@@ -1,0 +1,27 @@
+{
+  "description": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/triggers",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-12-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The trigger name.",
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DataBoxEdge/dataBoxEdgeDevices/triggers"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

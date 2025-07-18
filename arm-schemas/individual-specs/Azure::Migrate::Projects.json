@@ -1,0 +1,62 @@
+{
+  "type": "object",
+  "properties": {
+    "apiVersion": {
+      "type": "string",
+      "enum": [
+        "2018-02-02"
+      ]
+    },
+    "eTag": {
+      "type": "string",
+      "description": "For optimistic concurrency control."
+    },
+    "location": {
+      "type": "string",
+      "description": "Azure location in which project is created."
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the Azure Migrate project."
+    },
+    "properties": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ProjectProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ],
+      "description": "Properties of a project."
+    },
+    "resources": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/projects_groups_childResource"
+          }
+        ]
+      }
+    },
+    "tags": {
+      "type": "object",
+      "properties": {},
+      "description": "Tags provided by Azure Tagging service."
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "Microsoft.Migrate/projects"
+      ]
+    }
+  },
+  "required": [
+    "apiVersion",
+    "name",
+    "properties",
+    "type"
+  ],
+  "description": "Microsoft.Migrate/projects"
+}

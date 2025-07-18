@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.ContainerService/fleets/updateStrategies",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-03-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the UpdateStrategy resource.",
+      "oneOf": [
+        {
+          "maxLength": 50,
+          "minLength": 1,
+          "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The resource-specific properties for this resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/FleetUpdateStrategyProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ContainerService/fleets/updateStrategies"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

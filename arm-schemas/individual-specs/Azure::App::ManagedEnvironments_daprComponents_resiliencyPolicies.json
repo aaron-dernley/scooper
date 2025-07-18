@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.App/managedEnvironments/daprComponents/resiliencyPolicies",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-02-02-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the Dapr Component Resiliency Policy.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Dapr Component Resiliency Policy resource specific properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/DaprComponentResiliencyPolicyProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.App/managedEnvironments/daprComponents/resiliencyPolicies"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

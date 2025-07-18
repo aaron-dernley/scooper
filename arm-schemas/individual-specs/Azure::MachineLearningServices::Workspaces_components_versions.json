@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.MachineLearningServices/workspaces/components/versions",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-06-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Version identifier.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "[Required] Additional attributes of the entity.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ComponentVersionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.MachineLearningServices/workspaces/components/versions"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

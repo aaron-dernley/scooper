@@ -1,0 +1,69 @@
+{
+  "description": "Microsoft.ApiManagement/service/products",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-06-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Product identifier. Must be unique in the current API Management service instance.",
+      "maxLength": 256,
+      "minLength": 1,
+      "type": "string"
+    },
+    "properties": {
+      "description": "Product entity contract properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ProductContractProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/service_products_tags_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_products_apis_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_products_wikis_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_products_groups_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_products_policies_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_products_apiLinks_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_products_groupLinks_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ApiManagement/service/products"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

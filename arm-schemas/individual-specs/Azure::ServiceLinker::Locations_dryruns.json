@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.ServiceLinker/locations/dryruns",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of dryrun.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The properties of the dryrun job.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/DryrunProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ServiceLinker/locations/dryruns"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,54 @@
+{
+  "description": "Microsoft.Automation/automationAccounts/nodeConfigurations",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-10-23"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The Dsc node configuration name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Node configuration properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/DscNodeConfigurationCreateOrUpdateParametersProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Gets or sets the tags attached to the resource.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Automation/automationAccounts/nodeConfigurations"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

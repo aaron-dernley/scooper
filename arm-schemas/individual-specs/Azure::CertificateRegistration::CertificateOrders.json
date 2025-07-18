@@ -1,0 +1,72 @@
+{
+  "description": "Microsoft.CertificateRegistration/certificateOrders",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-11-01"
+      ],
+      "type": "string"
+    },
+    "kind": {
+      "description": "Kind of resource. If the resource is an app, you can refer to https://github.com/Azure/app-service-linux-docs/blob/master/Things_You_Should_Know/kind_property.md#app-service-resource-kind-reference for details supported values for kind.",
+      "type": "string"
+    },
+    "location": {
+      "description": "Resource Location.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the certificate order.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "AppServiceCertificateOrder resource specific properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/AppServiceCertificateOrderProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/certificateOrders_certificates_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.CertificateRegistration/certificateOrders"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

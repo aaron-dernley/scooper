@@ -1,0 +1,43 @@
+{
+  "description": "Microsoft.Network/virtualHubs/routeMaps",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01"
+      ],
+      "type": "string"
+    },
+    "id": {
+      "description": "Resource ID.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the RouteMap.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of the RouteMap resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/RouteMapProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Network/virtualHubs/routeMaps"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

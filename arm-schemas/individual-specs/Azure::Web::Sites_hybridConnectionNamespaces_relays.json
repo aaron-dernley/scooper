@@ -1,0 +1,43 @@
+{
+  "description": "Microsoft.Web/sites/hybridConnectionNamespaces/relays",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-11-01"
+      ],
+      "type": "string"
+    },
+    "kind": {
+      "description": "Kind of resource.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The relay name for this hybrid connection.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "HybridConnection resource specific properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/HybridConnectionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Web/sites/hybridConnectionNamespaces/relays"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

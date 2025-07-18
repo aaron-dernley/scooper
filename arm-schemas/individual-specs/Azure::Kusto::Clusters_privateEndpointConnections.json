@@ -1,0 +1,47 @@
+{
+  "description": "Microsoft.Kusto/clusters/privateEndpointConnections",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-04-13"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the private endpoint connection.",
+      "oneOf": [
+        {
+          "pattern": "^.*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/PrivateEndpointConnectionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Kusto/clusters/privateEndpointConnections"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

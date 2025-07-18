@@ -1,0 +1,47 @@
+{
+  "description": "Microsoft.AVS/privateClouds/globalReachConnections",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-09-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the global reach connection",
+      "oneOf": [
+        {
+          "pattern": "^[-\\w\\._]+$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The resource-specific properties for this resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/GlobalReachConnectionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AVS/privateClouds/globalReachConnections"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

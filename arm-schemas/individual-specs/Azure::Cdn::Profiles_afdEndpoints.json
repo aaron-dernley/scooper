@@ -1,0 +1,68 @@
+{
+  "description": "Microsoft.Cdn/profiles/afdEndpoints",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-04-15"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "The geo-location where the resource lives",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the endpoint under the profile which is unique globally.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The JSON object that contains the properties required to create an endpoint.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/AFDEndpointProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/profiles_afdEndpoints_routes_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Cdn/profiles/afdEndpoints"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

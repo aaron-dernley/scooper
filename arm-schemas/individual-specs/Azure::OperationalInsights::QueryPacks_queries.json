@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.OperationalInsights/queryPacks/queries",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-02-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The id of a specific query defined in the Log Analytics QueryPack",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties that define an Log Analytics QueryPack-Query resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/LogAnalyticsQueryPackQueryProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.OperationalInsights/queryPacks/queries"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

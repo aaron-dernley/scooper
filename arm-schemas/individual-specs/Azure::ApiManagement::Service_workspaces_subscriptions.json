@@ -1,0 +1,48 @@
+{
+  "description": "Microsoft.ApiManagement/service/workspaces/subscriptions",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-06-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Subscription entity Identifier. The entity represents the association between a user and a product in API Management.",
+      "oneOf": [
+        {
+          "maxLength": 256,
+          "pattern": "^[^*#&+:<>?]+$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Subscription contract properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/SubscriptionCreateParameterProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ApiManagement/service/workspaces/subscriptions"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

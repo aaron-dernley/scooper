@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.SignalRService/webPubSub/hubs",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-01-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The hub name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of a hub.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/WebPubSubHubProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.SignalRService/webPubSub/hubs"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

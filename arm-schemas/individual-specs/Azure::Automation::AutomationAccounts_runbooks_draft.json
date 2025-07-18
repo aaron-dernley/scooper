@@ -1,0 +1,84 @@
+{
+  "description": "Microsoft.Automation/automationAccounts/runbooks/draft",
+  "oneOf": [
+    {
+      "properties": {
+        "name": {
+          "oneOf": [
+            {
+              "pattern": "^.*/content$",
+              "type": "string"
+            },
+            {
+              "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+            }
+          ]
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "type": "object"
+    },
+    {
+      "properties": {
+        "name": {
+          "oneOf": [
+            {
+              "pattern": "^.*/testJob$",
+              "type": "string"
+            },
+            {
+              "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+            }
+          ]
+        },
+        "parameters": {
+          "description": "Gets or sets the parameters of the test job.",
+          "oneOf": [
+            {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "properties": {},
+              "type": "object"
+            },
+            {
+              "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+            }
+          ]
+        },
+        "runOn": {
+          "description": "Gets or sets the runOn which specifies the group name where the job is to be executed.",
+          "type": "string"
+        },
+        "runtimeEnvironment": {
+          "description": "The runtime Environment Name on which job needs to be tested",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "type": "object"
+    }
+  ],
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-10-23"
+      ],
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Automation/automationAccounts/runbooks/draft"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "apiVersion",
+    "type"
+  ]
+}

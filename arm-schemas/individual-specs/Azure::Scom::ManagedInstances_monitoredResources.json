@@ -1,0 +1,35 @@
+{
+  "description": "Microsoft.Scom/managedInstances/monitoredResources",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-07-07-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The monitored resource name.",
+      "oneOf": [
+        {
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9-_]*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Scom/managedInstances/monitoredResources"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

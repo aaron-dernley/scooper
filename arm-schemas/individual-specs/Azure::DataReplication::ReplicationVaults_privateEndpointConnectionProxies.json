@@ -1,0 +1,51 @@
+{
+  "description": "Microsoft.DataReplication/replicationVaults/privateEndpointConnectionProxies",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-09-01"
+      ],
+      "type": "string"
+    },
+    "etag": {
+      "description": "Gets or sets ETag.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The private endpoint connection proxy name.",
+      "oneOf": [
+        {
+          "pattern": "^[a-zA-Z0-9-.]*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The resource-specific properties for this resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/PrivateEndpointConnectionProxyProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DataReplication/replicationVaults/privateEndpointConnectionProxies"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

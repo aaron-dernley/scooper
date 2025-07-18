@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Search/searchServices/sharedPrivateLinkResources",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-05-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the shared private link resource managed by the Azure AI Search service within the specified resource group.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Describes the properties of a shared private link resource managed by the Azure AI Search service.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/SharedPrivateLinkResourceProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Search/searchServices/sharedPrivateLinkResources"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

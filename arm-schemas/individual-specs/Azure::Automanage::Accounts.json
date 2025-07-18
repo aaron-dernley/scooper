@@ -1,0 +1,57 @@
+{
+  "description": "Microsoft.Automanage/accounts",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2020-06-30-preview"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "The identity of the Automanage account.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/AccountIdentity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The geo-location where the resource lives",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the Automanage account.",
+      "type": "string"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Automanage/accounts"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

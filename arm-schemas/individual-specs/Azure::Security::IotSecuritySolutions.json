@@ -1,0 +1,58 @@
+{
+  "description": "Microsoft.Security/iotSecuritySolutions",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2019-08-01"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "The resource location.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the IoT Security solution.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Security Solution data",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/IoTSecuritySolutionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Resource tags",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Security/iotSecuritySolutions"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

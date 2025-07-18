@@ -1,0 +1,59 @@
+{
+  "description": "Microsoft.DataFactory/factories/managedVirtualNetworks",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2018-06-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Managed virtual network name",
+      "oneOf": [
+        {
+          "maxLength": 127,
+          "minLength": 1,
+          "pattern": "^([_A-Za-z0-9]|([_A-Za-z0-9][-_A-Za-z0-9]{0,125}[_A-Za-z0-9]))$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Managed Virtual Network properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ManagedVirtualNetwork"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/factories_managedVirtualNetworks_managedPrivateEndpoints_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DataFactory/factories/managedVirtualNetworks"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

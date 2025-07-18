@@ -1,0 +1,62 @@
+{
+  "description": "Microsoft.Migrate/modernizeProjects/workloadDeployments",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2022-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Workload deployment name.",
+      "oneOf": [
+        {
+          "pattern": "^[a-z][a-z0-9]*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Workload deployment model properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/WorkloadDeploymentModelProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Gets or sets the resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Migrate/modernizeProjects/workloadDeployments"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

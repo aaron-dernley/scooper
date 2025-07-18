@@ -1,0 +1,40 @@
+{
+  "description": "Microsoft.EventHub/namespaces/eventhubs/authorizationRules",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The authorization rule name.",
+      "minLength": 1,
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties supplied to create or update AuthorizationRule",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/AuthorizationRuleProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.EventHub/namespaces/eventhubs/authorizationRules"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

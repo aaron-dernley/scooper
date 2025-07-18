@@ -1,0 +1,91 @@
+{
+  "description": "Microsoft.DBforMariaDB/servers",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2018-06-01-preview"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "The location the resource resides in.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the server.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of the server.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ServerPropertiesForCreate"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/servers_databases_childResource"
+          },
+          {
+            "$ref": "#/definitions/servers_firewallRules_childResource"
+          },
+          {
+            "$ref": "#/definitions/servers_configurations_childResource"
+          },
+          {
+            "$ref": "#/definitions/servers_virtualNetworkRules_childResource"
+          },
+          {
+            "$ref": "#/definitions/servers_securityAlertPolicies_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "sku": {
+      "description": "The SKU (pricing tier) of the server.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/Sku"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Application-specific metadata in the form of key-value pairs.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DBforMariaDB/servers"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

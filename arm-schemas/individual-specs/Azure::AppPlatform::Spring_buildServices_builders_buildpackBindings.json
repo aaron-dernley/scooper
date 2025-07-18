@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.AppPlatform/Spring/buildServices/builders/buildpackBindings",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the Buildpack Binding Name",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of a buildpack binding",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/BuildpackBindingProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AppPlatform/Spring/buildServices/builders/buildpackBindings"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

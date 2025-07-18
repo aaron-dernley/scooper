@@ -1,0 +1,60 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "Microsoft.RecoveryServices/vaults/backupPolicies"
+      ]
+    },
+    "apiVersion": {
+      "type": "string",
+      "enum": [
+        "2016-12-01"
+      ]
+    },
+    "location": {
+      "type": "string",
+      "description": "Resource location."
+    },
+    "tags": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ],
+      "description": "Resource tags."
+    },
+    "eTag": {
+      "type": "string",
+      "description": "Optional ETag."
+    },
+    "properties": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ProtectionPolicy"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ],
+      "description": "ProtectionPolicyResource properties"
+    }
+  },
+  "required": [
+    "name",
+    "type",
+    "apiVersion",
+    "properties"
+  ],
+  "description": "Microsoft.RecoveryServices/vaults/backupPolicies"
+}

@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.StorSimple/managers/storageDomains",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2016-10-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The storage domain name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/StorageDomainProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.StorSimple/managers/storageDomains"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

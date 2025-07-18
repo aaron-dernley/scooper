@@ -1,0 +1,40 @@
+{
+  "description": "microsoft.aadiam/privateLinkForAzureAd/privateEndpointConnections",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2020-03-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The PrivateEndpointConnection name.",
+      "minLength": 1,
+      "type": "string"
+    },
+    "properties": {
+      "description": "Resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/PrivateEndpointConnectionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "microsoft.aadiam/privateLinkForAzureAd/privateEndpointConnections"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

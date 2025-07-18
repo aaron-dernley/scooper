@@ -1,0 +1,47 @@
+{
+  "description": "Microsoft.Migrate/assessmentProjects/webAppCollectors",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-09-09-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Web app collector ARM name.",
+      "oneOf": [
+        {
+          "pattern": "^[^<>&:\\?/#]{1,260}$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The resource-specific properties for this resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/WebAppCollectorPropertiesBaseWithAgent"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Migrate/assessmentProjects/webAppCollectors"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

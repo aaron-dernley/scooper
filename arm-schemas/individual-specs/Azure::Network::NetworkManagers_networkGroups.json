@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.Network/networkManagers/networkGroups",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the network group.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The Network Group properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/NetworkGroupProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/networkManagers_networkGroups_staticMembers_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Network/networkManagers/networkGroups"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

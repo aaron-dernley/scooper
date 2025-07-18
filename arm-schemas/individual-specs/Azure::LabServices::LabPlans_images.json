@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.LabServices/labPlans/images",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-06-07"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The image name.",
+      "oneOf": [
+        {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[-\\w\\\\._\\\\(\\\\)]+$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Image resource properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ImageProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.LabServices/labPlans/images"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

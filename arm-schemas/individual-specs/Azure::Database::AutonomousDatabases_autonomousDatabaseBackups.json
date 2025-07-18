@@ -1,0 +1,47 @@
+{
+  "description": "Oracle.Database/autonomousDatabases/autonomousDatabaseBackups",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-03-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "AutonomousDatabaseBackup id",
+      "oneOf": [
+        {
+          "pattern": ".*",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The resource-specific properties for this resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/AutonomousDatabaseBackupProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Oracle.Database/autonomousDatabases/autonomousDatabaseBackups"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

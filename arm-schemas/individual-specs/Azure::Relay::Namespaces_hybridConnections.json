@@ -1,0 +1,51 @@
+{
+  "description": "Microsoft.Relay/namespaces/HybridConnections",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2016-07-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The hybrid connection name.",
+      "maxLength": 50,
+      "minLength": 1,
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of HybridConnection",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/HybridConnectionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/namespaces_HybridConnections_authorizationRules_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Relay/namespaces/HybridConnections"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

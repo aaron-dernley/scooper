@@ -1,0 +1,57 @@
+{
+  "description": "Microsoft.ApiManagement/service/gateways",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-06-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Gateway entity identifier. Must be unique in the current API Management service instance. Must not have value 'managed'",
+      "maxLength": 80,
+      "minLength": 1,
+      "type": "string"
+    },
+    "properties": {
+      "description": "Gateway details.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/GatewayContractProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/service_gateways_apis_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_gateways_hostnameConfigurations_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_gateways_certificateAuthorities_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ApiManagement/service/gateways"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

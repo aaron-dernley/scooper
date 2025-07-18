@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/repos",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-03-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The repository name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Azure DevOps Repository properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/AzureDevOpsRepositoryProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/repos"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,48 @@
+{
+  "description": "Microsoft.AgFoodPlatform/farmBeats/extensions",
+  "properties": {
+    "additionalApiProperties": {
+      "description": "Additional Api Properties.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "$ref": "#/definitions/ApiProperties"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "apiVersion": {
+      "enum": [
+        "2023-06-01-preview"
+      ],
+      "type": "string"
+    },
+    "extensionVersion": {
+      "description": "Extension Version.",
+      "maxLength": 10,
+      "minLength": 3,
+      "type": "string"
+    },
+    "name": {
+      "description": "Id of extension resource.",
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AgFoodPlatform/farmBeats/extensions"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

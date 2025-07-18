@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.DocumentDB/throughputPools/throughputPoolAccounts",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Cosmos DB global database account in a Throughput Pool",
+      "oneOf": [
+        {
+          "maxLength": 50,
+          "minLength": 3,
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "An Azure Cosmos DB Global Database Account which is part of a Throughputpool.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ThroughputPoolAccountProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DocumentDB/throughputPools/throughputPoolAccounts"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

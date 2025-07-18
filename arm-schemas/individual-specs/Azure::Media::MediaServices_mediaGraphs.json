@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Media/mediaServices/mediaGraphs",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2020-02-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The Media Graph name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Class for Media Graph properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/MediaGraphProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Media/mediaServices/mediaGraphs"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

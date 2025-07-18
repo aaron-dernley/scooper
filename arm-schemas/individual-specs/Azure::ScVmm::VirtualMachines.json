@@ -1,0 +1,96 @@
+{
+  "description": "Microsoft.ScVmm/virtualMachines",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-04-01-preview"
+      ],
+      "type": "string"
+    },
+    "extendedLocation": {
+      "description": "The extended location.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ExtendedLocation"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "identity": {
+      "description": "The identity of the resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/Identity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "Gets or sets the location.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the VirtualMachine.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/VirtualMachineProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/virtualMachines_extensions_childResource"
+          },
+          {
+            "$ref": "#/definitions/virtualMachines_guestAgents_childResource"
+          },
+          {
+            "$ref": "#/definitions/virtualMachines_hybridIdentityMetadata_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ScVmm/virtualMachines"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

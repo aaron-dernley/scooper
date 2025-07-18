@@ -1,0 +1,68 @@
+{
+  "description": "Microsoft.MachineLearningCompute/operationalizationClusters",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2017-08-01-preview"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "Specifies the location of the resource.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the cluster.",
+      "oneOf": [
+        {
+          "maxLength": 90,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z][-\\w\\._\\(\\)]+[a-zA-Z0-9]$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Properties of an operationalization cluster.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/OperationalizationClusterProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Contains resource tags defined as key/value pairs.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.MachineLearningCompute/operationalizationClusters"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,84 @@
+{
+  "description": "Microsoft.MachineLearningServices/workspaces/datasets",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2020-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "datasetType": {
+      "description": "Specifies dataset type.",
+      "oneOf": [
+        {
+          "enum": [
+            "tabular",
+            "file"
+          ],
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "name": {
+      "description": "The Dataset name.",
+      "type": "string"
+    },
+    "parameters": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/DatasetCreateRequestParameters"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "registration": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/DatasetCreateRequestRegistration"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "skipValidation": {
+      "description": "Skip validation that ensures data can be loaded from the dataset before registration.",
+      "oneOf": [
+        {
+          "default": false,
+          "type": "boolean"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "timeSeries": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/DatasetCreateRequestTimeSeries"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.MachineLearningServices/workspaces/datasets"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

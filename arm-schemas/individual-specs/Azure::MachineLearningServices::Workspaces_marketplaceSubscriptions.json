@@ -1,0 +1,47 @@
+{
+  "description": "Microsoft.MachineLearningServices/workspaces/marketplaceSubscriptions",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-06-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Marketplace Subscription name.",
+      "oneOf": [
+        {
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9\\-_]{0,254}$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "[Required] Additional attributes of the entity.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/MarketplaceSubscriptionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.MachineLearningServices/workspaces/marketplaceSubscriptions"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

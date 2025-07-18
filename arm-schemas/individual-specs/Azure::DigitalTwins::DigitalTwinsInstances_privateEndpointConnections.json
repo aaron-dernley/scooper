@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.DigitalTwins/digitalTwinsInstances/privateEndpointConnections",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-01-31"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the private endpoint connection.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The connection properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ConnectionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DigitalTwins/digitalTwinsInstances/privateEndpointConnections"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

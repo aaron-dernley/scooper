@@ -1,0 +1,43 @@
+{
+  "description": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-12-01"
+      ],
+      "type": "string"
+    },
+    "kind": {
+      "description": "Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the inventoryItem.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/InventoryItemProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

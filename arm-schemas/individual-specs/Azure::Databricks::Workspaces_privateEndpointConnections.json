@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Databricks/workspaces/privateEndpointConnections",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-03-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the private endpoint connection",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The private endpoint connection properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/PrivateEndpointConnectionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Databricks/workspaces/privateEndpointConnections"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

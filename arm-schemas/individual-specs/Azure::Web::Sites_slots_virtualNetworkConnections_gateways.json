@@ -1,0 +1,43 @@
+{
+  "description": "Microsoft.Web/sites/slots/virtualNetworkConnections/gateways",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-11-01"
+      ],
+      "type": "string"
+    },
+    "kind": {
+      "description": "Kind of resource.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the gateway. Currently, the only supported string is \"primary\".",
+      "type": "string"
+    },
+    "properties": {
+      "description": "VnetGateway resource specific properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/VnetGatewayProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Web/sites/slots/virtualNetworkConnections/gateways"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

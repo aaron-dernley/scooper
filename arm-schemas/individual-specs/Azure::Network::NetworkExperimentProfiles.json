@@ -1,0 +1,80 @@
+{
+  "description": "Microsoft.Network/NetworkExperimentProfiles",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2019-11-01"
+      ],
+      "type": "string"
+    },
+    "etag": {
+      "description": "Gets a unique read-only string that changes whenever the resource is updated.",
+      "type": "string"
+    },
+    "location": {
+      "description": "Resource location.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The Profile identifier associated with the Tenant and Partner",
+      "oneOf": [
+        {
+          "pattern": "^[a-zA-Z0-9_\\-\\(\\)\\.]*[^\\.]$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The properties of a Profile",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ProfileProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/NetworkExperimentProfiles_Experiments_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Network/NetworkExperimentProfiles"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

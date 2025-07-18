@@ -1,0 +1,52 @@
+{
+  "description": "Microsoft.Media/mediaServices/assets",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-01-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The Asset name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/AssetProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/mediaServices_assets_tracks_childResource"
+          },
+          {
+            "$ref": "#/definitions/mediaServices_assets_assetFilters_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Media/mediaServices/assets"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Cache/Redis/linkedServers",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2019-07-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the linked server that is being added to the Redis cache.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties required to create a linked server.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/RedisLinkedServerCreateProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Cache/Redis/linkedServers"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,51 @@
+{
+  "description": "Microsoft.Migrate/migrateProjects/solutions",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-01-01"
+      ],
+      "type": "string"
+    },
+    "etag": {
+      "description": "Gets or sets the ETAG for optimistic concurrency control.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Unique name of a migration solution within a migrate project.",
+      "oneOf": [
+        {
+          "pattern": "^[a-zA-Z0-9-]{3,24}$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Gets or sets the properties of the solution.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/SolutionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Migrate/migrateProjects/solutions"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

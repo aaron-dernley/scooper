@@ -1,0 +1,41 @@
+{
+  "description": "Microsoft.Relay/namespaces/HybridConnections/authorizationRules",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2016-07-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The authorizationRule name.",
+      "maxLength": 50,
+      "minLength": 1,
+      "type": "string"
+    },
+    "properties": {
+      "description": "Authorization Rule properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/AuthorizationRuleProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Relay/namespaces/HybridConnections/authorizationRules"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

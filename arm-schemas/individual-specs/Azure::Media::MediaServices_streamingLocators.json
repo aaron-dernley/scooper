@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Media/mediaServices/streamingLocators",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-01-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The Streaming Locator name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of the Streaming Locator.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/StreamingLocatorProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Media/mediaServices/streamingLocators"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

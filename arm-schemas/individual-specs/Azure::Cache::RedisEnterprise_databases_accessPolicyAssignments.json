@@ -1,0 +1,47 @@
+{
+  "description": "Microsoft.Cache/redisEnterprise/databases/accessPolicyAssignments",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the Redis Enterprise database access policy assignment.",
+      "oneOf": [
+        {
+          "pattern": "^[A-Za-z0-9]{1,60}$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Properties of the access policy assignment.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/AccessPolicyAssignmentProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Cache/redisEnterprise/databases/accessPolicyAssignments"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

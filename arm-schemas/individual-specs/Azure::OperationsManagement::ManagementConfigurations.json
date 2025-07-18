@@ -1,0 +1,43 @@
+{
+  "description": "Microsoft.OperationsManagement/ManagementConfigurations",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2015-11-01-preview"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "Resource location",
+      "type": "string"
+    },
+    "name": {
+      "description": "User Management Configuration Name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties for ManagementConfiguration object supported by the OperationsManagement resource provider.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ManagementConfigurationProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.OperationsManagement/ManagementConfigurations"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

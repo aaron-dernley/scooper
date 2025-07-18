@@ -1,0 +1,83 @@
+{
+  "description": "Microsoft.Compute/cloudServices",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-11-04"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "Resource location.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the cloud service.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Cloud service properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/CloudServiceProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "systemData": {
+      "description": "The system meta data relating to this resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/SystemData"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Compute/cloudServices"
+      ],
+      "type": "string"
+    },
+    "zones": {
+      "description": "List of logical availability zone of the resource. List should contain only 1 zone where cloud service should be provisioned. This field is optional.",
+      "oneOf": [
+        {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

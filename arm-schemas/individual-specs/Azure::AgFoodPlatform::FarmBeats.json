@@ -1,0 +1,98 @@
+{
+  "description": "Microsoft.AgFoodPlatform/farmBeats",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-06-01-preview"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "Identity for the resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/Identity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The geo-location where the resource lives",
+      "type": "string"
+    },
+    "name": {
+      "description": "DataManagerForAgriculture resource name.",
+      "oneOf": [
+        {
+          "maxLength": 63,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9]+(-[A-Za-z0-9]+)*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Data Manager For Agriculture ARM Resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/DataManagerForAgricultureProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/farmBeats_solutions_childResource"
+          },
+          {
+            "$ref": "#/definitions/farmBeats_extensions_childResource"
+          },
+          {
+            "$ref": "#/definitions/farmBeats_dataConnectors_childResource"
+          },
+          {
+            "$ref": "#/definitions/farmBeats_privateEndpointConnections_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AgFoodPlatform/farmBeats"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

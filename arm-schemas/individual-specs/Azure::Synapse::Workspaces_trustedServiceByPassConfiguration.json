@@ -1,0 +1,34 @@
+{
+  "description": "Microsoft.Synapse/workspaces/trustedServiceByPassConfiguration",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2021-06-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "oneOf": [
+        {
+          "pattern": "^.*/default$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Synapse/workspaces/trustedServiceByPassConfiguration"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.ContainerService/managedClusters/agentPools",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-05-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the agent pool.",
+      "oneOf": [
+        {
+          "maxLength": 12,
+          "minLength": 1,
+          "pattern": "^[a-z][a-z0-9]{0,11}$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Properties of an agent pool.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ManagedClusterAgentPoolProfileProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ContainerService/managedClusters/agentPools"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

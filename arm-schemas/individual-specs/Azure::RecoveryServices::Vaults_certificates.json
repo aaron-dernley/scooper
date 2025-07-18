@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.RecoveryServices/vaults/certificates",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-02-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Certificate friendly name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Raw certificate data.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/RawCertificateData"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.RecoveryServices/vaults/certificates"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

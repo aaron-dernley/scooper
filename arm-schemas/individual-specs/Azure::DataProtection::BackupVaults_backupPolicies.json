@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.DataProtection/backupVaults/backupPolicies",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-07-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the policy",
+      "type": "string"
+    },
+    "properties": {
+      "description": "BaseBackupPolicyResource properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/BaseBackupPolicy"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DataProtection/backupVaults/backupPolicies"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

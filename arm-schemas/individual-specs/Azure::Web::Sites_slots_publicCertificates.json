@@ -1,0 +1,43 @@
+{
+  "description": "Microsoft.Web/sites/slots/publicCertificates",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-11-01"
+      ],
+      "type": "string"
+    },
+    "kind": {
+      "description": "Kind of resource.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Public certificate name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "PublicCertificate resource specific properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/PublicCertificateProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Web/sites/slots/publicCertificates"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

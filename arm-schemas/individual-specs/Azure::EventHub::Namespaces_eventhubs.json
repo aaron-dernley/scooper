@@ -1,0 +1,54 @@
+{
+  "description": "Microsoft.EventHub/namespaces/eventhubs",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The Event Hub name",
+      "maxLength": 256,
+      "minLength": 1,
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties supplied to the Create Or Update Event Hub operation.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/EventhubProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/namespaces_eventhubs_consumergroups_childResource"
+          },
+          {
+            "$ref": "#/definitions/namespaces_eventhubs_authorizationRules_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.EventHub/namespaces/eventhubs"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

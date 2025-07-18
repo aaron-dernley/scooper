@@ -1,0 +1,57 @@
+{
+  "description": "Microsoft.StoragePool/diskPools/iscsiTargets",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2021-08-01"
+      ],
+      "type": "string"
+    },
+    "managedBy": {
+      "description": "Azure resource id. Indicates if this resource is managed by another Azure resource.",
+      "type": "string"
+    },
+    "managedByExtended": {
+      "description": "List of Azure resource ids that manage this resource.",
+      "oneOf": [
+        {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "name": {
+      "description": "The name of the iSCSI Target.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties for iSCSI Target create request.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/IscsiTargetCreateProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.StoragePool/diskPools/iscsiTargets"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

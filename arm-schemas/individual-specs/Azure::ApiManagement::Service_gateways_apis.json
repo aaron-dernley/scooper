@@ -1,0 +1,41 @@
+{
+  "description": "Microsoft.ApiManagement/service/gateways/apis",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-06-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "API identifier. Must be unique in the current API Management service instance.",
+      "maxLength": 80,
+      "minLength": 1,
+      "type": "string"
+    },
+    "properties": {
+      "description": "Association entity contract properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/AssociationContractProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ApiManagement/service/gateways/apis"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,61 @@
+{
+  "description": "Microsoft.ContainerService/managedClusters/agentPools/machines",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-04-02-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Host name of the machine.",
+      "oneOf": [
+        {
+          "pattern": "^[a-z][a-z0-9]{0,11}$|^[a-zA-Z0-9][-_a-zA-Z0-9]{0,39}$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The properties of the machine",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/MachineProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ContainerService/managedClusters/agentPools/machines"
+      ],
+      "type": "string"
+    },
+    "zones": {
+      "description": "The Availability zone in which machine is located.",
+      "oneOf": [
+        {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,83 @@
+{
+  "description": "Microsoft.StorSimple/managers",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2017-06-01"
+      ],
+      "type": "string"
+    },
+    "etag": {
+      "description": "The etag of the manager.",
+      "type": "string"
+    },
+    "location": {
+      "description": "The geo location of the resource.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The manager name",
+      "maxLength": 50,
+      "minLength": 2,
+      "type": "string"
+    },
+    "properties": {
+      "description": "The properties of the StorSimple Manager.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ManagerProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/managers_bandwidthSettings_childResource"
+          },
+          {
+            "$ref": "#/definitions/managers_extendedInformation_childResource"
+          },
+          {
+            "$ref": "#/definitions/managers_accessControlRecords_childResource"
+          },
+          {
+            "$ref": "#/definitions/managers_storageAccountCredentials_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "The tags attached to the resource.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.StorSimple/managers"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

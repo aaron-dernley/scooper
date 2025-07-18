@@ -1,0 +1,50 @@
+{
+  "description": "Microsoft.ApiManagement/service/tenant",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-06-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The identifier of the Access configuration.",
+      "oneOf": [
+        {
+          "enum": [
+            "access",
+            "gitAccess"
+          ],
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Tenant access information update parameter properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/AccessInformationCreateParameterProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ApiManagement/service/tenant"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,47 @@
+{
+  "description": "Microsoft.Synapse/workspaces/sqlPools/transparentDataEncryption",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2021-06-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the transparent data encryption configuration.",
+      "oneOf": [
+        {
+          "pattern": "^.*/current$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Represents the properties of the resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/TransparentDataEncryptionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Synapse/workspaces/sqlPools/transparentDataEncryption"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

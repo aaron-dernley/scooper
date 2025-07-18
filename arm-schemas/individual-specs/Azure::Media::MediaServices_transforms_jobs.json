@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Media/mediaServices/transforms/jobs",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2022-07-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The Job name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/JobProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Media/mediaServices/transforms/jobs"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

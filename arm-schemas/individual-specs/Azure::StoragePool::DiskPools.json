@@ -1,0 +1,97 @@
+{
+  "description": "Microsoft.StoragePool/diskPools",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2021-08-01"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "The geo-location where the resource lives.",
+      "type": "string"
+    },
+    "managedBy": {
+      "description": "Azure resource id. Indicates if this resource is managed by another Azure resource.",
+      "type": "string"
+    },
+    "managedByExtended": {
+      "description": "List of Azure resource ids that manage this resource.",
+      "oneOf": [
+        {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "name": {
+      "description": "The name of the Disk Pool.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties for Disk Pool create request.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/DiskPoolCreateProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/diskPools_iscsiTargets_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "sku": {
+      "description": "Determines the SKU of the Disk Pool",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/Sku"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.StoragePool/diskPools"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

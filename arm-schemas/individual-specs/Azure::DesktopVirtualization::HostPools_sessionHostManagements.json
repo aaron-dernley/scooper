@@ -1,0 +1,46 @@
+{
+  "description": "Microsoft.DesktopVirtualization/hostPools/sessionHostManagements",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-03-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "oneOf": [
+        {
+          "pattern": "^.*/default$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Detailed properties for SessionHostManagement",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/SessionHostManagementProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DesktopVirtualization/hostPools/sessionHostManagements"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

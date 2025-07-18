@@ -1,0 +1,98 @@
+{
+  "description": "Microsoft.StorageCache/caches",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "The identity of the cache, if configured.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/CacheIdentity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "Region name string.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of cache. Length of name must not be greater than 80 and chars must be from the [-0-9a-zA-Z_] char class.",
+      "oneOf": [
+        {
+          "pattern": "^[-0-9a-zA-Z_]{1,80}$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Properties of the cache.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/CacheProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/caches_storageTargets_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "sku": {
+      "description": "SKU for the cache.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/CacheSku"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.StorageCache/caches"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,51 @@
+{
+  "description": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/backups",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2022-11-01"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "Resource location",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the backup",
+      "oneOf": [
+        {
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9\\-_]{0,63}$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Backup Properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/BackupProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/backups"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

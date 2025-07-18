@@ -1,0 +1,59 @@
+{
+  "description": "Microsoft.Resources/deploymentScripts",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-08-01"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "Optional property. Managed identity to be used for this deployment script. Currently, only user-assigned MSI is supported.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ManagedServiceIdentity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The location of the ACI and the storage account for the deployment script.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the deployment script.",
+      "maxLength": 90,
+      "minLength": 1,
+      "type": "string"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Resources/deploymentScripts"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

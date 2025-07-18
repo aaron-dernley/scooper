@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.DocumentDB/databaseAccounts/dataTransferJobs",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the Data Transfer Job",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Data Transfer Create Job Properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/DataTransferJobProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DocumentDB/databaseAccounts/dataTransferJobs"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

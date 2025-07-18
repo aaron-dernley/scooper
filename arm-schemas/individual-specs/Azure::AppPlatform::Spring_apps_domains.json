@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.AppPlatform/Spring/apps/domains",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the custom domain resource.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of the custom domain resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/CustomDomainProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AppPlatform/Spring/apps/domains"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

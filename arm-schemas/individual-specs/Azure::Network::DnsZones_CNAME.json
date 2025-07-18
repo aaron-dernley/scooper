@@ -1,0 +1,43 @@
+{
+  "description": "Microsoft.Network/dnszones/CNAME",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2015-05-04-preview"
+      ],
+      "type": "string"
+    },
+    "etag": {
+      "description": "The etag of the record set.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the RecordSet, relative to the name of the zone.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The properties of the record set.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/RecordSetProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Network/dnszones/CNAME"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

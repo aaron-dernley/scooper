@@ -1,0 +1,63 @@
+{
+  "description": "Microsoft.StorSimple/managers/devices/backupPolicies",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2017-06-01"
+      ],
+      "type": "string"
+    },
+    "kind": {
+      "description": "The Kind of the object. Currently only Series8000 is supported",
+      "oneOf": [
+        {
+          "enum": [
+            "Series8000"
+          ],
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "name": {
+      "description": "The name of the backup policy to be created/updated.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The properties of the backup policy.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/BackupPolicyProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/managers_devices_backupPolicies_schedules_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.StorSimple/managers/devices/backupPolicies"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

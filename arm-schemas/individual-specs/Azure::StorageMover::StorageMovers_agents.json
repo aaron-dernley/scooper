@@ -1,0 +1,38 @@
+{
+  "description": "Microsoft.StorageMover/storageMovers/agents",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the Agent resource.",
+      "type": "string"
+    },
+    "properties": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/AgentProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.StorageMover/storageMovers/agents"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

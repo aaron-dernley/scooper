@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Automation/automationAccounts/connectionTypes",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-10-23"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The parameters supplied to the create or update connection type operation.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Gets or sets the value of the connection type.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ConnectionTypeCreateOrUpdateProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Automation/automationAccounts/connectionTypes"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

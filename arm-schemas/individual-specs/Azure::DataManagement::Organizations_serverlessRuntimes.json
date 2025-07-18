@@ -1,0 +1,47 @@
+{
+  "description": "Informatica.DataManagement/organizations/serverlessRuntimes",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-05-08"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the Serverless Runtime resource",
+      "oneOf": [
+        {
+          "pattern": "^[a-zA-Z0-9_-]*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The resource-specific properties for this resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/InformaticaServerlessRuntimeProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Informatica.DataManagement/organizations/serverlessRuntimes"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

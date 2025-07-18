@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/users",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-12-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The user name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The storage account credential properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/UserProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DataBoxEdge/dataBoxEdgeDevices/users"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

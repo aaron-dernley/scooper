@@ -1,0 +1,95 @@
+{
+  "description": "Microsoft.DigitalTwins/digitalTwinsInstances",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-01-31"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "The managed identity for the DigitalTwinsInstance.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/DigitalTwinsIdentity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The resource location.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the DigitalTwinsInstance.",
+      "oneOf": [
+        {
+          "maxLength": 63,
+          "minLength": 3,
+          "pattern": "^(?!-)[A-Za-z0-9-]{3,63}(?<!-)$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "DigitalTwins instance properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/DigitalTwinsProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/digitalTwinsInstances_endpoints_childResource"
+          },
+          {
+            "$ref": "#/definitions/digitalTwinsInstances_privateEndpointConnections_childResource"
+          },
+          {
+            "$ref": "#/definitions/digitalTwinsInstances_timeSeriesDatabaseConnections_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "The resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DigitalTwins/digitalTwinsInstances"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

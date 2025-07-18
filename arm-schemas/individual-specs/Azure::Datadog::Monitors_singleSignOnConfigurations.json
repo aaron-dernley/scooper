@@ -1,0 +1,38 @@
+{
+  "description": "Microsoft.Datadog/monitors/singleSignOnConfigurations",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-10-20"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Configuration name",
+      "type": "string"
+    },
+    "properties": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/DatadogSingleSignOnProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Datadog/monitors/singleSignOnConfigurations"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Automation/automationAccounts/hybridRunbookWorkerGroups/hybridRunbookWorkers",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-10-23"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The hybrid runbook worker id",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Gets or sets hybrid runbook worker group create or update properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/HybridRunbookWorkerCreateOrUpdateParameters"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Automation/automationAccounts/hybridRunbookWorkerGroups/hybridRunbookWorkers"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

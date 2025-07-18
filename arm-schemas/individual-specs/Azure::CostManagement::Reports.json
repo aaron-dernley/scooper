@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.CostManagement/reports",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2018-08-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Report Name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The properties of the report.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ReportProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.CostManagement/reports"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

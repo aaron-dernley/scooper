@@ -1,0 +1,47 @@
+{
+  "description": "Microsoft.Network/networkManagers/verifierWorkspaces/reachabilityAnalysisIntents",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Reachability Analysis Intent name.",
+      "oneOf": [
+        {
+          "pattern": "^[0-9a-zA-Z]([0-9a-zA-Z_.-]{0,62}[0-9a-zA-Z_])?$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Represents the Reachability Analysis Intent properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ReachabilityAnalysisIntentProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Network/networkManagers/verifierWorkspaces/reachabilityAnalysisIntents"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

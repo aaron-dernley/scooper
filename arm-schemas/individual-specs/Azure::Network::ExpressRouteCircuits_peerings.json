@@ -1,0 +1,53 @@
+{
+  "description": "Microsoft.Network/expressRouteCircuits/peerings",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01"
+      ],
+      "type": "string"
+    },
+    "id": {
+      "description": "Resource ID.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the peering.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of the express route circuit peering.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ExpressRouteCircuitPeeringPropertiesFormat"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/expressRouteCircuits_peerings_connections_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Network/expressRouteCircuits/peerings"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

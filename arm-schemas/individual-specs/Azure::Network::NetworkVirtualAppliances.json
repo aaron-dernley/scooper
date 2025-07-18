@@ -1,0 +1,89 @@
+{
+  "description": "Microsoft.Network/networkVirtualAppliances",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01"
+      ],
+      "type": "string"
+    },
+    "id": {
+      "description": "Resource ID.",
+      "type": "string"
+    },
+    "identity": {
+      "description": "The service principal that has read access to cloud-init and config blob.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ManagedServiceIdentity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "Resource location.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of Network Virtual Appliance.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of the Network Virtual Appliance.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/NetworkVirtualAppliancePropertiesFormat"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/networkVirtualAppliances_inboundSecurityRules_childResource"
+          },
+          {
+            "$ref": "#/definitions/networkVirtualAppliances_virtualApplianceSites_childResource"
+          },
+          {
+            "$ref": "#/definitions/networkVirtualAppliances_networkVirtualApplianceConnections_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Network/networkVirtualAppliances"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,79 @@
+{
+  "description": "Microsoft.ServiceFabric/managedclusters/applications",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-09-01-preview"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "Describes the managed identities for an Azure resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ManagedIdentity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "Resource location depends on the parent resource.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the application resource.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The application resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ApplicationResourceProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/managedclusters_applications_services_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Azure resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ServiceFabric/managedclusters/applications"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

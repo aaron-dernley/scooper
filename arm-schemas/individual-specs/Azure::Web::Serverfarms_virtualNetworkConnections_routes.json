@@ -1,0 +1,43 @@
+{
+  "description": "Microsoft.Web/serverfarms/virtualNetworkConnections/routes",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-11-01"
+      ],
+      "type": "string"
+    },
+    "kind": {
+      "description": "Kind of resource.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the Virtual Network route.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "VnetRoute resource specific properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/VnetRouteProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Web/serverfarms/virtualNetworkConnections/routes"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

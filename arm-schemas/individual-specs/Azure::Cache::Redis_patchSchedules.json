@@ -1,0 +1,47 @@
+{
+  "description": "Microsoft.Cache/Redis/patchSchedules",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2019-07-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Default string modeled as parameter for auto generation to work correctly.",
+      "oneOf": [
+        {
+          "pattern": "^.*/default$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "List of patch schedules for a Redis cache.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ScheduleEntries"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Cache/Redis/patchSchedules"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

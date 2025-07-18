@@ -1,0 +1,43 @@
+{
+  "description": "Microsoft.Network/virtualHubs/ipConfigurations",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01"
+      ],
+      "type": "string"
+    },
+    "id": {
+      "description": "Resource ID.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the ipconfig.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The properties of the Virtual Hub IPConfigurations.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/HubIPConfigurationPropertiesFormat"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Network/virtualHubs/ipConfigurations"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

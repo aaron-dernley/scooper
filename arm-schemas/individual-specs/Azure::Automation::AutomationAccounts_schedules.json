@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Automation/automationAccounts/schedules",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-10-23"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The schedule name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Gets or sets the list of schedule properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ScheduleCreateOrUpdateProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Automation/automationAccounts/schedules"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

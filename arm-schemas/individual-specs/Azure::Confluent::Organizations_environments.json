@@ -1,0 +1,57 @@
+{
+  "description": "Microsoft.Confluent/organizations/environments",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01"
+      ],
+      "type": "string"
+    },
+    "id": {
+      "description": "Id of the environment",
+      "type": "string"
+    },
+    "kind": {
+      "description": "Type of environment",
+      "type": "string"
+    },
+    "name": {
+      "description": "Confluent environment id",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Environment properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/EnvironmentProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/organizations_environments_clusters_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Confluent/organizations/environments"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

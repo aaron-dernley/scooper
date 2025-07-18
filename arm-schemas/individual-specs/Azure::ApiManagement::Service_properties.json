@@ -1,0 +1,48 @@
+{
+  "description": "Microsoft.ApiManagement/service/properties",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2019-01-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Identifier of the property.",
+      "oneOf": [
+        {
+          "maxLength": 256,
+          "pattern": "^[^*#&+:<>?]+$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Property entity contract properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/PropertyContractProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ApiManagement/service/properties"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,77 @@
+{
+  "description": "Microsoft.RedHatOpenShift/openShiftClusters",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-11-22"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "The geo-location where the resource lives",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the OpenShift cluster resource.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The cluster properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/OpenShiftClusterProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/openshiftclusters_secret_childResource"
+          },
+          {
+            "$ref": "#/definitions/openshiftclusters_syncSet_childResource"
+          },
+          {
+            "$ref": "#/definitions/openshiftclusters_machinePool_childResource"
+          },
+          {
+            "$ref": "#/definitions/openshiftclusters_syncIdentityProvider_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.RedHatOpenShift/openShiftClusters"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

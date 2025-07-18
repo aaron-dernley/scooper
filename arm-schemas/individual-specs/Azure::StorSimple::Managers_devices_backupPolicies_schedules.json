@@ -1,0 +1,53 @@
+{
+  "description": "Microsoft.StorSimple/managers/devices/backupPolicies/schedules",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2017-06-01"
+      ],
+      "type": "string"
+    },
+    "kind": {
+      "description": "The Kind of the object. Currently only Series8000 is supported",
+      "oneOf": [
+        {
+          "enum": [
+            "Series8000"
+          ],
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "name": {
+      "description": "The backup schedule name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The properties of the backup schedule.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/BackupScheduleProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.StorSimple/managers/devices/backupPolicies/schedules"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.AzureArcData/sqlManagedInstances/failoverGroups",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-03-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the Failover Group",
+      "type": "string"
+    },
+    "properties": {
+      "description": "null",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/FailoverGroupProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AzureArcData/sqlManagedInstances/failoverGroups"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

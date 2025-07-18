@@ -1,0 +1,49 @@
+{
+  "type": "object",
+  "properties": {
+    "apiVersion": {
+      "type": "string",
+      "enum": [
+        "2018-05-01"
+      ]
+    },
+    "name": {
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "^[-\\w_]+$",
+          "minLength": 1,
+          "maxLength": 64
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ],
+      "description": "The name of the job within the specified resource group. Job names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long."
+    },
+    "properties": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/JobBaseProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ],
+      "description": "The properties of a Batch AI Job."
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "Microsoft.BatchAI/workspaces/experiments/jobs"
+      ]
+    }
+  },
+  "required": [
+    "apiVersion",
+    "name",
+    "properties",
+    "type"
+  ],
+  "description": "Microsoft.BatchAI/workspaces/experiments/jobs"
+}

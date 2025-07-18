@@ -1,0 +1,78 @@
+{
+  "description": "Microsoft.Network/trafficmanagerprofiles",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-04-01-preview"
+      ],
+      "type": "string"
+    },
+    "id": {
+      "description": "Fully qualified resource Id for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/trafficManagerProfiles/{resourceName}",
+      "type": "string"
+    },
+    "location": {
+      "description": "The Azure Region where the resource lives",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the Traffic Manager profile.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The properties of the Traffic Manager profile.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ProfileProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/trafficmanagerprofiles_AzureEndpoints_childResource"
+          },
+          {
+            "$ref": "#/definitions/trafficmanagerprofiles_NestedEndpoints_childResource"
+          },
+          {
+            "$ref": "#/definitions/trafficmanagerprofiles_ExternalEndpoints_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Network/trafficmanagerprofiles"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

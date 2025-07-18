@@ -1,0 +1,57 @@
+{
+  "description": "Microsoft.DevTestLab/labs/servicerunners",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2018-09-15"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "The identity of the resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/IdentityProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The location of the resource.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the service runner.",
+      "type": "string"
+    },
+    "tags": {
+      "description": "The tags of the resource.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DevTestLab/labs/servicerunners"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

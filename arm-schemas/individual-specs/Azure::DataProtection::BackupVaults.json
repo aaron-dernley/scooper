@@ -1,0 +1,89 @@
+{
+  "description": "Microsoft.DataProtection/backupVaults",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-07-01"
+      ],
+      "type": "string"
+    },
+    "eTag": {
+      "description": "Optional ETag.",
+      "type": "string"
+    },
+    "identity": {
+      "description": "Input Managed Identity Details",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/DppIdentityDetails"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "Resource location.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the backup vault.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "BackupVaultResource properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/BackupVault"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/backupVaults_backupPolicies_childResource"
+          },
+          {
+            "$ref": "#/definitions/backupVaults_backupInstances_childResource"
+          },
+          {
+            "$ref": "#/definitions/backupVaults_backupResourceGuardProxies_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DataProtection/backupVaults"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

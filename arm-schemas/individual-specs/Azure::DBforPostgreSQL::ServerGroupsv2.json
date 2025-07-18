@@ -1,0 +1,101 @@
+{
+  "description": "Microsoft.DBforPostgreSQL/serverGroupsv2",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-03-02-preview"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "Describes the identity of the cluster.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/IdentityProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The geo-location where the resource lives",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the cluster.",
+      "oneOf": [
+        {
+          "maxLength": 40,
+          "minLength": 3,
+          "pattern": "^(?![0-9]+$)(?!-)[a-z0-9-]{3,40}(?<!-)$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Properties of the cluster.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ClusterProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/serverGroupsv2_roles_childResource"
+          },
+          {
+            "$ref": "#/definitions/serverGroupsv2_firewallRules_childResource"
+          },
+          {
+            "$ref": "#/definitions/serverGroupsv2_nodeConfigurations_childResource"
+          },
+          {
+            "$ref": "#/definitions/serverGroupsv2_coordinatorConfigurations_childResource"
+          },
+          {
+            "$ref": "#/definitions/serverGroupsv2_privateEndpointConnections_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DBforPostgreSQL/serverGroupsv2"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

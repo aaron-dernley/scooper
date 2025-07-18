@@ -1,0 +1,47 @@
+{
+  "description": "Microsoft.DatabaseWatcher/watchers/targets",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-01-02"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The target resource name.",
+      "oneOf": [
+        {
+          "pattern": "^[a-zA-Z0-9]{1}[a-zA-Z0-9-_]{3,60}$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The resource-specific properties for this resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/TargetProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DatabaseWatcher/watchers/targets"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

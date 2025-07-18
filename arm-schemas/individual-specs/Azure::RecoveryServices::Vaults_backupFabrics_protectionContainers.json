@@ -1,0 +1,70 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers"
+      ]
+    },
+    "apiVersion": {
+      "type": "string",
+      "enum": [
+        "2016-12-01"
+      ]
+    },
+    "location": {
+      "type": "string",
+      "description": "Resource location."
+    },
+    "tags": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ],
+      "description": "Resource tags."
+    },
+    "eTag": {
+      "type": "string",
+      "description": "Optional ETag."
+    },
+    "properties": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ProtectionContainer"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ],
+      "description": "ProtectionContainerResource properties"
+    },
+    "resources": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/vaults_backupFabrics_protectionContainers_protectedItems_childResource"
+          }
+        ]
+      }
+    }
+  },
+  "required": [
+    "name",
+    "type",
+    "apiVersion",
+    "properties"
+  ],
+  "description": "Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers"
+}

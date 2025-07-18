@@ -1,0 +1,40 @@
+{
+  "description": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-12-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The role name.",
+      "type": "string"
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/dataBoxEdgeDevices_roles_addons_childResource"
+          },
+          {
+            "$ref": "#/definitions/dataBoxEdgeDevices_roles_monitoringConfig_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

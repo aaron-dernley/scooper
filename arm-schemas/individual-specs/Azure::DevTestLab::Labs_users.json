@@ -1,0 +1,77 @@
+{
+  "description": "Microsoft.DevTestLab/labs/users",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2018-09-15"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "The location of the resource.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the user profile.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The properties of the resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/UserProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/labs_users_disks_childResource"
+          },
+          {
+            "$ref": "#/definitions/labs_users_secrets_childResource"
+          },
+          {
+            "$ref": "#/definitions/labs_users_environments_childResource"
+          },
+          {
+            "$ref": "#/definitions/labs_users_servicefabrics_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "The tags of the resource.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DevTestLab/labs/users"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.SignalRService/webPubSub/sharedPrivateLinkResources",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-01-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the shared private link resource.",
+      "oneOf": [
+        {
+          "maxLength": 63,
+          "minLength": 3,
+          "pattern": "^[a-zA-Z][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Describes the properties of an existing Shared Private Link Resource",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/SharedPrivateLinkResourceProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.SignalRService/webPubSub/sharedPrivateLinkResources"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

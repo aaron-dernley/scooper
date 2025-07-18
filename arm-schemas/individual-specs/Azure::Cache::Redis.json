@@ -1,0 +1,88 @@
+{
+  "description": "Microsoft.Cache/Redis",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2019-07-01"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "The geo-location where the resource lives",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the Redis cache.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Redis cache properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/RedisCreateProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/Redis_firewallRules_childResource"
+          },
+          {
+            "$ref": "#/definitions/Redis_linkedServers_childResource"
+          },
+          {
+            "$ref": "#/definitions/Redis_patchSchedules_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Cache/Redis"
+      ],
+      "type": "string"
+    },
+    "zones": {
+      "description": "A list of availability zones denoting where the resource needs to come from.",
+      "oneOf": [
+        {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,55 @@
+{
+  "description": "Microsoft.DataShare/accounts/shares",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2021-08-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the share.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties on the share",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ShareProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/accounts_shares_dataSets_childResource"
+          },
+          {
+            "$ref": "#/definitions/accounts_shares_invitations_childResource"
+          },
+          {
+            "$ref": "#/definitions/accounts_shares_synchronizationSettings_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DataShare/accounts/shares"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

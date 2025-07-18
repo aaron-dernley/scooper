@@ -1,0 +1,73 @@
+{
+  "type": "object",
+  "properties": {
+    "apiVersion": {
+      "type": "string",
+      "enum": [
+        "2018-05-01"
+      ]
+    },
+    "location": {
+      "type": "string",
+      "description": "The region in which to create the Workspace."
+    },
+    "name": {
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "^[-\\w_]+$",
+          "minLength": 1,
+          "maxLength": 64
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ],
+      "description": "The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long."
+    },
+    "resources": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/workspaces_experiments_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_fileServers_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_clusters_childResource"
+          }
+        ]
+      }
+    },
+    "tags": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {}
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ],
+      "description": "The user specified tags associated with the Workspace."
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "Microsoft.BatchAI/workspaces"
+      ]
+    }
+  },
+  "required": [
+    "apiVersion",
+    "location",
+    "name",
+    "type"
+  ],
+  "description": "Microsoft.BatchAI/workspaces"
+}

@@ -1,0 +1,39 @@
+{
+  "description": "PaloAltoNetworks.Cloudngfw/localRulestacks/certificates",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-05-23"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "certificate name",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The resource-specific properties for this resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/CertificateObject"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "PaloAltoNetworks.Cloudngfw/localRulestacks/certificates"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

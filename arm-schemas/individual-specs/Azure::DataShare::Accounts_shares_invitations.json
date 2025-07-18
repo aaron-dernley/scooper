@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.DataShare/accounts/shares/invitations",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2021-08-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the invitation.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties on the Invitation",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/InvitationProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DataShare/accounts/shares/invitations"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,95 @@
+{
+  "description": "Microsoft.Batch/batchAccounts",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "The identity of the Batch account.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/BatchAccountIdentity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The region in which to create the account.",
+      "type": "string"
+    },
+    "name": {
+      "description": "A name for the Batch account which must be unique within the region. Batch account names must be between 3 and 24 characters in length and must use only numbers and lowercase letters. This name is used as part of the DNS name that is used to access the Batch service in the region in which the account is created. For example: http://accountname.region.batch.azure.com/.",
+      "oneOf": [
+        {
+          "maxLength": 24,
+          "minLength": 3,
+          "pattern": "^[a-z0-9]+$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The properties of the Batch account.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/BatchAccountCreateProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/batchAccounts_pools_childResource"
+          },
+          {
+            "$ref": "#/definitions/batchAccounts_applications_childResource"
+          },
+          {
+            "$ref": "#/definitions/batchAccounts_certificates_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "The user-specified tags associated with the account.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Batch/batchAccounts"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

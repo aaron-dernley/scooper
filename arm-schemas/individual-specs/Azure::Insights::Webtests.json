@@ -1,0 +1,74 @@
+{
+  "description": "Microsoft.Insights/webtests",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2022-06-15"
+      ],
+      "type": "string"
+    },
+    "kind": {
+      "description": "The kind of WebTest that this web test watches. Choices are ping, multistep and standard.",
+      "oneOf": [
+        {
+          "enum": [
+            "ping",
+            "multistep",
+            "standard"
+          ],
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "Resource location",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the Application Insights WebTest resource.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Metadata describing a web test for an Azure resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/WebTestProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Resource tags",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Insights/webtests"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

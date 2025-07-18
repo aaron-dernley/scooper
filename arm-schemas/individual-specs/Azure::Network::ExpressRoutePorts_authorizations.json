@@ -1,0 +1,43 @@
+{
+  "description": "Microsoft.Network/expressRoutePorts/authorizations",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01"
+      ],
+      "type": "string"
+    },
+    "id": {
+      "description": "Resource ID.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the authorization.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "ExpressRoutePort properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ExpressRoutePortAuthorizationPropertiesFormat"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Network/expressRoutePorts/authorizations"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

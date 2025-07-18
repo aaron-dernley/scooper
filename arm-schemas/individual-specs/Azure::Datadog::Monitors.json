@@ -1,0 +1,93 @@
+{
+  "description": "Microsoft.Datadog/monitors",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-10-20"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/IdentityProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "type": "string"
+    },
+    "name": {
+      "description": "Monitor resource name",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties specific to the monitor resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/MonitorProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/monitors_tagRules_childResource"
+          },
+          {
+            "$ref": "#/definitions/monitors_monitoredSubscriptions_childResource"
+          },
+          {
+            "$ref": "#/definitions/monitors_singleSignOnConfigurations_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "sku": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ResourceSku"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Dictionary of <string>",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Datadog/monitors"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

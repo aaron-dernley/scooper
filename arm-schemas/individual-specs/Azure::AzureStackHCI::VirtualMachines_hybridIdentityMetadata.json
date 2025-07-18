@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.AzureStackHCI/virtualMachines/hybridIdentityMetadata",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2022-12-15-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the hybridIdentityMetadata.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/HybridIdentityMetadataProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AzureStackHCI/virtualMachines/hybridIdentityMetadata"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

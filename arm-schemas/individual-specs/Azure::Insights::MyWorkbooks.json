@@ -1,0 +1,103 @@
+{
+  "description": "Microsoft.Insights/myWorkbooks",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2021-03-08"
+      ],
+      "type": "string"
+    },
+    "etag": {
+      "description": "Resource etag",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "id": {
+      "description": "Azure resource Id",
+      "type": "string"
+    },
+    "identity": {
+      "description": "Identity used for BYOS",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/MyWorkbookManagedIdentity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "kind": {
+      "description": "The kind of workbook. Choices are user and shared.",
+      "oneOf": [
+        {
+          "enum": [
+            "user",
+            "shared"
+          ],
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "Resource location",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the Application Insights component resource.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Metadata describing a workbook for an Azure resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/MyWorkbookProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Resource tags",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Insights/myWorkbooks"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

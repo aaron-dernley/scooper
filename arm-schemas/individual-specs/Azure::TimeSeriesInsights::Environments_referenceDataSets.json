@@ -1,0 +1,68 @@
+{
+  "description": "Microsoft.TimeSeriesInsights/environments/referenceDataSets",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2021-06-30-preview"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "The location of the resource.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the reference data set.",
+      "oneOf": [
+        {
+          "maxLength": 63,
+          "minLength": 3,
+          "pattern": "^[A-Za-z0-9]",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Properties used to create a reference data set.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ReferenceDataSetCreationProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Key-value pairs of additional properties for the resource.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.TimeSeriesInsights/environments/referenceDataSets"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

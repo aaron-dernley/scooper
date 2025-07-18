@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.HybridData/dataManagers/dataStores",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2019-06-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The data store/repository name to be created or updated.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "DataStore properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/DataStoreProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.HybridData/dataManagers/dataStores"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

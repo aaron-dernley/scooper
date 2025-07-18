@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Network/networkManagers/connectivityConfigurations",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the network manager connectivity configuration.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of a network manager connectivity configuration",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ConnectivityConfigurationProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Network/networkManagers/connectivityConfigurations"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

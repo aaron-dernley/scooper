@@ -1,0 +1,81 @@
+{
+  "description": "Microsoft.HybridData/dataManagers",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2019-06-01"
+      ],
+      "type": "string"
+    },
+    "etag": {
+      "description": "Etag of the Resource.",
+      "type": "string"
+    },
+    "location": {
+      "description": "The location of the resource. This will be one of the supported and registered Azure Geo Regions (e.g. West US, East\r\nUS, Southeast Asia, etc.). The geo region of a resource cannot be changed once it is created, but if an identical geo\r\nregion is specified on update the request will succeed.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only",
+      "oneOf": [
+        {
+          "maxLength": 24,
+          "minLength": 3,
+          "pattern": "^[-\\w\\.]+$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/dataManagers_dataStores_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "sku": {
+      "description": "The sku type.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/Sku"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "The list of key value pairs that describe the resource. These tags can be used in viewing and grouping this resource\r\n(across resource groups).",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.HybridData/dataManagers"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

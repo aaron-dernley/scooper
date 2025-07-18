@@ -1,0 +1,58 @@
+{
+  "description": "Microsoft.LabServices/labaccounts/labs/environmentsettings/environments",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2018-10-15"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "The location of the resource.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the environment.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The properties of the Environment resource",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/EnvironmentProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "The tags of the resource.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.LabServices/labaccounts/labs/environmentsettings/environments"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

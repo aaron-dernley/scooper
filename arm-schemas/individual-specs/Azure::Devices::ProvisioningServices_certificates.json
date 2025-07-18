@@ -1,0 +1,40 @@
+{
+  "description": "Microsoft.Devices/provisioningServices/certificates",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-02-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the certificate create or update.",
+      "maxLength": 256,
+      "type": "string"
+    },
+    "properties": {
+      "description": "properties of a certificate",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/CertificateProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Devices/provisioningServices/certificates"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

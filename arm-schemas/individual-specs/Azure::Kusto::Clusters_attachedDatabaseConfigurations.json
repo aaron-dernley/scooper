@@ -1,0 +1,51 @@
+{
+  "description": "Microsoft.Kusto/clusters/attachedDatabaseConfigurations",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-04-13"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "Resource location.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the attached database configuration.",
+      "oneOf": [
+        {
+          "pattern": "^.*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The properties of the attached database configuration.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/AttachedDatabaseConfigurationProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Kusto/clusters/attachedDatabaseConfigurations"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

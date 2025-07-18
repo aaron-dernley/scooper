@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.Media/mediaServices/transforms",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2022-07-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The Transform name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/TransformProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/mediaServices_transforms_jobs_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Media/mediaServices/transforms"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.ContainerService/managedClusters/maintenanceConfigurations",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-05-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the maintenance configuration.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of a default maintenance configuration.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/MaintenanceConfigurationProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ContainerService/managedClusters/maintenanceConfigurations"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

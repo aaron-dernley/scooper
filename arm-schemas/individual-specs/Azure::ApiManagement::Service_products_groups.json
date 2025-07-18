@@ -1,0 +1,29 @@
+{
+  "description": "Microsoft.ApiManagement/service/products/groups",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-06-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Group identifier. Must be unique in the current API Management service instance.",
+      "maxLength": 256,
+      "minLength": 1,
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ApiManagement/service/products/groups"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,43 @@
+{
+  "description": "Microsoft.Network/serviceEndpointPolicies/serviceEndpointPolicyDefinitions",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01"
+      ],
+      "type": "string"
+    },
+    "id": {
+      "description": "Resource ID.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the service endpoint policy definition name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of the service endpoint policy definition.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ServiceEndpointPolicyDefinitionPropertiesFormat"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Network/serviceEndpointPolicies/serviceEndpointPolicyDefinitions"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

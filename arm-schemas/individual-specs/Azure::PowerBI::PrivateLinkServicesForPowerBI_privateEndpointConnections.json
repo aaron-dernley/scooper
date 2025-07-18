@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.PowerBI/privateLinkServicesForPowerBI/privateEndpointConnections",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2020-06-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the private endpoint.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Specifies the properties of the private endpoint connection.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/PrivateEndpointConnectionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.PowerBI/privateLinkServicesForPowerBI/privateEndpointConnections"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

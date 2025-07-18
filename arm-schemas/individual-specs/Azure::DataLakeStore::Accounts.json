@@ -1,0 +1,85 @@
+{
+  "description": "Microsoft.DataLakeStore/accounts",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2016-11-01"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "The Key Vault encryption identity, if any.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/EncryptionIdentity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The resource location.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the Data Lake Store account.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The Data Lake Store account properties to use for creating.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/CreateDataLakeStoreAccountProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/accounts_firewallRules_childResource"
+          },
+          {
+            "$ref": "#/definitions/accounts_trustedIdProviders_childResource"
+          },
+          {
+            "$ref": "#/definitions/accounts_virtualNetworkRules_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "The resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DataLakeStore/accounts"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

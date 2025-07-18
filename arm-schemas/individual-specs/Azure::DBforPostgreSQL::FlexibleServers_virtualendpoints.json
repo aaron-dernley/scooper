@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.DBforPostgreSQL/flexibleServers/virtualendpoints",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-01-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Base name of the virtual endpoints.",
+      "oneOf": [
+        {
+          "maxLength": 63,
+          "minLength": 3,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9-]{0,62}(?<!-)$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Properties of the pair of virtual endpoints.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/VirtualEndpointResourceProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DBforPostgreSQL/flexibleServers/virtualendpoints"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

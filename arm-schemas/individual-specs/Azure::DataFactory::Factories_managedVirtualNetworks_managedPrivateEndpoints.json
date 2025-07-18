@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.DataFactory/factories/managedVirtualNetworks/managedPrivateEndpoints",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2018-06-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Managed private endpoint name",
+      "oneOf": [
+        {
+          "maxLength": 127,
+          "minLength": 1,
+          "pattern": "^([_A-Za-z0-9]|([_A-Za-z0-9][-_A-Za-z0-9]{0,125}[_A-Za-z0-9]))$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Managed private endpoint properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ManagedPrivateEndpoint"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DataFactory/factories/managedVirtualNetworks/managedPrivateEndpoints"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,115 @@
+{
+  "description": "Microsoft.HybridCompute/machines",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-02-19-preview"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "Identity for the resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/Identity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "kind": {
+      "description": "Indicates which kind of Arc machine placement on-premises, such as HCI, SCVMM or VMware etc.",
+      "oneOf": [
+        {
+          "enum": [
+            "AVS",
+            "HCI",
+            "SCVMM",
+            "VMware",
+            "EPS",
+            "GCP",
+            "AWS"
+          ],
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The geo-location where the resource lives",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the hybrid machine.",
+      "oneOf": [
+        {
+          "maxLength": 54,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9-_\\.]{1,54}$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Hybrid Compute Machine properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/MachineProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/machines_extensions_childResource"
+          },
+          {
+            "$ref": "#/definitions/machines_runCommands_childResource"
+          },
+          {
+            "$ref": "#/definitions/machines_licenseProfiles_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.HybridCompute/machines"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,41 @@
+{
+  "description": "Microsoft.ServiceBus/namespaces/disasterRecoveryConfigs",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-01-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The Disaster Recovery configuration name",
+      "maxLength": 50,
+      "minLength": 1,
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties required to the Create Or Update Alias(Disaster Recovery configurations)",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ArmDisasterRecoveryProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ServiceBus/namespaces/disasterRecoveryConfigs"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

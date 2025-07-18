@@ -1,0 +1,43 @@
+{
+  "description": "Microsoft.Web/staticSites/customDomains",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-11-01"
+      ],
+      "type": "string"
+    },
+    "kind": {
+      "description": "Kind of resource.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The custom domain to create.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "StaticSiteCustomDomainRequestPropertiesARMResource resource specific properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/StaticSiteCustomDomainRequestPropertiesARMResourceProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Web/staticSites/customDomains"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

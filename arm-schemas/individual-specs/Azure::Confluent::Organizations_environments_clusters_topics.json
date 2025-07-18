@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Confluent/organizations/environments/clusters/topics",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Confluent kafka or schema registry topic name",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Topic Properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/TopicProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Confluent/organizations/environments/clusters/topics"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

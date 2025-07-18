@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "properties": {
+    "apiVersion": {
+      "type": "string",
+      "enum": [
+        "2019-08-09-preview"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the cluster in the private cloud"
+    },
+    "properties": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ClusterProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ],
+      "description": "The properties of a cluster"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "Microsoft.VMwareVirtustream/privateClouds/clusters"
+      ]
+    }
+  },
+  "required": [
+    "apiVersion",
+    "name",
+    "properties",
+    "type"
+  ],
+  "description": "Microsoft.VMwareVirtustream/privateClouds/clusters"
+}

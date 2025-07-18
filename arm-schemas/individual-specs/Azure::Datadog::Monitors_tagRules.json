@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Datadog/monitors/tagRules",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-10-20"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Rule set name",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Definition of the properties for a TagRules resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/MonitoringTagRulesProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Datadog/monitors/tagRules"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

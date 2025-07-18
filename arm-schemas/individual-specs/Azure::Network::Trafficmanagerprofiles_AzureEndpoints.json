@@ -1,0 +1,43 @@
+{
+  "description": "Microsoft.Network/trafficmanagerprofiles/AzureEndpoints",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-04-01-preview"
+      ],
+      "type": "string"
+    },
+    "id": {
+      "description": "Fully qualified resource Id for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/trafficManagerProfiles/{resourceName}",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the Traffic Manager endpoint to be created or updated.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The properties of the Traffic Manager endpoint.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/EndpointProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Network/trafficmanagerprofiles/AzureEndpoints"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

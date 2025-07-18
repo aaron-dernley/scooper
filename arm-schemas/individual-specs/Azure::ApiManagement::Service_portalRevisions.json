@@ -1,0 +1,41 @@
+{
+  "description": "Microsoft.ApiManagement/service/portalRevisions",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-06-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Portal revision identifier. Must be unique in the current API Management service instance.",
+      "maxLength": 256,
+      "minLength": 1,
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of the portal revisions.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/PortalRevisionContractProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ApiManagement/service/portalRevisions"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

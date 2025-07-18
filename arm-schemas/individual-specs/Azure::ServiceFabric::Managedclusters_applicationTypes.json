@@ -1,0 +1,68 @@
+{
+  "description": "Microsoft.ServiceFabric/managedclusters/applicationTypes",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-09-01-preview"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "Resource location depends on the parent resource.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the application type name resource.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The application type name properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ApplicationTypeResourceProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/managedclusters_applicationTypes_versions_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Azure resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ServiceFabric/managedclusters/applicationTypes"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

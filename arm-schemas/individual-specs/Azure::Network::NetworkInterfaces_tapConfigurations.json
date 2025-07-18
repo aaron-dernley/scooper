@@ -1,0 +1,43 @@
+{
+  "description": "Microsoft.Network/networkInterfaces/tapConfigurations",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01"
+      ],
+      "type": "string"
+    },
+    "id": {
+      "description": "Resource ID.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the tap configuration.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of the Virtual Network Tap configuration.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/NetworkInterfaceTapConfigurationPropertiesFormat"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Network/networkInterfaces/tapConfigurations"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

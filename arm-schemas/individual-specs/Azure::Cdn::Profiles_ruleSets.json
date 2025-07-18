@@ -1,0 +1,37 @@
+{
+  "description": "Microsoft.Cdn/profiles/ruleSets",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-04-15"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the rule set under the profile which is unique globally",
+      "type": "string"
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/profiles_ruleSets_rules_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Cdn/profiles/ruleSets"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

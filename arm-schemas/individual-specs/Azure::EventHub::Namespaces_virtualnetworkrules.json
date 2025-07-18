@@ -1,0 +1,40 @@
+{
+  "description": "Microsoft.EventHub/namespaces/virtualnetworkrules",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2018-01-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The Virtual Network Rule name.",
+      "minLength": 1,
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties supplied to create or update VirtualNetworkRules",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/VirtualNetworkRuleProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.EventHub/namespaces/virtualnetworkrules"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

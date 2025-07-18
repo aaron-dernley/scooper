@@ -1,0 +1,97 @@
+{
+  "description": "Microsoft.Devices/IotHubs",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-06-30-preview"
+      ],
+      "type": "string"
+    },
+    "etag": {
+      "description": "The Etag field is *not* required. If it is provided in the response body, it must also be provided as a header per the normal ETag convention.",
+      "type": "string"
+    },
+    "identity": {
+      "description": "The managed identities for the IotHub.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ArmIdentity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The resource location.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the IoT hub.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "IotHub properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/IotHubProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/IotHubs_certificates_childResource"
+          },
+          {
+            "$ref": "#/definitions/iotHubs_privateEndpointConnections_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "sku": {
+      "description": "IotHub SKU info",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/IotHubSkuInfo"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "The resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Devices/IotHubs"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

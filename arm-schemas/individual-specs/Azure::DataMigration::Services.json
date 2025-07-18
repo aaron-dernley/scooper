@@ -1,0 +1,89 @@
+{
+  "description": "Microsoft.DataMigration/services",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-03-15-preview"
+      ],
+      "type": "string"
+    },
+    "etag": {
+      "description": "HTTP strong entity tag value. Ignored if submitted",
+      "type": "string"
+    },
+    "kind": {
+      "description": "The resource kind. Only 'vm' (the default) is supported.",
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the service",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Custom service properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/DataMigrationServiceProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/services_projects_childResource"
+          },
+          {
+            "$ref": "#/definitions/services_serviceTasks_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "sku": {
+      "description": "Service SKU",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ServiceSku"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Dictionary of <string>",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DataMigration/services"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

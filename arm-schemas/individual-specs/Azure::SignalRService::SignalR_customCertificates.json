@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.SignalRService/signalR/customCertificates",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-01-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Custom certificate name",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Custom certificate properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/CustomCertificateProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.SignalRService/signalR/customCertificates"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,88 @@
+{
+  "description": "Microsoft.MachineLearningServices/workspaces/services",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2021-04-01"
+      ],
+      "type": "string"
+    },
+    "description": {
+      "description": "The description of the service.",
+      "type": "string"
+    },
+    "environmentImageRequest": {
+      "description": "The Environment, models and assets needed for inferencing.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/CreateServiceRequestEnvironmentImageRequest"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "keys": {
+      "description": "The authentication keys.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/CreateServiceRequestKeys"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "kvTags": {
+      "description": "The service tag dictionary. Tags are mutable.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The name of the Azure location/region.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the Azure Machine Learning service.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The service properties dictionary. Properties are immutable.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.MachineLearningServices/workspaces/services"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

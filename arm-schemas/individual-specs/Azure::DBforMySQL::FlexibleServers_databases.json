@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.DBforMySQL/flexibleServers/databases",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-12-30"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the database.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The properties of a database.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/DatabaseProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DBforMySQL/flexibleServers/databases"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

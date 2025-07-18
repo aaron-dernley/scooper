@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Aad/domainServices/ouContainer",
+  "properties": {
+    "accountName": {
+      "description": "The account name",
+      "type": "string"
+    },
+    "apiVersion": {
+      "enum": [
+        "2025-05-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the OuContainer.",
+      "type": "string"
+    },
+    "password": {
+      "description": "The account password",
+      "type": "string"
+    },
+    "spn": {
+      "description": "The account spn",
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Aad/domainServices/ouContainer"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

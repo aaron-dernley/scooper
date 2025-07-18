@@ -1,0 +1,47 @@
+{
+  "description": "Microsoft.DBforPostgreSQL/flexibleServers/advancedThreatProtectionSettings",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-01-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the advanced threat protection settings.",
+      "oneOf": [
+        {
+          "pattern": "^.*/Default$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Advanced threat protection properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ServerThreatProtectionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DBforPostgreSQL/flexibleServers/advancedThreatProtectionSettings"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

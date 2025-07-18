@@ -1,0 +1,71 @@
+{
+  "description": "Microsoft.AVS/privateClouds/clusters",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-09-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the cluster",
+      "oneOf": [
+        {
+          "pattern": "^[-\\w\\._]+$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The resource-specific properties for this resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ClusterProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/privateClouds_clusters_datastores_childResource"
+          },
+          {
+            "$ref": "#/definitions/privateClouds_clusters_placementPolicies_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "sku": {
+      "description": "The SKU (Stock Keeping Unit) assigned to this resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/Sku"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AVS/privateClouds/clusters"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

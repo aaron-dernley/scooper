@@ -1,0 +1,60 @@
+{
+  "description": "Microsoft.DatabaseFleetManager/fleets/fleetspaces",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-02-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the fleetspace.",
+      "oneOf": [
+        {
+          "pattern": "^.+$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "A Fleetspace properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/FleetspaceProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/fleets_fleetspaces_databases_childResource"
+          },
+          {
+            "$ref": "#/definitions/fleets_fleetspaces_firewallRules_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DatabaseFleetManager/fleets/fleetspaces"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

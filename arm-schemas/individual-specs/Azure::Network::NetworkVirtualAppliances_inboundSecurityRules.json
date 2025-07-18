@@ -1,0 +1,43 @@
+{
+  "description": "Microsoft.Network/networkVirtualAppliances/inboundSecurityRules",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01"
+      ],
+      "type": "string"
+    },
+    "id": {
+      "description": "Resource ID.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of security rule collection.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The properties of the Inbound Security Rules.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/InboundSecurityRuleProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Network/networkVirtualAppliances/inboundSecurityRules"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

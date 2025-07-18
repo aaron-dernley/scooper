@@ -1,0 +1,104 @@
+{
+  "description": "Microsoft.OperationalInsights/workspaces/dataSources",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-02-01"
+      ],
+      "type": "string"
+    },
+    "etag": {
+      "description": "The ETag of the data source.",
+      "type": "string"
+    },
+    "kind": {
+      "description": "The kind of the DataSource.",
+      "oneOf": [
+        {
+          "enum": [
+            "WindowsEvent",
+            "WindowsPerformanceCounter",
+            "IISLogs",
+            "LinuxSyslog",
+            "LinuxSyslogCollection",
+            "LinuxPerformanceObject",
+            "LinuxPerformanceCollection",
+            "CustomLog",
+            "CustomLogCollection",
+            "AzureAuditLog",
+            "AzureActivityLog",
+            "GenericDataSource",
+            "ChangeTrackingCustomPath",
+            "ChangeTrackingPath",
+            "ChangeTrackingServices",
+            "ChangeTrackingDataTypeConfiguration",
+            "ChangeTrackingDefaultRegistry",
+            "ChangeTrackingRegistry",
+            "ChangeTrackingLinuxPath",
+            "LinuxChangeTrackingPath",
+            "ChangeTrackingContentLocation",
+            "WindowsTelemetry",
+            "Office365",
+            "SecurityWindowsBaselineConfiguration",
+            "SecurityCenterSecurityWindowsBaselineConfiguration",
+            "SecurityEventCollectionConfiguration",
+            "SecurityInsightsSecurityEventCollectionConfiguration",
+            "ImportComputerGroup",
+            "NetworkMonitoring",
+            "Itsm",
+            "DnsAnalytics",
+            "ApplicationInsights",
+            "SqlDataClassification"
+          ],
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "name": {
+      "description": "The name of the datasource resource.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The data source properties in raw json format, each kind of data source have it's own schema.",
+      "oneOf": [
+        {
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.OperationalInsights/workspaces/dataSources"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

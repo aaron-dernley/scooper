@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.RecoveryServices/vaults/replicationVaultSettings",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-02-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Vault setting name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Vault setting creation input properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/VaultSettingCreationInputProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.RecoveryServices/vaults/replicationVaultSettings"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.DataLakeAnalytics/accounts/computePolicies",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2019-11-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the compute policy to create or update.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The compute policy properties to use when creating a new compute policy.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/CreateOrUpdateComputePolicyProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DataLakeAnalytics/accounts/computePolicies"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,73 @@
+{
+  "description": "Microsoft.ElasticSan/elasticSans/volumegroups",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01-preview"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "The identity of the resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/Identity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "name": {
+      "description": "The name of the VolumeGroup.",
+      "oneOf": [
+        {
+          "maxLength": 63,
+          "minLength": 3,
+          "pattern": "^[A-Za-z0-9]+((-|_)[a-z0-9A-Z]+)*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Properties of VolumeGroup.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/VolumeGroupProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/elasticSans_volumegroups_volumes_childResource"
+          },
+          {
+            "$ref": "#/definitions/elasticSans_volumegroups_snapshots_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ElasticSan/elasticSans/volumegroups"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

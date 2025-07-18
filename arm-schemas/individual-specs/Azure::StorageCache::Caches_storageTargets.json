@@ -1,0 +1,47 @@
+{
+  "description": "Microsoft.StorageCache/caches/storageTargets",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of Storage Target.",
+      "oneOf": [
+        {
+          "pattern": "^[-0-9a-zA-Z_]{1,80}$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "StorageTarget properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/StorageTargetProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.StorageCache/caches/storageTargets"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

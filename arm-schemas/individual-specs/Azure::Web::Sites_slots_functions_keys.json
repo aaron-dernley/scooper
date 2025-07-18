@@ -1,0 +1,31 @@
+{
+  "description": "Microsoft.Web/sites/slots/functions/keys",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-11-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the key.",
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Web/sites/slots/functions/keys"
+      ],
+      "type": "string"
+    },
+    "value": {
+      "description": "Key value",
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

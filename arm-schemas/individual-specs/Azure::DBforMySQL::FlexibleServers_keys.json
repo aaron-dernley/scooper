@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.DBForMySql/flexibleServers/keys",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2020-07-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the server key.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of the ServerKey Resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ServerKeyProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DBForMySql/flexibleServers/keys"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

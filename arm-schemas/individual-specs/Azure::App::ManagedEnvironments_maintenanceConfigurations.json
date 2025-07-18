@@ -1,0 +1,47 @@
+{
+  "description": "Microsoft.App/managedEnvironments/maintenanceConfigurations",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-02-02-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the maintenance configuration.",
+      "oneOf": [
+        {
+          "pattern": "^[-\\w\\._\\(\\)]+$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The resource-specific properties for this resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ScheduledEntries"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.App/managedEnvironments/maintenanceConfigurations"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

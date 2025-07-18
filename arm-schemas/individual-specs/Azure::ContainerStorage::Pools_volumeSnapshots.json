@@ -1,0 +1,47 @@
+{
+  "type": "object",
+  "properties": {
+    "apiVersion": {
+      "type": "string",
+      "enum": [
+        "2023-03-01-preview"
+      ]
+    },
+    "name": {
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9-]{3,24}$"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ],
+      "description": "Volume Snapshot Resource"
+    },
+    "properties": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/VolumeSnapshotProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ],
+      "description": "Volume Snapshot Properties"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "Microsoft.ContainerStorage/pools/volumeSnapshots"
+      ]
+    }
+  },
+  "required": [
+    "apiVersion",
+    "name",
+    "properties",
+    "type"
+  ],
+  "description": "Microsoft.ContainerStorage/pools/volumeSnapshots"
+}

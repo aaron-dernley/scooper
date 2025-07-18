@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Network/networkManagers/networkGroups/staticMembers",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the static member.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The Static Member properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/StaticMemberProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Network/networkManagers/networkGroups/staticMembers"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

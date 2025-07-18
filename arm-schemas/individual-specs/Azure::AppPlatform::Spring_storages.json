@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.AppPlatform/Spring/storages",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the storage resource.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of the storage resource payload.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/StorageProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AppPlatform/Spring/storages"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

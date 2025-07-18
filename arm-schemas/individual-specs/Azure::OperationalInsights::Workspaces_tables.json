@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.OperationalInsights/workspaces/tables",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-02-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the table.",
+      "oneOf": [
+        {
+          "maxLength": 63,
+          "minLength": 4,
+          "pattern": "^[A-Za-z0-9-_]+$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Table's properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/TableProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.OperationalInsights/workspaces/tables"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

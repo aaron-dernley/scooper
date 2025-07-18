@@ -1,0 +1,72 @@
+{
+  "description": "microsoft.insights/components/myanalyticsItems",
+  "properties": {
+    "Content": {
+      "description": "The content of this item",
+      "type": "string"
+    },
+    "Id": {
+      "description": "Internally assigned unique id of the item definition.",
+      "type": "string"
+    },
+    "Name": {
+      "description": "The user-defined name of the item.",
+      "type": "string"
+    },
+    "Properties": {
+      "description": "A set of properties that can be defined in the context of a specific item type. Each type may have its own properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ApplicationInsightsComponentAnalyticsItemProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "Scope": {
+      "description": "Enum indicating if this item definition is owned by a specific user or is shared between all users with access to the Application Insights component.",
+      "oneOf": [
+        {
+          "enum": [
+            "shared",
+            "user"
+          ],
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "apiVersion": {
+      "enum": [
+        "2015-05-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "oneOf": [
+        {
+          "pattern": "^.*/item$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "microsoft.insights/components/myanalyticsItems"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

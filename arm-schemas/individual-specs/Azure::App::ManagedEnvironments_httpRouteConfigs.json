@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.App/managedEnvironments/httpRouteConfigs",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-02-02-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the Http Route Config Resource.",
+      "oneOf": [
+        {
+          "maxLength": 63,
+          "minLength": 3,
+          "pattern": "^[a-z][a-z0-9]*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Http Route Config properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/HttpRouteConfigProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.App/managedEnvironments/httpRouteConfigs"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

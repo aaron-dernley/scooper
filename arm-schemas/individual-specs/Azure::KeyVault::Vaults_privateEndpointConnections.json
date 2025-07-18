@@ -1,0 +1,43 @@
+{
+  "description": "Microsoft.KeyVault/vaults/privateEndpointConnections",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-12-01-preview"
+      ],
+      "type": "string"
+    },
+    "etag": {
+      "description": "Modified whenever there is a change in the state of private endpoint connection.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the private endpoint connection associated with the key vault.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/PrivateEndpointConnectionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.KeyVault/vaults/privateEndpointConnections"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

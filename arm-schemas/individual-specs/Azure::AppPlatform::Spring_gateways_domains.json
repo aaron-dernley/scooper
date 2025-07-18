@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.AppPlatform/Spring/gateways/domains",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the Spring Cloud Gateway custom domain.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The properties of custom domain for Spring Cloud Gateway",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/GatewayCustomDomainProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AppPlatform/Spring/gateways/domains"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

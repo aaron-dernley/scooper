@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.AzureStackHCI/clusters/arcSettings/extensions",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-02-15-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the machine extension.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Describes Machine Extension Properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ExtensionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AzureStackHCI/clusters/arcSettings/extensions"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

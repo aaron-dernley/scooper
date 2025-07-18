@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.RecoveryServices/vaults/replicationProtectionIntents",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-02-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "A name for the replication protection item.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Create protection intent input properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/CreateProtectionIntentProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.RecoveryServices/vaults/replicationProtectionIntents"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

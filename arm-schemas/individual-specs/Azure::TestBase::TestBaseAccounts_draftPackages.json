@@ -1,0 +1,47 @@
+{
+  "description": "Microsoft.TestBase/testBaseAccounts/draftPackages",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-11-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The resource name of the Test Base Draft Package.",
+      "oneOf": [
+        {
+          "pattern": "^[A-Za-z0-9]([A-Za-z0-9_]|([-. ][A-Za-z0-9]))+$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Test Base Draft Package properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/DraftPackageProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.TestBase/testBaseAccounts/draftPackages"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

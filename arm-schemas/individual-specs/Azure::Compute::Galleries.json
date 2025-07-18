@@ -1,0 +1,85 @@
+{
+  "description": "Microsoft.Compute/galleries",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-03-03"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "The identity of the gallery, if configured.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/GalleryIdentity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "Resource location",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with dots and periods allowed in the middle. The maximum length is 80 characters.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Describes the properties of a Shared Image Gallery.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/GalleryProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/galleries_images_childResource"
+          },
+          {
+            "$ref": "#/definitions/galleries_applications_childResource"
+          },
+          {
+            "$ref": "#/definitions/galleries_inVMAccessControlProfiles_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Compute/galleries"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

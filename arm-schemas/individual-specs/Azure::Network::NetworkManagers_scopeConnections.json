@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Network/networkManagers/scopeConnections",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Name for the cross-tenant connection.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The scope connection properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ScopeConnectionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Network/networkManagers/scopeConnections"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

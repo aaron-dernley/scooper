@@ -1,0 +1,130 @@
+{
+  "description": "Microsoft.Synapse/workspaces",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2021-06-01-preview"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "Identity of the workspace",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ManagedIdentity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The geo-location where the resource lives",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the workspace.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Workspace resource properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/WorkspaceProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/workspaces_keys_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_sqlPools_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_kustoPools_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_bigDataPools_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_firewallRules_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_administrators_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_auditingSettings_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_sqlAdministrators_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_integrationRuntimes_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_encryptionProtector_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_securityAlertPolicies_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_extendedAuditingSettings_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_vulnerabilityAssessments_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_privateEndpointConnections_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_azureADOnlyAuthentications_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_dedicatedSQLminimalTlsSettings_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_managedIdentitySqlControlSettings_childResource"
+          },
+          {
+            "$ref": "#/definitions/workspaces_trustedServiceByPassConfiguration_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Synapse/workspaces"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

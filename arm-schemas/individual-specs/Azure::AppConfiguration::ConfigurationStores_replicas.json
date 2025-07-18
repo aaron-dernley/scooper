@@ -1,0 +1,31 @@
+{
+  "description": "Microsoft.AppConfiguration/configurationStores/replicas",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-02-01-preview"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "The location of the replica.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the replica.",
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AppConfiguration/configurationStores/replicas"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

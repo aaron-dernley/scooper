@@ -1,0 +1,43 @@
+{
+  "description": "Microsoft.Blockchain/blockchainMembers/transactionNodes",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2018-06-01-preview"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "Gets or sets the transaction node location.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Transaction node name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Gets or sets the blockchain member properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/TransactionNodeProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Blockchain/blockchainMembers/transactionNodes"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,68 @@
+{
+  "description": "Microsoft.ContainerService/managedClusters/namespaces",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-02-02-preview"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "The location of the namespace.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the namespace.",
+      "oneOf": [
+        {
+          "maxLength": 63,
+          "minLength": 1,
+          "pattern": "[a-z0-9]([-a-z0-9]*[a-z0-9])?",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Properties of a namespace.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/NamespaceProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "The tags to be persisted on the managed cluster namespace.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ContainerService/managedClusters/namespaces"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

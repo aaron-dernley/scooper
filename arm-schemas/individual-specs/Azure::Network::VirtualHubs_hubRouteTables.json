@@ -1,0 +1,43 @@
+{
+  "description": "Microsoft.Network/virtualHubs/hubRouteTables",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01"
+      ],
+      "type": "string"
+    },
+    "id": {
+      "description": "Resource ID.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the RouteTable.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of the RouteTable resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/HubRouteTableProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Network/virtualHubs/hubRouteTables"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,55 @@
+{
+  "description": "Microsoft.AppPlatform/Spring/buildServices",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the build service resource.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of the build resource",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/BuildServiceProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/Spring_buildServices_builds_childResource"
+          },
+          {
+            "$ref": "#/definitions/Spring_buildServices_builders_childResource"
+          },
+          {
+            "$ref": "#/definitions/Spring_buildServices_agentPools_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AppPlatform/Spring/buildServices"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,70 @@
+{
+  "description": "Microsoft.AzureStackHCI/storagecontainers",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2021-09-01-preview"
+      ],
+      "type": "string"
+    },
+    "extendedLocation": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/StoragecontainersExtendedLocation"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The resource location",
+      "type": "string"
+    },
+    "name": {
+      "description": "",
+      "maxLength": 64,
+      "minLength": 3,
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of a storage container resource",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/StoragecontainersProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Resource tags",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AzureStackHCI/storagecontainers"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,81 @@
+{
+  "description": "Microsoft.LabServices/labPlans",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-06-07"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "Managed Identity Information",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/Identity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The geo-location where the resource lives",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the lab plan that uniquely identifies it within containing resource group. Used in resource URIs and in UI.",
+      "maxLength": 100,
+      "minLength": 1,
+      "type": "string"
+    },
+    "properties": {
+      "description": "Lab plan resource properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/LabPlanProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/labPlans_images_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.LabServices/labPlans"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

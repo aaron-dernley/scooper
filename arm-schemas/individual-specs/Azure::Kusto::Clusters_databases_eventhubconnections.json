@@ -1,0 +1,43 @@
+{
+  "description": "Microsoft.Kusto/clusters/databases/eventhubconnections",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2018-09-07-preview"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "Resource location.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the event hub connection.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Class representing the Kusto event hub connection properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/EventHubConnectionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Kusto/clusters/databases/eventhubconnections"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

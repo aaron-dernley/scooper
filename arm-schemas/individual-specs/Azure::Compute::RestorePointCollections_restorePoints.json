@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Compute/restorePointCollections/restorePoints",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-11-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the restore point.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The restore point properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/RestorePointProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Compute/restorePointCollections/restorePoints"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,46 @@
+{
+  "description": "microsoft.insights/components/pricingPlans",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2017-10-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "oneOf": [
+        {
+          "pattern": "^.*/current$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The properties of the suppression.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/PricingPlanProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "microsoft.insights/components/pricingPlans"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

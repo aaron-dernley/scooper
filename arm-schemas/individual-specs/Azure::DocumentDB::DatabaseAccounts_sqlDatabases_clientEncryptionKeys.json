@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/clientEncryptionKeys",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Cosmos DB ClientEncryptionKey name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties to create and update ClientEncryptionKey.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ClientEncryptionKeyCreateUpdateProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/clientEncryptionKeys"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

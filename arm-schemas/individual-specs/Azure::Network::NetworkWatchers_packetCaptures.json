@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Network/networkWatchers/packetCaptures",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the packet capture session.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of the packet capture.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/PacketCaptureParameters"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Network/networkWatchers/packetCaptures"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

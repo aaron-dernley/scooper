@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/storageAccounts/containers",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-12-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The container name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The container properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ContainerProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DataBoxEdge/dataBoxEdgeDevices/storageAccounts/containers"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

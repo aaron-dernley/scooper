@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.HealthcareApis/workspaces/iotconnectors/fhirdestinations",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-04-01-preview"
+      ],
+      "type": "string"
+    },
+    "etag": {
+      "description": "An etag associated with the resource, used for optimistic concurrency when editing it.",
+      "type": "string"
+    },
+    "location": {
+      "description": "The resource location.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of IoT Connector FHIR destination resource.",
+      "maxLength": 24,
+      "minLength": 3,
+      "type": "string"
+    },
+    "properties": {
+      "description": "IoT FHIR Destination settings.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/IotFhirDestinationProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.HealthcareApis/workspaces/iotconnectors/fhirdestinations"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

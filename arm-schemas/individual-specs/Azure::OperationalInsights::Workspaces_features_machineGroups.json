@@ -1,0 +1,63 @@
+{
+  "description": "Microsoft.OperationalInsights/workspaces/features/machineGroups",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2015-11-01-preview"
+      ],
+      "type": "string"
+    },
+    "etag": {
+      "description": "Resource ETAG.",
+      "type": "string"
+    },
+    "kind": {
+      "description": "Additional resource type qualifier.",
+      "oneOf": [
+        {
+          "enum": [
+            "machine",
+            "process",
+            "port",
+            "clientGroup",
+            "machineGroup"
+          ],
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "name": {
+      "description": "Machine Group resource name.",
+      "maxLength": 36,
+      "minLength": 36,
+      "type": "string"
+    },
+    "properties": {
+      "description": "Resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/MachineGroupProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.OperationalInsights/workspaces/features/machineGroups"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

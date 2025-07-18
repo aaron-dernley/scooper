@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Sql/servers/advisors",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2014-04-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the Server Advisor.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/AdvisorProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Sql/servers/advisors"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

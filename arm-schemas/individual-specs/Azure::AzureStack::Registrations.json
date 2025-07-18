@@ -1,0 +1,63 @@
+{
+  "description": "Microsoft.AzureStack/registrations",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2022-06-01"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "Location of the resource.",
+      "oneOf": [
+        {
+          "enum": [
+            "global"
+          ],
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "name": {
+      "description": "Name of the Azure Stack registration.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of the Azure Stack registration resource",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/RegistrationParameterProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/registrations_customerSubscriptions_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AzureStack/registrations"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

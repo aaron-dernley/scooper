@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.StorageMover/storageMovers/endpoints",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the Endpoint resource.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The resource specific properties for the Storage Mover resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/EndpointBaseProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.StorageMover/storageMovers/endpoints"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

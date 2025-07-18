@@ -1,0 +1,43 @@
+{
+  "description": "Microsoft.Network/networkSecurityGroups/securityRules",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01"
+      ],
+      "type": "string"
+    },
+    "id": {
+      "description": "Resource ID.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the security rule.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of the security rule.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/SecurityRulePropertiesFormat"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Network/networkSecurityGroups/securityRules"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

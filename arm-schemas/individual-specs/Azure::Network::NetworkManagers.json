@@ -1,0 +1,98 @@
+{
+  "description": "Microsoft.Network/networkManagers",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01"
+      ],
+      "type": "string"
+    },
+    "id": {
+      "description": "Resource ID.",
+      "type": "string"
+    },
+    "location": {
+      "description": "Resource location.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the network manager.",
+      "oneOf": [
+        {
+          "pattern": "^[0-9a-zA-Z]([0-9a-zA-Z_.-]{0,62}[0-9a-zA-Z_])?$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The network manager properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/NetworkManagerProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/networkManagers_ipamPools_childResource"
+          },
+          {
+            "$ref": "#/definitions/networkManagers_networkGroups_childResource"
+          },
+          {
+            "$ref": "#/definitions/networkManagers_scopeConnections_childResource"
+          },
+          {
+            "$ref": "#/definitions/networkManagers_verifierWorkspaces_childResource"
+          },
+          {
+            "$ref": "#/definitions/networkManagers_connectivityConfigurations_childResource"
+          },
+          {
+            "$ref": "#/definitions/networkManagers_securityUserConfigurations_childResource"
+          },
+          {
+            "$ref": "#/definitions/networkManagers_securityAdminConfigurations_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Network/networkManagers"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

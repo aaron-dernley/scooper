@@ -1,0 +1,78 @@
+{
+  "description": "Microsoft.AzureActiveDirectory/ciamDirectories",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-05-17-preview"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "The location in which the resource is hosted and data resides. Can be one of 'United States', 'Europe', 'Asia Pacific', or 'Australia'. Refer to [this documentation](https://aka.ms/ciam-data-location) for more information.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The initial sub domain of the tenant.",
+      "oneOf": [
+        {
+          "maxLength": 26,
+          "pattern": "^[a-zA-Z0-9]{1,26}",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The Azure AD for customers tenant resource properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/CiamTenantResourceProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "sku": {
+      "description": "SKU properties of the Azure AD for customers tenant. Learn more about Azure AD for customers billing at [https://aka.ms/ciambilling](https://aka.ms/ciambilling).",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/CiamResourceSKU"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Resource Tags",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AzureActiveDirectory/ciamDirectories"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

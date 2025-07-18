@@ -1,0 +1,68 @@
+{
+  "description": "Microsoft.DevTestLab/labs/users/servicefabrics",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2018-09-15"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "The location of the resource.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the service fabric.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The properties of the resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ServiceFabricProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/labs_users_servicefabrics_schedules_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "The tags of the resource.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DevTestLab/labs/users/servicefabrics"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

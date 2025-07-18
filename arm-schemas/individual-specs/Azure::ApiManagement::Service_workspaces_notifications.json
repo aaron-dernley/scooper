@@ -1,0 +1,56 @@
+{
+  "description": "Microsoft.ApiManagement/service/workspaces/notifications",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-06-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Notification Name Identifier.",
+      "oneOf": [
+        {
+          "enum": [
+            "RequestPublisherNotificationMessage",
+            "PurchasePublisherNotificationMessage",
+            "NewApplicationNotificationMessage",
+            "BCC",
+            "NewIssuePublisherNotificationMessage",
+            "AccountClosedPublisher",
+            "QuotaLimitApproachingPublisherNotificationMessage"
+          ],
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/service_workspaces_notifications_recipientUsers_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_workspaces_notifications_recipientEmails_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ApiManagement/service/workspaces/notifications"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

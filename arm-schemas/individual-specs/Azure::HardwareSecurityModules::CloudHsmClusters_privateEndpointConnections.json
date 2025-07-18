@@ -1,0 +1,53 @@
+{
+  "description": "Microsoft.HardwareSecurityModules/cloudHsmClusters/privateEndpointConnections",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-03-31"
+      ],
+      "type": "string"
+    },
+    "etag": {
+      "description": "Modified whenever there is a change in the state of private endpoint connection.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the private endpoint connection associated with the Cloud HSM Cluster.",
+      "oneOf": [
+        {
+          "maxLength": 24,
+          "minLength": 3,
+          "pattern": "^[a-zA-Z0-9-]{3,24}$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/PrivateEndpointConnectionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.HardwareSecurityModules/cloudHsmClusters/privateEndpointConnections"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

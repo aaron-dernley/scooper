@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Automation/automationAccounts/webhooks",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-10-23"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The webhook name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Gets or sets the properties of the webhook.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/WebhookCreateOrUpdateProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Automation/automationAccounts/webhooks"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

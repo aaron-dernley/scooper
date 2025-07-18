@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Logz/monitors/accounts/tagRules",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2022-01-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Definition of the properties for a TagRules resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/MonitoringTagRulesProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Logz/monitors/accounts/tagRules"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

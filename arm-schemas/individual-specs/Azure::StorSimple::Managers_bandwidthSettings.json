@@ -1,0 +1,53 @@
+{
+  "description": "Microsoft.StorSimple/managers/bandwidthSettings",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2017-06-01"
+      ],
+      "type": "string"
+    },
+    "kind": {
+      "description": "The Kind of the object. Currently only Series8000 is supported",
+      "oneOf": [
+        {
+          "enum": [
+            "Series8000"
+          ],
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "name": {
+      "description": "The bandwidth setting name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The properties of the bandwidth setting.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/BandwidthRateSettingProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.StorSimple/managers/bandwidthSettings"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

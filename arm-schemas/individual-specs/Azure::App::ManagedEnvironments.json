@@ -1,0 +1,110 @@
+{
+  "description": "Microsoft.App/managedEnvironments",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-02-02-preview"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "Managed identities for the Managed Environment to interact with other Azure services without maintaining any secrets or credentials in code.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ManagedServiceIdentity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "kind": {
+      "description": "Kind of the Environment.",
+      "type": "string"
+    },
+    "location": {
+      "description": "The geo-location where the resource lives",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the Environment.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Managed environment resource specific properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ManagedEnvironmentProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/managedEnvironments_storages_childResource"
+          },
+          {
+            "$ref": "#/definitions/managedEnvironments_certificates_childResource"
+          },
+          {
+            "$ref": "#/definitions/managedEnvironments_javaComponents_childResource"
+          },
+          {
+            "$ref": "#/definitions/managedEnvironments_daprComponents_childResource"
+          },
+          {
+            "$ref": "#/definitions/managedEnvironments_dotNetComponents_childResource"
+          },
+          {
+            "$ref": "#/definitions/managedEnvironments_httpRouteConfigs_childResource"
+          },
+          {
+            "$ref": "#/definitions/managedEnvironments_daprSubscriptions_childResource"
+          },
+          {
+            "$ref": "#/definitions/managedEnvironments_managedCertificates_childResource"
+          },
+          {
+            "$ref": "#/definitions/managedEnvironments_maintenanceConfigurations_childResource"
+          },
+          {
+            "$ref": "#/definitions/managedEnvironments_privateEndpointConnections_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.App/managedEnvironments"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

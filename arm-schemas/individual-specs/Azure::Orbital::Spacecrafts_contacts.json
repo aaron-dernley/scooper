@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Orbital/spacecrafts/contacts",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2022-11-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Contact name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of the Contact Resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ContactsProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Orbital/spacecrafts/contacts"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

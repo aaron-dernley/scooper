@@ -1,0 +1,97 @@
+{
+  "description": "Microsoft.Media/videoAnalyzers",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2021-11-01-preview"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "The identities associated to the Video Analyzer resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/VideoAnalyzerIdentity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The geo-location where the resource lives",
+      "type": "string"
+    },
+    "name": {
+      "description": "The Video Analyzer account name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/VideoAnalyzerProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/videoAnalyzers_videos_childResource"
+          },
+          {
+            "$ref": "#/definitions/videoAnalyzers_edgeModules_childResource"
+          },
+          {
+            "$ref": "#/definitions/videoAnalyzers_pipelineJobs_childResource"
+          },
+          {
+            "$ref": "#/definitions/videoAnalyzers_livePipelines_childResource"
+          },
+          {
+            "$ref": "#/definitions/videoAnalyzers_accessPolicies_childResource"
+          },
+          {
+            "$ref": "#/definitions/videoAnalyzers_pipelineTopologies_childResource"
+          },
+          {
+            "$ref": "#/definitions/videoAnalyzers_privateEndpointConnections_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Media/videoAnalyzers"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

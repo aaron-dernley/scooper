@@ -1,0 +1,27 @@
+{
+  "description": "Microsoft.Web/sites/slots/siteextensions",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-11-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Site extension name.",
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Web/sites/slots/siteextensions"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

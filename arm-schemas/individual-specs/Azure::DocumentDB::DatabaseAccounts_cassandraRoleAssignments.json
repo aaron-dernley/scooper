@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.DocumentDB/databaseAccounts/cassandraRoleAssignments",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The GUID for the Role Assignment.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties to create and update an Azure Cosmos DB Cassandra Role Assignment.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/CassandraRoleAssignmentResourceProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DocumentDB/databaseAccounts/cassandraRoleAssignments"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,47 @@
+{
+  "description": "Microsoft.App/containerApps/resiliencyPolicies",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-02-02-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the resiliency policy.",
+      "oneOf": [
+        {
+          "pattern": "^[-\\w\\._\\(\\)]+$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "App Resiliency resource specific properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/AppResiliencyProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.App/containerApps/resiliencyPolicies"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

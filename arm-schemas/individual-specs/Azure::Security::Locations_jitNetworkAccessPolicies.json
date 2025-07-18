@@ -1,0 +1,42 @@
+{
+  "description": "Microsoft.Security/locations/jitNetworkAccessPolicies",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2020-01-01"
+      ],
+      "type": "string"
+    },
+    "kind": {
+      "description": "Kind of the resource",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of a Just-in-Time access configuration policy.",
+      "type": "string"
+    },
+    "properties": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/JitNetworkAccessPolicyProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Security/locations/jitNetworkAccessPolicies"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

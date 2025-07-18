@@ -1,0 +1,62 @@
+{
+  "description": "Microsoft.ApiManagement/service/templates",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-06-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Email Template Name Identifier.",
+      "oneOf": [
+        {
+          "enum": [
+            "applicationApprovedNotificationMessage",
+            "accountClosedDeveloper",
+            "quotaLimitApproachingDeveloperNotificationMessage",
+            "newDeveloperNotificationMessage",
+            "emailChangeIdentityDefault",
+            "inviteUserNotificationMessage",
+            "newCommentNotificationMessage",
+            "confirmSignUpIdentityDefault",
+            "newIssueNotificationMessage",
+            "purchaseDeveloperNotificationMessage",
+            "passwordResetIdentityDefault",
+            "passwordResetByAdminNotificationMessage",
+            "rejectDeveloperNotificationMessage",
+            "requestDeveloperNotificationMessage"
+          ],
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Email Template Update contract properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/EmailTemplateUpdateParameterProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ApiManagement/service/templates"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

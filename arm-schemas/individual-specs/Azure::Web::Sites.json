@@ -1,0 +1,148 @@
+{
+  "description": "Microsoft.Web/sites",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-11-01"
+      ],
+      "type": "string"
+    },
+    "extendedLocation": {
+      "description": "Extended Location.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ExtendedLocation"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "identity": {
+      "description": "Managed service identity.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ManagedServiceIdentity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "kind": {
+      "description": "Kind of resource. If the resource is an app, you can refer to https://github.com/Azure/app-service-linux-docs/blob/master/Things_You_Should_Know/kind_property.md#app-service-resource-kind-reference for details supported values for kind.",
+      "type": "string"
+    },
+    "location": {
+      "description": "Resource Location.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Unique name of the app to create or update. To create or update a deployment slot, use the {slot} parameter.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Site resource specific properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/SiteProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/sites_slots_childResource"
+          },
+          {
+            "$ref": "#/definitions/sites_config_childResource"
+          },
+          {
+            "$ref": "#/definitions/sites_functions_childResource"
+          },
+          {
+            "$ref": "#/definitions/sites_extensions_childResource"
+          },
+          {
+            "$ref": "#/definitions/sites_deployments_childResource"
+          },
+          {
+            "$ref": "#/definitions/sites_certificates_childResource"
+          },
+          {
+            "$ref": "#/definitions/sites_networkConfig_childResource"
+          },
+          {
+            "$ref": "#/definitions/sites_premieraddons_childResource"
+          },
+          {
+            "$ref": "#/definitions/sites_privateAccess_childResource"
+          },
+          {
+            "$ref": "#/definitions/sites_sitecontainers_childResource"
+          },
+          {
+            "$ref": "#/definitions/sites_siteextensions_childResource"
+          },
+          {
+            "$ref": "#/definitions/sites_sourcecontrols_childResource"
+          },
+          {
+            "$ref": "#/definitions/sites_hostNameBindings_childResource"
+          },
+          {
+            "$ref": "#/definitions/sites_hybridconnection_childResource"
+          },
+          {
+            "$ref": "#/definitions/sites_publicCertificates_childResource"
+          },
+          {
+            "$ref": "#/definitions/sites_virtualNetworkConnections_childResource"
+          },
+          {
+            "$ref": "#/definitions/sites_domainOwnershipIdentifiers_childResource"
+          },
+          {
+            "$ref": "#/definitions/sites_privateEndpointConnections_childResource"
+          },
+          {
+            "$ref": "#/definitions/sites_basicPublishingCredentialsPolicies_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Web/sites"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

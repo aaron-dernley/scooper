@@ -1,0 +1,43 @@
+{
+  "description": "Microsoft.Compute/virtualMachineScaleSets/virtualMachines/extensions",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-11-01"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "The location of the extension.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the virtual machine extension.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Describes the properties of a Virtual Machine Extension.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/VirtualMachineExtensionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Compute/virtualMachineScaleSets/virtualMachines/extensions"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

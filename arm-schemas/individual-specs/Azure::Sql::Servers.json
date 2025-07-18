@@ -1,0 +1,145 @@
+{
+  "description": "Microsoft.Sql/servers",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "The Azure Active Directory identity of the server.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ResourceIdentity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "Resource location.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the server.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ServerProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/servers_keys_childResource"
+          },
+          {
+            "$ref": "#/definitions/servers_databases_childResource"
+          },
+          {
+            "$ref": "#/definitions/servers_jobAgents_childResource"
+          },
+          {
+            "$ref": "#/definitions/servers_dnsAliases_childResource"
+          },
+          {
+            "$ref": "#/definitions/servers_syncAgents_childResource"
+          },
+          {
+            "$ref": "#/definitions/servers_elasticPools_childResource"
+          },
+          {
+            "$ref": "#/definitions/servers_firewallRules_childResource"
+          },
+          {
+            "$ref": "#/definitions/servers_failoverGroups_childResource"
+          },
+          {
+            "$ref": "#/definitions/servers_administrators_childResource"
+          },
+          {
+            "$ref": "#/definitions/servers_auditingSettings_childResource"
+          },
+          {
+            "$ref": "#/definitions/servers_ipv6FirewallRules_childResource"
+          },
+          {
+            "$ref": "#/definitions/servers_connectionPolicies_childResource"
+          },
+          {
+            "$ref": "#/definitions/servers_encryptionProtector_childResource"
+          },
+          {
+            "$ref": "#/definitions/servers_virtualNetworkRules_childResource"
+          },
+          {
+            "$ref": "#/definitions/servers_outboundFirewallRules_childResource"
+          },
+          {
+            "$ref": "#/definitions/servers_securityAlertPolicies_childResource"
+          },
+          {
+            "$ref": "#/definitions/servers_devOpsAuditingSettings_childResource"
+          },
+          {
+            "$ref": "#/definitions/servers_extendedAuditingSettings_childResource"
+          },
+          {
+            "$ref": "#/definitions/servers_vulnerabilityAssessments_childResource"
+          },
+          {
+            "$ref": "#/definitions/servers_privateEndpointConnections_childResource"
+          },
+          {
+            "$ref": "#/definitions/servers_azureADOnlyAuthentications_childResource"
+          },
+          {
+            "$ref": "#/definitions/servers_sqlVulnerabilityAssessments_childResource"
+          },
+          {
+            "$ref": "#/definitions/servers_advancedThreatProtectionSettings_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Sql/servers"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

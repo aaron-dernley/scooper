@@ -1,0 +1,62 @@
+{
+  "description": "Microsoft.Web/customApis",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2016-06-01"
+      ],
+      "type": "string"
+    },
+    "etag": {
+      "description": "Resource ETag",
+      "type": "string"
+    },
+    "location": {
+      "description": "Resource location",
+      "type": "string"
+    },
+    "name": {
+      "description": "API name",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Custom API properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/CustomApiPropertiesDefinition"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Resource tags",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Web/customApis"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

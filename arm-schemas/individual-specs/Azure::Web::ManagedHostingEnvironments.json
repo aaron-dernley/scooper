@@ -1,0 +1,65 @@
+{
+  "description": "Microsoft.Web/managedHostingEnvironments",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2015-08-01"
+      ],
+      "type": "string"
+    },
+    "id": {
+      "description": "Resource Id",
+      "type": "string"
+    },
+    "kind": {
+      "description": "Kind of resource",
+      "type": "string"
+    },
+    "location": {
+      "description": "Resource Location",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of managed hosting environment",
+      "type": "string"
+    },
+    "properties": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/HostingEnvironmentProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Resource tags",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Web/managedHostingEnvironments"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

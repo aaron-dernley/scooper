@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.NotificationHubs/namespaces/privateEndpointConnections",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-10-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Private Endpoint Connection Name",
+      "oneOf": [
+        {
+          "maxLength": 87,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z][a-zA-Z0-9-]*\\.[a-fA-F0-9\\-]+$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Private Endpoint Connection properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/PrivateEndpointConnectionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.NotificationHubs/namespaces/privateEndpointConnections"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

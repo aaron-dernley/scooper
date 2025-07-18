@@ -1,0 +1,47 @@
+{
+  "description": "Microsoft.Kusto/clusters/managedPrivateEndpoints",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-04-13"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the managed private endpoint.",
+      "oneOf": [
+        {
+          "pattern": "^.*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "A managed private endpoint.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ManagedPrivateEndpointProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Kusto/clusters/managedPrivateEndpoints"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

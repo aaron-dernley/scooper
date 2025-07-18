@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.DataLakeStore/accounts/trustedIdProviders",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2016-11-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the trusted identity provider. This is used for differentiation of providers in the account.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The trusted identity provider properties to use when creating a new trusted identity provider.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/CreateOrUpdateTrustedIdProviderProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DataLakeStore/accounts/trustedIdProviders"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

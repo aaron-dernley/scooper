@@ -1,0 +1,43 @@
+{
+  "description": "Microsoft.Network/virtualHubs/hubVirtualNetworkConnections",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01"
+      ],
+      "type": "string"
+    },
+    "id": {
+      "description": "Resource ID.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the HubVirtualNetworkConnection.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of the hub virtual network connection.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/HubVirtualNetworkConnectionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Network/virtualHubs/hubVirtualNetworkConnections"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

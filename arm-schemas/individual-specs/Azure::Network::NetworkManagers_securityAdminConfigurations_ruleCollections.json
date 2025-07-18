@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.Network/networkManagers/securityAdminConfigurations/ruleCollections",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-07-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the network manager security Configuration rule collection.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Indicates the properties for the network manager admin rule collection.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/AdminRuleCollectionPropertiesFormat"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/networkManagers_securityAdminConfigurations_ruleCollections_rules_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Network/networkManagers/securityAdminConfigurations/ruleCollections"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

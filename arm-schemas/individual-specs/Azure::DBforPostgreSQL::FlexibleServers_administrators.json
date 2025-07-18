@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.DBforPostgreSQL/flexibleServers/administrators",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-01-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Object identifier of the Microsoft Entra principal.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of the server administrator associated to a Microsoft Entra principal.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/AdministratorPropertiesForAdd"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DBforPostgreSQL/flexibleServers/administrators"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

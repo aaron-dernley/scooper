@@ -1,0 +1,38 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationStorageClassifications/replicationStorageClassificationMappings"
+      ]
+    },
+    "apiVersion": {
+      "type": "string",
+      "enum": [
+        "2018-01-10"
+      ]
+    },
+    "properties": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/StorageMappingInputProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ],
+      "description": "Storage mapping input properties."
+    }
+  },
+  "required": [
+    "name",
+    "type",
+    "apiVersion",
+    "properties"
+  ],
+  "description": "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationStorageClassifications/replicationStorageClassificationMappings"
+}

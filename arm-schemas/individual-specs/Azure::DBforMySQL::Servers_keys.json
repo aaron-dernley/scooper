@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.DBforMySQL/servers/keys",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2020-01-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the MySQL Server key to be operated on (updated or created).",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of the ServerKey Resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ServerKeyProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DBforMySQL/servers/keys"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,79 @@
+{
+  "description": "Microsoft.EventGrid/partnerTopics",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-04-01-preview"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "Identity information for the Partner Topic resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/IdentityInfo"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "Location of the resource.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the partner topic.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of the Partner Topic.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/PartnerTopicProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/partnerTopics_eventSubscriptions_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Tags of the resource.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.EventGrid/partnerTopics"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

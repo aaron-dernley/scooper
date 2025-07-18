@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.AppPlatform/Spring/certificates",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the certificate resource.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of the certificate resource payload.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/CertificateProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AppPlatform/Spring/certificates"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

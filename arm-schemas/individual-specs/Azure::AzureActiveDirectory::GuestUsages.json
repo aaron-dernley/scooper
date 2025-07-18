@@ -1,0 +1,58 @@
+{
+  "description": "Microsoft.AzureActiveDirectory/guestUsages",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-05-17-preview"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "Location of the Guest Usages resource.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The initial domain name of the Azure AD B2C tenant.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The Guest Usages Resource Properties",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/GuestUsagesResourceProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Key-value pairs of additional resource provisioning properties.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AzureActiveDirectory/guestUsages"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

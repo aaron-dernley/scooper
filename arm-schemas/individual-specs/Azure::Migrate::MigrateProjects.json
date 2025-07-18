@@ -1,0 +1,71 @@
+{
+  "description": "Microsoft.Migrate/migrateProjects",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-01-01"
+      ],
+      "type": "string"
+    },
+    "eTag": {
+      "description": "For optimistic concurrency control.",
+      "type": "string"
+    },
+    "location": {
+      "description": "Azure location in which project is created.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the Azure Migrate project.",
+      "oneOf": [
+        {
+          "pattern": "^[a-zA-Z0-9-]{3,24}$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Properties of a migrate project.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/MigrateProjectProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/migrateProjects_solutions_childResource"
+          },
+          {
+            "$ref": "#/definitions/migrateProjects_privateEndpointConnections_childResource"
+          },
+          {
+            "$ref": "#/definitions/migrateProjects_privateEndpointConnectionProxies_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Migrate/migrateProjects"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

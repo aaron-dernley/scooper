@@ -1,0 +1,79 @@
+{
+  "description": "Microsoft.Blockchain/blockchainMembers",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2018-06-01-preview"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "The GEO location of the blockchain service.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Blockchain member name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Gets or sets the blockchain member properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/BlockchainMemberProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/blockchainMembers_transactionNodes_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "sku": {
+      "description": "Gets or sets the blockchain member Sku.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/Sku"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Tags of the service which is a list of key value pairs that describes the resource.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Blockchain/blockchainMembers"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

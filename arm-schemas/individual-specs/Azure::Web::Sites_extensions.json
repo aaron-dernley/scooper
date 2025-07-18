@@ -1,0 +1,77 @@
+{
+  "description": "Microsoft.Web/sites/extensions",
+  "oneOf": [
+    {
+      "properties": {
+        "kind": {
+          "description": "Kind of resource.",
+          "type": "string"
+        },
+        "name": {
+          "oneOf": [
+            {
+              "pattern": "^.*/MSDeploy$",
+              "type": "string"
+            },
+            {
+              "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+            }
+          ]
+        },
+        "properties": {
+          "description": "Core resource properties",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/MSDeployCore"
+            },
+            {
+              "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+            }
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "properties"
+      ],
+      "type": "object"
+    },
+    {
+      "properties": {
+        "name": {
+          "oneOf": [
+            {
+              "pattern": "^.*/onedeploy$",
+              "type": "string"
+            },
+            {
+              "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+            }
+          ]
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "type": "object"
+    }
+  ],
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-11-01"
+      ],
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Web/sites/extensions"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "apiVersion",
+    "type"
+  ]
+}

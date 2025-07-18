@@ -1,0 +1,47 @@
+{
+  "description": "Microsoft.Peering/peeringServices/prefixes",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-05-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the prefix.",
+      "oneOf": [
+        {
+          "pattern": "[A-Za-z0-9_.-]{1,63}",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Gets or sets the peering prefix properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/PeeringServicePrefixProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Peering/peeringServices/prefixes"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

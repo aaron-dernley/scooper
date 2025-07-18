@@ -1,0 +1,85 @@
+{
+  "description": "Microsoft.Workloads/sapVirtualInstances",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-04-01"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "A pre-created user assigned identity with appropriate roles assigned. To learn more on identity and roles required, visit the ACSS how-to-guide.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/UserAssignedServiceIdentity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The geo-location where the resource lives",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the Virtual Instances for SAP solutions resource",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Defines the Virtual Instance for SAP solutions resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/SAPVirtualInstanceProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/sapVirtualInstances_centralInstances_childResource"
+          },
+          {
+            "$ref": "#/definitions/sapVirtualInstances_databaseInstances_childResource"
+          },
+          {
+            "$ref": "#/definitions/sapVirtualInstances_applicationInstances_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Workloads/sapVirtualInstances"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

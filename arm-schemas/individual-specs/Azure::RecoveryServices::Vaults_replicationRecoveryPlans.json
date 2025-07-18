@@ -1,0 +1,38 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "Microsoft.RecoveryServices/vaults/replicationRecoveryPlans"
+      ]
+    },
+    "apiVersion": {
+      "type": "string",
+      "enum": [
+        "2018-01-10"
+      ]
+    },
+    "properties": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/CreateRecoveryPlanInputProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ],
+      "description": "Recovery plan creation properties."
+    }
+  },
+  "required": [
+    "name",
+    "type",
+    "apiVersion",
+    "properties"
+  ],
+  "description": "Microsoft.RecoveryServices/vaults/replicationRecoveryPlans"
+}

@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.Cdn/profiles/originGroups",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-04-15"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the origin group which is unique within the endpoint.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The JSON object that contains the properties of the origin group.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/AFDOriginGroupProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/profiles_originGroups_origins_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Cdn/profiles/originGroups"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

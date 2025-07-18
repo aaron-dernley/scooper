@@ -1,0 +1,58 @@
+{
+  "description": "Microsoft.AppPlatform/Spring/applicationAccelerators/customizedAccelerators",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the customized accelerator.",
+      "oneOf": [
+        {
+          "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Customized accelerator properties payload",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/CustomizedAcceleratorProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "sku": {
+      "description": "Sku of the customized accelerator resource",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/Sku"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AppPlatform/Spring/applicationAccelerators/customizedAccelerators"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

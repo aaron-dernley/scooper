@@ -1,0 +1,68 @@
+{
+  "type": "object",
+  "properties": {
+    "apiVersion": {
+      "type": "string",
+      "enum": [
+        "2019-08-09-preview"
+      ]
+    },
+    "location": {
+      "type": "string",
+      "description": "Resource location"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the private cloud"
+    },
+    "properties": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/PrivateCloudProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ],
+      "description": "The properties of a private cloud resource"
+    },
+    "resources": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/privateClouds_clusters_childResource"
+          }
+        ]
+      }
+    },
+    "tags": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {}
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ],
+      "description": "Resource tags"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "Microsoft.VMwareVirtustream/privateClouds"
+      ]
+    }
+  },
+  "required": [
+    "apiVersion",
+    "name",
+    "properties",
+    "type"
+  ],
+  "description": "Microsoft.VMwareVirtustream/privateClouds"
+}

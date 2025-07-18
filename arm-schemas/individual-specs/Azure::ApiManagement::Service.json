@@ -1,0 +1,207 @@
+{
+  "description": "Microsoft.ApiManagement/service",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-06-01-preview"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "Managed service identity of the Api Management service.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ApiManagementServiceIdentity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "Resource location.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the API Management service.",
+      "oneOf": [
+        {
+          "maxLength": 50,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Properties of the API Management service.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ApiManagementServiceProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/service_apis_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_tags_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_users_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_caches_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_groups_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_tenant_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_loggers_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_schemas_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_backends_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_gateways_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_policies_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_products_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_templates_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_workspaces_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_diagnostics_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_namedValues_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_certificates_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_contentTypes_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_notifications_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_portalconfigs_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_subscriptions_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_apiVersionSets_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_documentations_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_portalsettings_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_policyFragments_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_portalRevisions_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_identityProviders_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_policyRestrictions_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_authorizationServers_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_authorizationProviders_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_openidConnectProviders_childResource"
+          },
+          {
+            "$ref": "#/definitions/service_privateEndpointConnections_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "sku": {
+      "description": "SKU properties of the API Management service.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ApiManagementServiceSkuProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ApiManagement/service"
+      ],
+      "type": "string"
+    },
+    "zones": {
+      "description": "A list of availability zones denoting where the resource needs to come from.",
+      "oneOf": [
+        {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

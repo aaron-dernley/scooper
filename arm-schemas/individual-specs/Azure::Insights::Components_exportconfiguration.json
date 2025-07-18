@@ -1,0 +1,63 @@
+{
+  "description": "Microsoft.Insights/components/exportconfiguration",
+  "properties": {
+    "DestinationAccountId": {
+      "description": "The name of destination storage account.",
+      "type": "string"
+    },
+    "DestinationAddress": {
+      "description": "The SAS URL for the destination storage container. It must grant write permission.",
+      "type": "string"
+    },
+    "DestinationStorageLocationId": {
+      "description": "The location ID of the destination storage container.",
+      "type": "string"
+    },
+    "DestinationStorageSubscriptionId": {
+      "description": "The subscription ID of the destination storage container.",
+      "type": "string"
+    },
+    "DestinationType": {
+      "description": "The Continuous Export destination type. This has to be 'Blob'.",
+      "type": "string"
+    },
+    "IsEnabled": {
+      "description": "Set to 'true' to create a Continuous Export configuration as enabled, otherwise set it to 'false'.",
+      "type": "string"
+    },
+    "NotificationQueueEnabled": {
+      "description": "Deprecated",
+      "type": "string"
+    },
+    "NotificationQueueUri": {
+      "description": "Deprecated",
+      "type": "string"
+    },
+    "RecordTypes": {
+      "description": "The document types to be exported, as comma separated values. Allowed values include 'Requests', 'Event', 'Exceptions', 'Metrics', 'PageViews', 'PageViewPerformance', 'Rdd', 'PerformanceCounters', 'Availability', 'Messages'.",
+      "type": "string"
+    },
+    "apiVersion": {
+      "enum": [
+        "2015-05-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The Continuous Export configuration ID. This is unique within a Application Insights component.",
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Insights/components/exportconfiguration"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

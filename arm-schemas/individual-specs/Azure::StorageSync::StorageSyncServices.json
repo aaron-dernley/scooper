@@ -1,0 +1,85 @@
+{
+  "description": "Microsoft.StorageSync/storageSyncServices",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2022-09-01"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "managed identities for the Storage Sync to interact with other Azure services without maintaining any secrets or credentials in code.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ManagedServiceIdentity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The geo-location where the resource lives",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of Storage Sync Service resource.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The parameters used to create the storage sync service.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/StorageSyncServiceCreateParametersProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/storageSyncServices_syncGroups_childResource"
+          },
+          {
+            "$ref": "#/definitions/storageSyncServices_registeredServers_childResource"
+          },
+          {
+            "$ref": "#/definitions/storageSyncServices_privateEndpointConnections_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.StorageSync/storageSyncServices"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,67 @@
+{
+  "description": "Microsoft.Insights/activityLogAlerts",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-01-01-preview"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "default": "global",
+      "description": "The location of the resource. Azure Activity Log Alert rules are supported on Global, West Europe and North Europe regions.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the Activity Log Alert rule.",
+      "oneOf": [
+        {
+          "pattern": "^[-\\w\\._\\(\\)]+$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The Activity Log Alert rule properties of the resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/AlertRuleProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "The tags of the resource.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Insights/activityLogAlerts"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

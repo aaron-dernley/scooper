@@ -1,0 +1,84 @@
+{
+  "description": "Microsoft.KeyVault/managedHSMs/privateEndpointConnections",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-12-01-preview"
+      ],
+      "type": "string"
+    },
+    "etag": {
+      "description": "Modified whenever there is a change in the state of private endpoint connection.",
+      "type": "string"
+    },
+    "identity": {
+      "description": "Managed service identity (system assigned and/or user assigned identities)",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ManagedServiceIdentity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The supported Azure location where the managed HSM Pool should be created.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the private endpoint connection associated with the managed hsm pool.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/MhsmPrivateEndpointConnectionProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "sku": {
+      "description": "SKU details",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ManagedHsmSku"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Resource tags",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.KeyVault/managedHSMs/privateEndpointConnections"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

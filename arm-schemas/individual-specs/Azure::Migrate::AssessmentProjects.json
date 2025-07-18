@@ -1,0 +1,77 @@
+{
+  "type": "object",
+  "properties": {
+    "apiVersion": {
+      "type": "string",
+      "enum": [
+        "2019-10-01"
+      ]
+    },
+    "eTag": {
+      "type": "string",
+      "description": "For optimistic concurrency control."
+    },
+    "location": {
+      "type": "string",
+      "description": "Azure location in which project is created."
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the Azure Migrate project."
+    },
+    "properties": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ProjectProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ],
+      "description": "Properties of a project."
+    },
+    "resources": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/assessmentProjects_groups_childResource"
+          },
+          {
+            "$ref": "#/definitions/assessmentProjects_hypervcollectors_childResource"
+          },
+          {
+            "$ref": "#/definitions/assessmentProjects_servercollectors_childResource"
+          },
+          {
+            "$ref": "#/definitions/assessmentProjects_vmwarecollectors_childResource"
+          },
+          {
+            "$ref": "#/definitions/assessmentProjects_importcollectors_childResource"
+          },
+          {
+            "$ref": "#/definitions/assessmentprojects_privateEndpointConnections_childResource"
+          }
+        ]
+      }
+    },
+    "tags": {
+      "type": "object",
+      "properties": {},
+      "description": "Tags provided by Azure Tagging service."
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "Microsoft.Migrate/assessmentProjects"
+      ]
+    }
+  },
+  "required": [
+    "apiVersion",
+    "name",
+    "properties",
+    "type"
+  ],
+  "description": "Microsoft.Migrate/assessmentProjects"
+}

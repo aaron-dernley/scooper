@@ -1,0 +1,183 @@
+{
+  "description": "Microsoft.Storage/storageAccounts",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2025-01-01"
+      ],
+      "type": "string"
+    },
+    "extendedLocation": {
+      "description": "Optional. Set the extended location of the resource. If not set, the storage account will be created in Azure main region. Otherwise it will be created in the specified extended location",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ExtendedLocation"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "identity": {
+      "description": "The identity of the resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/Identity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "kind": {
+      "description": "Required. Indicates the type of storage account.",
+      "oneOf": [
+        {
+          "enum": [
+            "Storage",
+            "StorageV2",
+            "BlobStorage",
+            "FileStorage",
+            "BlockBlobStorage"
+          ],
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "Required. Gets or sets the location of the resource. This will be one of the supported and registered Azure Geo Regions (e.g. West US, East US, Southeast Asia, etc.). The geo region of a resource cannot be changed once it is created, but if an identical geo region is specified on update, the request will succeed.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.",
+      "oneOf": [
+        {
+          "maxLength": 24,
+          "minLength": 3,
+          "pattern": "^[a-z0-9]+$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "placement": {
+      "description": "Optional. Gets or sets the zonal placement details for the storage account.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/Placement"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The parameters used to create the storage account.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/StorageAccountPropertiesCreateParameters"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/storageAccounts_localUsers_childResource"
+          },
+          {
+            "$ref": "#/definitions/storageAccounts_blobServices_childResource"
+          },
+          {
+            "$ref": "#/definitions/storageAccounts_fileServices_childResource"
+          },
+          {
+            "$ref": "#/definitions/storageAccounts_queueServices_childResource"
+          },
+          {
+            "$ref": "#/definitions/storageAccounts_tableServices_childResource"
+          },
+          {
+            "$ref": "#/definitions/storageAccounts_encryptionScopes_childResource"
+          },
+          {
+            "$ref": "#/definitions/storageAccounts_inventoryPolicies_childResource"
+          },
+          {
+            "$ref": "#/definitions/storageAccounts_managementPolicies_childResource"
+          },
+          {
+            "$ref": "#/definitions/storageAccounts_storageTaskAssignments_childResource"
+          },
+          {
+            "$ref": "#/definitions/storageAccounts_objectReplicationPolicies_childResource"
+          },
+          {
+            "$ref": "#/definitions/storageAccounts_privateEndpointConnections_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "sku": {
+      "description": "Required. Gets or sets the SKU name.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/Sku"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "tags": {
+      "description": "Gets or sets a list of key value pairs that describe the resource. These tags can be used for viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a resource. Each tag must have a key with a length no greater than 128 characters and a value with a length no greater than 256 characters.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Storage/storageAccounts"
+      ],
+      "type": "string"
+    },
+    "zones": {
+      "description": "Optional. Gets or sets the pinned logical availability zone for the storage account.",
+      "oneOf": [
+        {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

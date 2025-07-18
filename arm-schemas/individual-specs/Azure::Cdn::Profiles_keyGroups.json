@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.Cdn/profiles/keyGroups",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-06-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the KeyGroup under the profile.",
+      "oneOf": [
+        {
+          "maxLength": 260,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9]+(-*[a-zA-Z0-9])*$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The JSON object that contains the properties of the key group to create.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/KeyGroupProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Cdn/profiles/keyGroups"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

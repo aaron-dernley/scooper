@@ -1,0 +1,27 @@
+{
+  "description": "Microsoft.DataShare/accounts/shares/dataSets",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2021-08-01"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the dataSet.",
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.DataShare/accounts/shares/dataSets"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

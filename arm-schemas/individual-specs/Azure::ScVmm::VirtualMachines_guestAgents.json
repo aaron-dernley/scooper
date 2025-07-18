@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.ScVmm/virtualMachines/guestAgents",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-04-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the guestAgents.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Resource properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/GuestAgentProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.ScVmm/virtualMachines/guestAgents"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

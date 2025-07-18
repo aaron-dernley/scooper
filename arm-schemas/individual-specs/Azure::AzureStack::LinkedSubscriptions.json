@@ -1,0 +1,53 @@
+{
+  "description": "Microsoft.AzureStack/linkedSubscriptions",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2020-06-01-preview"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "Location of the resource.",
+      "oneOf": [
+        {
+          "enum": [
+            "global"
+          ],
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "name": {
+      "description": "Name of the Linked Subscription resource.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of the Linked Subscription resource",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/LinkedSubscriptionParameterProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AzureStack/linkedSubscriptions"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

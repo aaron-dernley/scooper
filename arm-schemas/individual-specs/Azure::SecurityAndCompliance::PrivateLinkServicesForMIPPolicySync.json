@@ -1,0 +1,101 @@
+{
+  "description": "Microsoft.SecurityAndCompliance/privateLinkServicesForMIPPolicySync",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2021-03-08"
+      ],
+      "type": "string"
+    },
+    "etag": {
+      "description": "An etag associated with the resource, used for optimistic concurrency when editing it.",
+      "type": "string"
+    },
+    "identity": {
+      "description": "Setting indicating whether the service has a managed identity associated with it.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ServicesResourceIdentity"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "kind": {
+      "description": "The kind of the service.",
+      "oneOf": [
+        {
+          "enum": [
+            "fhir",
+            "fhir-Stu3",
+            "fhir-R4"
+          ],
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The resource location.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the service instance.",
+      "maxLength": 24,
+      "minLength": 3,
+      "type": "string"
+    },
+    "properties": {
+      "description": "The common properties of a service.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ServicesProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/privateLinkServicesForMIPPolicySync_privateEndpointConnections_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "The resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.SecurityAndCompliance/privateLinkServicesForMIPPolicySync"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

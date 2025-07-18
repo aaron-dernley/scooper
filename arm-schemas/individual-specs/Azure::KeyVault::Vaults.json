@@ -1,0 +1,85 @@
+{
+  "description": "Microsoft.KeyVault/vaults",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-12-01-preview"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "The supported Azure location where the key vault should be created.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the vault",
+      "oneOf": [
+        {
+          "pattern": "^[a-zA-Z0-9-]{3,24}$",
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "Properties of the vault",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/VaultProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/vaults_keys_childResource"
+          },
+          {
+            "$ref": "#/definitions/vaults_secrets_childResource"
+          },
+          {
+            "$ref": "#/definitions/vaults_accessPolicies_childResource"
+          },
+          {
+            "$ref": "#/definitions/vaults_privateEndpointConnections_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "The tags that will be assigned to the key vault.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.KeyVault/vaults"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

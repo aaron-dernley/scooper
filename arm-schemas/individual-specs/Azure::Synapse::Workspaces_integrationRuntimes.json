@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.Synapse/workspaces/integrationRuntimes",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2021-06-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Integration runtime name",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Integration runtime properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/IntegrationRuntime"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.Synapse/workspaces/integrationRuntimes"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

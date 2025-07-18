@@ -1,0 +1,27 @@
+{
+  "description": "Microsoft.AppPlatform/Spring/serviceRegistries",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of Service Registry.",
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AppPlatform/Spring/serviceRegistries"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

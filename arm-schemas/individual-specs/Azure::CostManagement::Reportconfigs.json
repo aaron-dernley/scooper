@@ -1,0 +1,39 @@
+{
+  "description": "Microsoft.CostManagement/reportconfigs",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2018-05-31"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Report Config Name.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The properties of the report config.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ReportConfigProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.CostManagement/reportconfigs"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

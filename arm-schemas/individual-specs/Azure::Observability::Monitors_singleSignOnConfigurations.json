@@ -1,0 +1,39 @@
+{
+  "description": "Dynatrace.Observability/monitors/singleSignOnConfigurations",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2023-04-27"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Single Sign On Configuration Name",
+      "type": "string"
+    },
+    "properties": {
+      "description": "The resource-specific properties for this resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/DynatraceSingleSignOnProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Dynatrace.Observability/monitors/singleSignOnConfigurations"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

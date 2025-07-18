@@ -1,0 +1,70 @@
+{
+  "description": "Microsoft.AppPlatform/Spring/apps",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-05-01-preview"
+      ],
+      "type": "string"
+    },
+    "identity": {
+      "description": "The Managed Identity type of the app resource",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ManagedIdentityProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "location": {
+      "description": "The GEO location of the application, always the same with its parent resource",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the App resource.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of the App resource",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/AppResourceProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/Spring_apps_domains_childResource"
+          },
+          {
+            "$ref": "#/definitions/Spring_apps_bindings_childResource"
+          },
+          {
+            "$ref": "#/definitions/Spring_apps_deployments_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AppPlatform/Spring/apps"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,68 @@
+{
+  "description": "Microsoft.KubernetesConfiguration/privateLinkScopes",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2022-04-02-preview"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "The geo-location where the resource lives",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the Azure Arc PrivateLinkScope resource.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties that define a Azure Arc PrivateLinkScope resource.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/KubernetesConfigurationPrivateLinkScopeProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/privateLinkScopes_privateEndpointConnections_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "Resource tags.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "Microsoft.KubernetesConfiguration/privateLinkScopes"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,96 @@
+{
+  "description": "microsoft.visualstudio/account",
+  "properties": {
+    "accountName": {
+      "description": "The account name.",
+      "type": "string"
+    },
+    "apiVersion": {
+      "enum": [
+        "2014-04-01-preview"
+      ],
+      "type": "string"
+    },
+    "location": {
+      "description": "The Azure instance location.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the resource.",
+      "type": "string"
+    },
+    "operationType": {
+      "description": "The type of the operation.",
+      "oneOf": [
+        {
+          "enum": [
+            "unknown",
+            "create",
+            "update",
+            "link"
+          ],
+          "type": "string"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "properties": {
+      "description": "The custom properties of the resource.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/account_project_childResource"
+          },
+          {
+            "$ref": "#/definitions/account_extension_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "tags": {
+      "description": "The custom tags of the resource.",
+      "oneOf": [
+        {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "type": {
+      "enum": [
+        "microsoft.visualstudio/account"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

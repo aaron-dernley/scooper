@@ -1,0 +1,49 @@
+{
+  "description": "Microsoft.AzureStackHCI/clusters/arcSettings",
+  "properties": {
+    "apiVersion": {
+      "enum": [
+        "2024-02-15-preview"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the proxy resource holding details of HCI ArcSetting information.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "ArcSetting properties.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ArcSettingProperties"
+        },
+        {
+          "$ref": "https://schema.management.azure.com/schemas/common/definitions.json#/definitions/expression"
+        }
+      ]
+    },
+    "resources": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/clusters_arcSettings_extensions_childResource"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "type": {
+      "enum": [
+        "Microsoft.AzureStackHCI/clusters/arcSettings"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "properties",
+    "apiVersion",
+    "type"
+  ],
+  "type": "object"
+}

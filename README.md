@@ -7,18 +7,18 @@ Install Deno
 Run the scoop
 
 This will:
-	- Clone the Azure schema repo to a temp directory
-	- Extract only the latest API version of each resource
-	- Write everything into arm-schemas/
+- Clone the Azure schema repo to a temp directory
+- Extract only the latest API version of each resource
+- Write everything into arm-schemas/
 
 `deno task scoop`
 
 Verify resource types
 
 This checker:
-	- Parses all individual spec files
-	- Determines whether each one is a child resource
-	- Emits a report to arm-schemas/resource-structure-report.json
+- Parses all individual spec files
+- Determines whether each one is a child resource
+- Emits a report to arm-schemas/resource-structure-report.json
 
 `deno task checker`
 
